@@ -1,0 +1,58 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/kampagnen"
+  to = "/kampagnen.html"
+  status = 200
+
+[[redirects]]
+  from = "/produkte"
+  to = "/produkte.html"
+  status = 200
+
+[[redirects]]
+  from = "/preise"
+  to = "/preise.html"
+  status = 200
+
+[[redirects]]
+  from = "/gorilla-talk"
+  to = "/gorilla-talk.html"
+  status = 200
+
+[[redirects]]
+  from = "/marketing-wissen"
+  to = "/marketing-wissen.html"
+  status = 200
+
+[[redirects]]
+  from = "/kontakt"
+  to = "/kontakt.html"
+  status = 200
+
+[[redirects]]
+  from = "/shop"
+  to = "/shop.html"
+  status = 200
+
+[[redirects]]
+  from = "https://www.brandilla.de/*"
+  to = "https://brandilla.de/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kampagnen — Employer Branding & B2C auf Kaffeebechern | Referenzen | brandilla</title>
+<meta name="description" content="Echte Kampagnen, echte Zahlen: Deutsche Bahn, Amazon, Qatar Airways, N26 und mehr. TakeAway Marketing Referenzen von brandilla.">
+<meta name="keywords" content="Employer Branding Kaffeebecher Beispiele, Coffee Cup Kampagne Referenzen, TakeAway Marketing Beispiele, Kaffeebecher Werbung Erfahrungen">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandilla.de/kampagnen">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="brandilla">
+<meta property="og:title" content="Kampagnen die wirken — brandilla Referenzen">
+<meta property="og:description" content="Deutsche Bahn, Amazon, Qatar Airways & mehr. Echte Kampagnen. Echte Zahlen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400&display=swap" rel="stylesheet">
+<style>
+/* shared.css — brandilla Design System */
+:root {
+  --cream: #F7F2E8;
+  --dark: #1C1812;
+  --pink: #E50C7D;
+  --warm-gray: #8A857A;
+  --light-border: rgba(28,24,18,0.1);
+  --accent-light: #FDF8EF;
+  --cream-dark: #EDE8DC;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--dark); font-family: 'Jost', sans-serif; overflow-x: hidden; cursor: none; }
+
+.cursor { width: 10px; height: 10px; background: var(--pink); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; mix-blend-mode: multiply; }
+.cursor-ring { width: 32px; height: 32px; border: 1px solid rgba(229,12,125,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; transform: translate(-50%,-50%); }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; background: rgba(28,24,18,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(247,242,232,0.05); }
+.nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-brand-icon { width: 36px; height: 36px; background: #E50C7D; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.nav-brand-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #F7F2E8; letter-spacing: 0.02em; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links li { display: flex; align-items: center; }
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: rgba(247,242,232,0.45); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover { color: #F7F2E8; }
+.nav-cta { background: #E50C7D !important; color: #F7F2E8 !important; padding: 9px 22px !important; }
+.nav-cta:hover { background: #c5006a !important; }
+
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--pink); color: var(--cream); padding: 14px 32px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: none; cursor: none; transition: all 0.25s; }
+.btn-primary:hover { background: #f0007a; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(229,12,125,0.35); }
+.btn-pink { display: inline-flex; align-items: center; gap: 12px; background: var(--pink); color: var(--cream); padding: 16px 36px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; width: fit-content; transition: all 0.25s; cursor: none; }
+.btn-pink:hover { background: #f0007a; transform: translateX(6px); }
+.btn-outline-cream { display: inline-flex; align-items: center; gap: 12px; background: transparent; color: rgba(247,242,232,0.5); padding: 16px 36px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; width: fit-content; border: 1px solid rgba(247,242,232,0.1); transition: all 0.25s; cursor: none; }
+.btn-outline-cream:hover { color: var(--cream); border-color: rgba(247,242,232,0.3); transform: translateX(6px); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: rgba(247,242,232,0.5); padding: 14px 24px; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(247,242,232,0.12); transition: all 0.25s; cursor: none; }
+.btn-ghost:hover { color: var(--cream); border-color: rgba(247,242,232,0.3); }
+.btn-dark { display: inline-flex; align-items: center; gap: 10px; background: var(--dark); color: var(--cream); padding: 14px 32px; font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: none; cursor: none; transition: all 0.25s; }
+.btn-dark:hover { background: var(--pink); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(229,12,125,0.3); }
+
+.reveal { opacity: 1; }
+
+.reveal-delay { opacity: 1; }
+
+
+footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); padding: 64px 56px 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 56px; }
+.footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 16px; }
+.footer-tagline { font-size: 13px; color: rgba(247,242,232,0.3); line-height: 1.8; font-weight: 300; max-width: 280px; }
+.footer-col h4 { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,242,232,0.2); margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul li a { font-size: 13px; color: rgba(247,242,232,0.4); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--cream); }
+.footer-bottom { border-top: 1px solid rgba(247,242,232,0.05); padding-top: 32px; display: flex; align-items: center; justify-content: space-between; }
+.footer-copy { font-size: 11px; color: rgba(247,242,232,0.2); letter-spacing: 0.05em; font-weight: 300; }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,242,232,0.2); text-decoration: none; transition: color 0.2s; }
+.footer-social a:hover { color: var(--pink); }
+
+.marlon-float { position: fixed; bottom: 32px; right: 32px; z-index: 200; }
+.marlon-float-bubble { background: var(--dark); border: 1px solid rgba(229,12,125,0.2); padding: 14px 18px; max-width: 200px; margin-bottom: 10px; position: absolute; bottom: 62px; right: 0; opacity: 0; pointer-events: none; transform: translateY(8px); transition: all 0.3s; }
+.marlon-float-bubble p { font-size: 12px; color: rgba(247,242,232,0.7); line-height: 1.6; font-weight: 300; }
+.marlon-float:hover .marlon-float-bubble { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.marlon-float-btn { width: 60px; height: 60px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: none; transition: all 0.25s; margin-left: auto; box-shadow: 0 8px 28px rgba(229,12,125,0.35); border-radius: 50%; overflow: hidden; }
+.marlon-float-btn:hover { transform: scale(1.08) rotate(5deg); }
+
+@media(max-width:900px){
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media(max-width:1100px){
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 10px; }
+}
+
+</style>
+<style>
+/* PAGE-SPECIFIC */
+.k-hero {
+  min-height: 100vh;
+  background: #1C1812;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 68px;
+  position: relative;
+  overflow: hidden;
+}
+.k-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 55% 65% at 72% 50%, rgba(229,12,125,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.k-left {
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(247,242,232,0.06);
+  position: relative;
+  z-index: 1;
+}
+.k-tag {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #E50C7D;
+  margin-bottom: 48px;
+}
+.k-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(64px, 8.5vw, 110px);
+  font-weight: 400;
+  line-height: 1.0;
+  color: #F7F2E8;
+}
+.k-title em { font-style: italic; color: #E50C7D; }
+.k-sub {
+  font-size: 16px;
+  line-height: 1.9;
+  color: rgba(247,242,232,0.45);
+  font-weight: 300;
+  max-width: 380px;
+}
+.k-right {
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+}
+.k-stats { display: flex; flex-direction: column; gap: 36px; }
+.k-stat { border-left: 2px solid #E50C7D; padding-left: 22px; }
+.k-stat-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  color: #F7F2E8;
+  line-height: 1;
+}
+.k-stat-l {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(247,242,232,0.3);
+  margin-top: 6px;
+}
+
+/* FILTER */
+.k-filter {
+  background: #FDF8EF;
+  border-bottom: 1px solid rgba(28,24,18,0.1);
+  padding: 20px 56px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 68px;
+  z-index: 50;
+}
+.k-filter-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8A857A;
+  margin-right: 6px;
+}
+.k-fbtn {
+  padding: 7px 16px;
+  border: 1px solid rgba(28,24,18,0.1);
+  background: #F7F2E8;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #8A857A;
+  cursor: pointer;
+  transition: all .2s;
+}
+.k-fbtn:hover { background: #1C1812; color: #F7F2E8; border-color: #1C1812; }
+.k-fbtn.on { background: #E50C7D; border-color: #E50C7D; color: #F7F2E8; }
+
+/* CASE ITEMS */
+.cases { border-top: 1px solid rgba(28,24,18,0.08); }
+
+.c-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+  border-bottom: 1px solid rgba(28,24,18,0.08);
+}
+.c-item.dark-bg {
+  background: #1C1812;
+  border-bottom-color: rgba(247,242,232,0.05);
+}
+
+.c-text {
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.c-item.dark-bg .c-text { background: #1C1812; }
+
+.c-visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+}
+.c-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  transition: transform .6s ease, filter .4s;
+  filter: saturate(.85);
+}
+.c-item:hover .c-img { transform: scale(1.04); filter: saturate(1); }
+.c-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(229,12,125,0.12) 0%, transparent 60%);
+  z-index: 1;
+}
+.c-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: #EDE8DC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.c-item.dark-bg .c-placeholder { background: #2a241c; }
+
+.c-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #E50C7D;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.c-num::after {
+  content: '';
+  width: 48px;
+  height: 1px;
+  background: rgba(28,24,18,0.15);
+}
+.c-item.dark-bg .c-num::after { background: rgba(247,242,232,0.08); }
+
+.c-cat {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #E50C7D;
+  color: #F7F2E8;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.c-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3.8vw, 50px);
+  font-weight: 400;
+  color: #1C1812;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.c-title em { font-style: italic; color: #E50C7D; }
+.c-item.dark-bg .c-title { color: #F7F2E8; }
+
+.c-desc {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #8A857A;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+.c-item.dark-bg .c-desc { color: rgba(247,242,232,0.5); }
+
+.c-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(28,24,18,0.08);
+  margin-bottom: 36px;
+}
+.c-item.dark-bg .c-metrics { background: rgba(247,242,232,0.06); }
+.c-m {
+  background: #FDF8EF;
+  padding: 16px 18px;
+}
+.c-item.dark-bg .c-m { background: rgba(247,242,232,0.04); }
+.c-mv {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: #1C1812;
+  line-height: 1;
+}
+.c-mv span { color: #E50C7D; }
+.c-item.dark-bg .c-mv { color: #F7F2E8; }
+.c-ml {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8A857A;
+  margin-top: 4px;
+}
+.c-item.dark-bg .c-ml { color: rgba(247,242,232,0.3); }
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .25s;
+  width: fit-content;
+  border: none;
+}
+.c-btn-dark { background: #1C1812; color: #F7F2E8; }
+.c-btn-dark:hover { background: #E50C7D; transform: translateY(-2px); }
+.c-btn-cream { background: #F7F2E8; color: #E50C7D; }
+.c-btn-cream:hover { background: #fff; transform: translateY(-2px); }
+
+/* CLIENTS */
+.clients-sec {
+  padding: 100px 56px;
+  background: #FDF8EF;
+  border-top: 1px solid rgba(28,24,18,0.08);
+}
+.clients-inner { max-width: 1280px; margin: 0 auto; }
+.clients-sup {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #E50C7D;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.clients-sup::after { content: ''; width: 48px; height: 1px; background: rgba(28,24,18,0.12); }
+.clients-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 400;
+  color: #1C1812;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+.clients-headline em { font-style: italic; color: #E50C7D; }
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid rgba(28,24,18,0.1);
+  margin-top: 56px;
+}
+.client-cell {
+  padding: 28px 20px;
+  border-right: 1px solid rgba(28,24,18,0.1);
+  border-bottom: 1px solid rgba(28,24,18,0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+.client-cell:nth-child(4n) { border-right: none; }
+.client-name {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(28,24,18,0.28);
+  font-weight: 600;
+  transition: color .2s;
+}
+.client-type {
+  font-size: 11px;
+  color: rgba(28,24,18,0.18);
+  font-weight: 300;
+  margin-top: 4px;
+}
+.client-cell:hover { background: #F7F2E8; }
+.client-cell:hover .client-name { color: #1C1812; }
+.client-cell:hover .client-type { color: #E50C7D; }
+
+/* CTA */
+.k-cta {
+  background: #E50C7D;
+  padding: 120px 56px;
+  text-align: center;
+}
+.k-cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 6vw, 80px);
+  color: #F7F2E8;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+.k-cta-title em { font-style: italic; }
+.k-cta-sub {
+  font-size: 16px;
+  color: rgba(247,242,232,0.75);
+  margin-bottom: 44px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.k-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #F7F2E8;
+  color: #E50C7D;
+  padding: 16px 40px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all .25s;
+}
+.k-cta-btn:hover { background: #1C1812; color: #F7F2E8; }
+
+@media(max-width:900px){
+  .k-hero { grid-template-columns: 1fr; }
+  .k-right { display: none; }
+  .k-left { padding: 56px 24px; }
+  .k-filter { padding: 16px 24px; }
+  .c-item { grid-template-columns: 1fr; }
+  .c-text { padding: 48px 24px; }
+  .c-visual { min-height: 260px; }
+  .clients-sec { padding: 60px 24px; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+  .k-cta { padding: 80px 24px; }
+  .c-metrics { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="marlon-float">
+  <div class="marlon-float-bubble"><p>Echte Kampagnen. Echte Zahlen. Kein Bullshit. 🦍</p></div>
+  <div class="marlon-float-btn"><img src="marlon-float.png" alt="Marlon" style="width:60px;height:60px;object-fit:cover"></div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo-nav.png" alt="brandilla" style="height:40px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="produkte.html">Produkte</a></li>
+    <li><a href="kampagnen.html" style="color:#F7F2E8">Kampagnen</a></li>
+    <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="k-hero">
+  <div class="k-left">
+    <div class="k-tag">Referenzen & Case Studies</div>
+    <div class="k-title">Echte<br>Kampa&shy;gnen.<br><em>Echte<br>Zahlen.</em></div>
+    <div class="k-sub">Keine Hochglanz-Versprechen. Nur was wirklich passiert ist — von Startups bis DAX-Konzerne.</div>
+  </div>
+  <div class="k-right" style="position:relative;padding:0;overflow:hidden"><img src="kampagnen-hero.png" alt="brandilla Kampagnen — Städte & Coffee Cups" style="max-width:100%;width:100%;height:100%;object-fit:cover;display:block"><div style="position:absolute;bottom:0;left:0;right:0;padding:48px 72px;background:linear-gradient(to top, rgba(28,24,18,0.9) 0%, transparent 100%)">
+    <div class="k-stats">
+      <div class="k-stat">
+        <div class="k-stat-n">50<span style="font-size:28px;color:#E50C7D">+</span></div>
+        <div class="k-stat-l">Kampagnen umgesetzt</div>
+      </div>
+      <div class="k-stat">
+        <div class="k-stat-n">500<span style="font-size:28px;color:#E50C7D">k+</span></div>
+        <div class="k-stat-l">Cups ausgegeben</div>
+      </div>
+      <div class="k-stat">
+        <div class="k-stat-n">7</div>
+        <div class="k-stat-l">Jahre Erfahrung</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FILTER -->
+<div class="k-filter">
+  <span class="k-filter-label">Format</span>
+  <button class="k-fbtn on" onclick="filterCases('alle', this)">Alle</button>
+  <button class="k-fbtn" onclick="filterCases('employer', this)">Employer Branding</button>
+  <button class="k-fbtn" onclick="filterCases('b2c', this)">B2C</button>
+  <button class="k-fbtn" onclick="filterCases('recruiting', this)">Recruiting</button>
+  <button class="k-fbtn" onclick="filterCases('branding', this)">Brand Awareness</button>
+</div>
+
+<!-- CASES -->
+<div class="cases" id="casesGrid">
+
+  <!-- DB -->
+  <div class="c-item" data-cat="employer recruiting">
+    <div class="c-text">
+      <div class="c-num">01 — Case Study</div>
+      <div class="c-cat">Employer Branding</div>
+      <h2 class="c-title">Deutsche Bahn —<br><em>Recruiting to go.</em></h2>
+      <p class="c-desc">Der größte Arbeitgeber Deutschlands wollte flächendeckend in Baden-Württemberg präsent sein — 50.000 Cups an Cafés, Bäckereien und Tankstellen im ganzen Bundesland.</p>
+      <div class="c-metrics">
+        <div class="c-m"><div class="c-mv">50<span>k</span></div><div class="c-ml">Cups</div></div>
+        <div class="c-m"><div class="c-mv">Baden-<span style="font-size:14px">Württ.</span></div><div class="c-ml">Flächendeckend</div></div>
+        <div class="c-m"><div class="c-mv">6</div><div class="c-ml">Wochen</div></div>
+      </div>
+      <a href="kontakt.html" class="c-btn c-btn-dark">Ähnliche Kampagne anfragen →</a>
+    </div>
+    <div class="c-visual">
+      <img src="https://brandilla.de/wp-content/uploads/2026/01/DB-Cup.jpg" alt="Deutsche Bahn Employer Branding Coffee Cup Kampagne — brandilla" class="c-img" loading="lazy">
+      <div class="c-overlay"></div>
+    </div>
+  </div>
+
+  <!-- AMAZON -->
+  <div class="c-item dark-bg" data-cat="recruiting b2c">
+    <div class="c-visual">
+      <img src="https://brandilla.de/wp-content/uploads/2026/01/Amazon-Cups_Berlin-2-scaled.jpg" alt="Amazon Recruiting Kampagne Coffee Cups Berlin — brandilla" class="c-img" loading="lazy">
+      <div class="c-overlay"></div>
+    </div>
+    <div class="c-text">
+      <div class="c-num">02 — Case Study</div>
+      <div class="c-cat">Recruiting</div>
+      <h2 class="c-title">Amazon —<br><em>Berlin, we're hiring.</em></h2>
+      <p class="c-desc">Amazon suchte Fachkräfte in Berlin, Hamburg und München gleichzeitig — 30.000 Cups in den drei größten deutschen Tech-Hubs. Recruiting to go in seiner effizientesten Form.</p>
+      <div class="c-metrics">
+        <div class="c-m"><div class="c-mv">30<span>k</span></div><div class="c-ml">Cups</div></div>
+        <div class="c-m"><div class="c-mv">3</div><div class="c-ml">Städte</div></div>
+        <div class="c-m"><div class="c-mv">4</div><div class="c-ml">Wochen</div></div>
+      </div>
+      <a href="kontakt.html" class="c-btn c-btn-cream">Ähnliche Kampagne anfragen →</a>
+    </div>
+  </div>
+
+  <!-- QATAR -->
+  <div class="c-item" data-cat="b2c branding">
+    <div class="c-text">
+      <div class="c-num">03 — Case Study</div>
+      <div class="c-cat">B2C / Brand Awareness</div>
+      <h2 class="c-title">Qatar Airways —<br><em>Premium im Alltag.</em></h2>
+      <p class="c-desc">Eine Premium-Airline die die Reisenden von morgen schon heute anspricht: 30.000 Cups direkt an Universitäten und Studentencafés — dort wo junge Premium-Reisende ihren Tag starten.</p>
+      <div class="c-metrics">
+        <div class="c-m"><div class="c-mv">30<span>k</span></div><div class="c-ml">Cups</div></div>
+        <div class="c-m"><div class="c-mv">Unis &<br><span style="font-size:14px">Studenten-</span><br><span style="font-size:14px">cafés</span></div><div class="c-ml">Zielgruppe</div></div>
+        <div class="c-m"><div class="c-mv">8</div><div class="c-ml">Wochen</div></div>
+      </div>
+      <a href="kontakt.html" class="c-btn c-btn-dark">Ähnliche Kampagne anfragen →</a>
+    </div>
+    <div class="c-visual">
+      <div class="c-placeholder">
+        <span style="font-size:48px;opacity:.15">☕</span>
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(28,24,18,.2)">Qatar Airways Cup · Foto folgt</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- N26 -->
+  <div class="c-item dark-bg" data-cat="b2c branding">
+    <div class="c-visual">
+      <div class="c-placeholder">
+        <span style="font-size:48px;opacity:.1">☕</span>
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,242,232,.12)">N26 Cup · Foto folgt</span>
+      </div>
+    </div>
+    <div class="c-text">
+      <div class="c-num">04 — Case Study</div>
+      <div class="c-cat">B2C / FinTech</div>
+      <h2 class="c-title">N26 —<br><em>Banking to go.</em></h2>
+      <p class="c-desc">N26 rollte mit 100.000 Cups in Berlin, Karlsruhe, München, Hamburg, Köln und Stuttgart aus — die größte TakeAway Marketing Kampagne die brandilla je realisiert hat.</p>
+      <div class="c-metrics">
+        <div class="c-m"><div class="c-mv">100<span>k</span></div><div class="c-ml">Cups</div></div>
+        <div class="c-m"><div class="c-mv">6</div><div class="c-ml">Städte</div></div>
+        <div class="c-m"><div class="c-mv">12</div><div class="c-ml">Wochen</div></div>
+      </div>
+      <a href="kontakt.html" class="c-btn c-btn-cream">Ähnliche Kampagne anfragen →</a>
+    </div>
+  </div>
+
+  <!-- EUROPA-PARK -->
+  <div class="c-item" data-cat="b2c branding">
+    <div class="c-text">
+      <div class="c-num">05 — Case Study</div>
+      <div class="c-cat">B2C / Promotion</div>
+      <h2 class="c-title">Europa-Park —<br><em>Vorfreude im Becher.</em></h2>
+      <p class="c-desc">Europas größter Freizeitpark wollte in der Vorsaison Familien in Süddeutschland auf die kommende Saison einstimmen. TakeAway Marketing als stimmungsvoller Teaser.</p>
+      <div class="c-metrics">
+        <div class="c-m"><div class="c-mv">20<span>k</span></div><div class="c-ml">Cups</div></div>
+        <div class="c-m"><div class="c-mv">20 km</div><div class="c-ml">Radius</div></div>
+        <div class="c-m"><div class="c-mv">6</div><div class="c-ml">Wochen</div></div>
+      </div>
+      <a href="kontakt.html" class="c-btn c-btn-dark">Ähnliche Kampagne anfragen →</a>
+    </div>
+    <div class="c-visual">
+      <img src="https://brandilla.de/wp-content/uploads/2026/01/Europapark.jpg" alt="Europa-Park Promotion Kampagne Coffee Cups — brandilla" class="c-img" loading="lazy">
+      <div class="c-overlay"></div>
+    </div>
+  </div>
+
+
+  <!-- PIRELLI -->
+  <div class="c-item" data-cat="b2c branding">
+    <div class="c-text">
+      <div class="c-num">06 — Case Study</div>
+      <div class="c-cat">B2C / Automotive</div>
+      <h2 class="c-title">Pirelli —<br><em>Grip. Überall.</em></h2>
+      <p class="c-desc">Pirelli wollte rund um 10 deutsche Standorte Präsenz zeigen — direkt bei den Menschen die täglich mit dem Auto unterwegs sind. 100.000 Cups, standortgenau verteilt.</p>
+      <div class="c-metrics">
+        <div class="c-m"><div class="c-mv">100<span>k</span></div><div class="c-ml">Cups</div></div>
+        <div class="c-m"><div class="c-mv">10</div><div class="c-ml">Standorte</div></div>
+        <div class="c-m"><div class="c-mv">8</div><div class="c-ml">Wochen</div></div>
+      </div>
+      <a href="kontakt.html" class="c-btn c-btn-dark">Ähnliche Kampagne anfragen →</a>
+    </div>
+    <div class="c-visual">
+      <div class="c-placeholder">
+        <span style="font-size:48px;opacity:.15">☕</span>
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(28,24,18,.2)">Pirelli Cup · Foto folgt</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUXMONEY -->
+  <div class="c-item dark-bg" data-cat="b2c branding">
+    <div class="c-visual">
+      <div class="c-placeholder">
+        <span style="font-size:48px;opacity:.1">☕</span>
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,242,232,.12)">auxmoney Cup · Foto folgt</span>
+      </div>
+    </div>
+    <div class="c-text">
+      <div class="c-num">07 — Case Study</div>
+      <div class="c-cat">B2C / FinTech</div>
+      <h2 class="c-title">auxmoney —<br><em>Kredit. Einfach.</em></h2>
+      <p class="c-desc">auxmoney wollte in Düsseldorf Präsenz zeigen — der Heimatstadt des FinTech-Unternehmens. 50.000 Cups flächendeckend in der Rheinmetropole.</p>
+      <div class="c-metrics">
+        <div class="c-m"><div class="c-mv">50<span>k</span></div><div class="c-ml">Cups</div></div>
+        <div class="c-m"><div class="c-mv">1</div><div class="c-ml">Stadt</div></div>
+        <div class="c-m"><div class="c-mv">6</div><div class="c-ml">Wochen</div></div>
+      </div>
+      <a href="kontakt.html" class="c-btn c-btn-cream">Ähnliche Kampagne anfragen →</a>
+    </div>
+  </div>
+
+  <!-- DROEMER KNAUR -->
+  <div class="c-item" data-cat="b2c branding">
+    <div class="c-text">
+      <div class="c-num">08 — Case Study</div>
+      <div class="c-cat">B2C / Publishing</div>
+      <h2 class="c-title">Droemer Knaur —<br><em>Bücher to go.</em></h2>
+      <p class="c-desc">Der renommierte Münchner Verlag wollte Leser dort erreichen wo sie ihren Tag starten — 60.000 Cups in Berlin, Hamburg und München zur Buch-Neuerscheinung.</p>
+      <div class="c-metrics">
+        <div class="c-m"><div class="c-mv">60<span>k</span></div><div class="c-ml">Cups</div></div>
+        <div class="c-m"><div class="c-mv">3</div><div class="c-ml">Städte</div></div>
+        <div class="c-m"><div class="c-mv">4</div><div class="c-ml">Wochen</div></div>
+      </div>
+      <a href="kontakt.html" class="c-btn c-btn-dark">Ähnliche Kampagne anfragen →</a>
+    </div>
+    <div class="c-visual">
+      <div class="c-placeholder">
+        <span style="font-size:48px;opacity:.15">☕</span>
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(28,24,18,.2)">Droemer Knaur Cup · Foto folgt</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /casesGrid -->
+
+<!-- ALLE KUNDEN -->
+<section class="clients-sec">
+  <div class="clients-inner">
+    <div class="clients-sup">Alle Kunden</div>
+    <div class="clients-headline">Sie vertrauen<br>uns <em>bereits.</em></div>
+    <div class="clients-grid">
+      <div class="client-cell"><div class="client-name">Deutsche Bahn</div><div class="client-type">50k Cups · Baden-Württemberg</div></div>
+      <div class="client-cell"><div class="client-name">Amazon</div><div class="client-type">30k Cups · Berlin · HH · MUC</div></div>
+      <div class="client-cell"><div class="client-name">Qatar Airways</div><div class="client-type">30k Cups · Unis & Studentencafés</div></div>
+      <div class="client-cell"><div class="client-name">N26</div><div class="client-type">100k Cups · 6 Städte</div></div>
+      <div class="client-cell"><div class="client-name">Pirelli</div><div class="client-type">100k Cups · 10 Standorte</div></div>
+      <div class="client-cell"><div class="client-name">Europa-Park</div><div class="client-type">20k Cups · 20 km Radius</div></div>
+      <div class="client-cell"><div class="client-name">Woolworth</div><div class="client-type">20k Cups · Unna & Umgebung</div></div>
+      <div class="client-cell"><div class="client-name">Capgemini</div><div class="client-type">20k Cups · Jena & Erfurt</div></div>
+      <div class="client-cell"><div class="client-name">Paracelsus Kliniken</div><div class="client-type">100k Cups · 10 Kliniken</div></div>
+      <div class="client-cell"><div class="client-name">Apleona</div><div class="client-type">20k Cups · Frankfurt</div></div>
+      <div class="client-cell"><div class="client-name">auxmoney</div><div class="client-type">50k Cups · Düsseldorf</div></div>
+      <div class="client-cell"><div class="client-name">Droemer Knaur</div><div class="client-type">60k Cups · Berlin · HH · MUC</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="k-cta">
+  <div class="k-cta-title">Deine Marke.<br>Ihre <em>Hände.</em></div>
+  <div class="k-cta-sub">Kostenlose Beratung. Individueller Kampagnenvorschlag. Innerhalb von 24 Stunden.</div>
+  <a href="kontakt.html" class="k-cta-btn">Kampagne anfragen →</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">brandilla</div>
+      <div class="footer-tagline">TakeAway Marketing neu gedacht.</div>
+    </div>
+    <div class="footer-col"><h4>Produkte</h4><ul><li><a href="produkte.html">Coffee Cup</a></li><li><a href="produkte.html">Neue Medien</a></li></ul></div>
+    <div class="footer-col"><h4>Unternehmen</h4><ul><li><a href="preise.html">Preise</a></li><li><a href="gorilla-talk.html">Gorilla Talk</a></li><li><a href="marketing-wissen.html">Marketing-Wissen</a></li></ul></div>
+    <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="kontakt.html">Anfrage stellen</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2016–2026 brandilla UG · Berlin</div>
+    <div class="footer-social"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a></div>
+  </div>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+if (cursor && ring) {
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX - 5 + 'px';
+    cursor.style.top = e.clientY - 5 + 'px';
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2.5)'; ring.style.transform = 'translate(-50%,-50%) scale(1.5)'; });
+    el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.transform = 'translate(-50%,-50%) scale(1)'; });
+  });
+}
+</script>
+<script>
+function filterCases(cat, btn) {
+  document.querySelectorAll('.k-fbtn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#casesGrid .c-item').forEach(item => {
+    const cats = item.dataset.cat || '';
+    item.style.display = (cat === 'alle' || cats.includes(cat)) ? 'grid' : 'none';
+  });
+}
+
+// Scroll reveal animations
+const _reveals = document.querySelectorAll('.reveal, .reveal-delay');
+if ('IntersectionObserver' in window) {
+  const _ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  _reveals.forEach(el => _ro.observe(el));
+} else {
+  _reveals.forEach(el => el.classList.add('visible'));
+}
+
+</script>
+</body>
+</html>

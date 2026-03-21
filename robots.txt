@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://brandilla.de/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Block irrelevant paths
+Disallow: /assets/
+Disallow: /*.pdf$
