@@ -470,7 +470,7 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
 <section class="preise-section" id="preise">
   <div class="preise-inner">
     <div class="snum r" style="color:var(--pink)">02 — Preisübersicht</div>
-    <div class="stitle r">0,2l Bio-<em>Cups</em></div>
+    <div class="stitle r">Bio-Cups<br><em>4oz · 8oz · 12oz</em></div>
     <div class="r" style="margin-top:8px;font-size:15px;color:var(--warm-gray);font-weight:300">Alle Preise zzgl. MwSt. · Inkl. 4-farbigem Druck</div>
 
     <!-- Größen-Tabs -->
@@ -539,32 +539,32 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
     <div class="stitle r" style="color:#F7F2E8">So sehen<br><em>eure Cups aus.</em></div>
     <div class="gallery-grid rd">
       <div class="gallery-card">
-        <img src="https://brandilla.de/thumbnail-takeaway.png" alt="TakeAway Marketing Cup" class="gallery-img" loading="lazy">
+        <img src="thumbnail-takeaway.png" alt="brandilla Coffee Cup — TakeAway Marketing Beispiel" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">TakeAway Marketing</div><div class="gallery-type">Coffee Cup · DACH</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/thumbnail-qr.png" alt="QR-Tracking Cup" class="gallery-img" loading="lazy">
+        <img src="thumbnail-qr.png" alt="brandilla QR-Code Cup — Messbare Kampagne" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">QR-Tracking</div><div class="gallery-type">Messbare Kampagne</div></div>
+        <div class="gallery-info"><div class="gallery-client">QR-Tracking</div><div class="gallery-type">Live-Dashboard · Echtzeit</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/og-image.png" alt="brandilla Cup Design" class="gallery-img" loading="lazy">
+        <img src="marlon-cup-produkt.png" alt="brandilla Bio Cup Produkt" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">brandilla</div><div class="gallery-type">Signature Design</div></div>
+        <div class="gallery-info"><div class="gallery-client">Bio Cup</div><div class="gallery-type">Plastikfrei · 0,2l</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/kampagnen-hero.png" alt="Kampagne Cup" class="gallery-img" loading="lazy">
+        <img src="kampagnen-hero.png" alt="brandilla Kampagne Beispiel" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">Kampagne</div><div class="gallery-type">Employer Branding</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/marlon-cup-produkt.png" alt="Cup Produkt" class="gallery-img" loading="lazy">
+        <img src="og-image.png" alt="brandilla Logo Cup Design" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">Dein Cup</div><div class="gallery-type">Individuell bedruckt</div></div>
+        <div class="gallery-info"><div class="gallery-client">brandilla</div><div class="gallery-type">Signature Design</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/marlon-neue-medien.png" alt="Neue Medien Cup" class="gallery-img" loading="lazy">
+        <img src="marlon-neue-medien.png" alt="brandilla Neue Medien" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">Neue Medien</div><div class="gallery-type">Weitere Formate</div></div>
       </div>
@@ -809,7 +809,7 @@ let currentCupText3D = '';
 let currentSize3D = 'medium';
 let currentQty3D = 500;
 
-(function initCupViewer() {
+function initCupViewer() {
   const container = document.getElementById('cupViewer');
   const canvas = document.getElementById('cup-canvas');
   if (!container || !canvas || !window.THREE) return;
@@ -874,7 +874,7 @@ let currentQty3D = 500;
     tpx = e.touches[0].clientX; tpy = e.touches[0].clientY;
   }, { passive: true });
   container.addEventListener('touchend', () => { autoRotateTimeout = setTimeout(() => autoRotate = true, 2000); }, { passive: true });
-})();
+}
 
 function buildCup3D(size) {
   if (!window.THREE || !cupGroup) return;
@@ -1173,9 +1173,11 @@ document.getElementById('fileInput').addEventListener('change', function() {
   btn.addEventListener('click', function(e) { e.stopPropagation(); popup.classList.toggle('open'); });
   document.addEventListener('click', function(e) { if (!popup.contains(e.target) && !btn.contains(e.target)) popup.classList.remove('open'); });
 })();
+</script>
 <script>
 // Init Preistabelle + Kalkulation
 document.addEventListener('DOMContentLoaded', function() {
+  initCupViewer();
   renderPriceTable('medium');
   updateCalc();
   const aboSelect = document.getElementById('aboTyp');
