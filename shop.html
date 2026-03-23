@@ -419,15 +419,28 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
       <div class="preview-card">
         <div class="preview-label">Live-Vorschau</div>
         <div class="preview-cup">
-          <svg viewBox="0 0 180 240" width="200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M28 40 L20 220 Q20 232 32 232 L148 232 Q160 232 160 220 L152 40 Z" fill="rgba(247,242,232,0.06)" stroke="rgba(247,242,232,0.2)" stroke-width="1"/>
-            <path d="M32 90 L148 90 L152 165 L28 165 Z" fill="rgba(229,12,125,0.2)" stroke="rgba(229,12,125,0.4)" stroke-width="1"/>
-            <text x="90" y="133" font-family="serif" font-size="14" fill="rgba(229,12,125,0.5)" text-anchor="middle" font-style="italic" id="previewText">brandilla</text>
-            <text x="90" y="148" font-family="sans-serif" font-size="8" fill="rgba(247,242,232,0.2)" text-anchor="middle" letter-spacing="2">DEIN LOGO</text>
-            <ellipse cx="90" cy="40" rx="62" ry="12" fill="rgba(247,242,232,0.04)" stroke="rgba(247,242,232,0.15)" stroke-width="1"/>
-            <path d="M70 20 Q74 10 70 2" stroke="rgba(247,242,232,0.1)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M90 18 Q94 8 90 0" stroke="rgba(247,242,232,0.1)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <path d="M110 20 Q114 10 110 2" stroke="rgba(247,242,232,0.1)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <svg viewBox="0 0 200 260" width="200" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 20px 40px rgba(229,12,125,0.2))">
+            <!-- Cup body -->
+            <path d="M35 48 L22 232 Q21 244 34 244 L166 244 Q179 244 178 232 L165 48 Z" fill="rgba(247,242,232,0.07)" stroke="rgba(247,242,232,0.25)" stroke-width="1.5"/>
+            <!-- Cup highlight left -->
+            <path d="M38 55 L27 220" stroke="rgba(247,242,232,0.08)" stroke-width="6" stroke-linecap="round"/>
+            <!-- Print area (label zone) -->
+            <path d="M40 95 L160 95 L168 185 L32 185 Z" fill="rgba(229,12,125,0.12)" stroke="rgba(229,12,125,0.35)" stroke-width="1"/>
+            <!-- Logo text in print area -->
+            <text x="100" y="138" font-family="'Playfair Display', serif" font-size="18" fill="rgba(229,12,125,0.8)" text-anchor="middle" font-style="italic" id="previewText">brandilla</text>
+            <text x="100" y="158" font-family="'Jost', sans-serif" font-size="8" fill="rgba(247,242,232,0.3)" text-anchor="middle" letter-spacing="3">DEIN LOGO HIER</text>
+            <!-- Cup rim top -->
+            <ellipse cx="100" cy="48" rx="65" ry="13" fill="rgba(247,242,232,0.05)" stroke="rgba(247,242,232,0.3)" stroke-width="1.5"/>
+            <!-- Cup rim inner -->
+            <ellipse cx="100" cy="48" rx="58" ry="10" fill="none" stroke="rgba(247,242,232,0.08)" stroke-width="1"/>
+            <!-- Cup bottom -->
+            <ellipse cx="100" cy="240" rx="44" ry="7" fill="rgba(247,242,232,0.04)" stroke="rgba(247,242,232,0.1)" stroke-width="1"/>
+            <!-- Steam lines -->
+            <path d="M78 28 Q82 18 78 10" stroke="rgba(247,242,232,0.15)" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M100 24 Q104 14 100 6" stroke="rgba(247,242,232,0.15)" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <path d="M122 28 Q126 18 122 10" stroke="rgba(247,242,232,0.15)" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <!-- Brandilla watermark bottom -->
+            <text x="100" y="230" font-family="'Jost', sans-serif" font-size="7" fill="rgba(247,242,232,0.08)" text-anchor="middle" letter-spacing="2">BRANDILLA · BIO CUP</text>
           </svg>
         </div>
         <div class="preview-specs">
@@ -449,8 +462,8 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
           </div>
         </div>
         <div class="preview-cta">
-          <a href="mailto:cups@brandilla.de?subject=Cup Shop Anfrage — 1.000 Stück 8oz" class="bp" style="width:100%;justify-content:center">
-            Jetzt anfragen →
+          <a href="#bestellung" class="bp" style="width:100%;justify-content:center">
+            Jetzt bestellen →
           </a>
           <div style="font-size:10px;letter-spacing:1px;color:rgba(247,242,232,.2);text-align:center;margin-top:10px;font-weight:300">Kostenlose Druckdaten-Prüfung inklusive</div>
         </div>
@@ -518,34 +531,34 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
     <div class="stitle r" style="color:#F7F2E8">So sehen<br><em>eure Cups aus.</em></div>
     <div class="gallery-grid rd">
       <div class="gallery-card">
-        <img src="https://brandilla.de/kampagnen-hero.png" alt="Amazon Coffee Cup Kampagne Berlin" class="gallery-img" loading="lazy">
+        <img src="https://brandilla.de/thumbnail-takeaway.png" alt="TakeAway Marketing Cup" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">Amazon</div><div class="gallery-type">Recruiting · Berlin</div></div>
+        <div class="gallery-info"><div class="gallery-client">TakeAway Marketing</div><div class="gallery-type">Coffee Cup · DACH</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/marlon-cup-produkt.png" alt="Deutsche Bahn Coffee Cup Employer Branding" class="gallery-img" loading="lazy">
+        <img src="https://brandilla.de/thumbnail-qr.png" alt="QR-Tracking Cup" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">Deutsche Bahn</div><div class="gallery-type">Employer Branding</div></div>
+        <div class="gallery-info"><div class="gallery-client">QR-Tracking</div><div class="gallery-type">Messbare Kampagne</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/marlon-neue-medien.png" alt="Europa-Park Coffee Cup Kampagne" class="gallery-img" loading="lazy">
+        <img src="https://brandilla.de/og-image.png" alt="brandilla Cup Design" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">Europa-Park</div><div class="gallery-type">Promotion</div></div>
+        <div class="gallery-info"><div class="gallery-client">brandilla</div><div class="gallery-type">Signature Design</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/og-image.png" alt="brandilla Gorilla Cup" class="gallery-img" loading="lazy">
+        <img src="https://brandilla.de/kampagnen-hero.png" alt="Kampagne Cup" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">brandilla</div><div class="gallery-type">Signature Cup</div></div>
+        <div class="gallery-info"><div class="gallery-client">Kampagne</div><div class="gallery-type">Employer Branding</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/thumbnail-takeaway.png" alt="Dr. Smile Coffee Cup" class="gallery-img" loading="lazy">
+        <img src="https://brandilla.de/marlon-cup-produkt.png" alt="Cup Produkt" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">Dr. Smile</div><div class="gallery-type">B2C</div></div>
+        <div class="gallery-info"><div class="gallery-client">Dein Cup</div><div class="gallery-type">Individuell bedruckt</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/thumbnail-qr.png" alt="Coffee Cup individuelles Design" class="gallery-img" loading="lazy">
+        <img src="https://brandilla.de/marlon-neue-medien.png" alt="Neue Medien Cup" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
-        <div class="gallery-info"><div class="gallery-client">Individuell</div><div class="gallery-type">Custom Design</div></div>
+        <div class="gallery-info"><div class="gallery-client">Neue Medien</div><div class="gallery-type">Weitere Formate</div></div>
       </div>
     </div>
   </div>
@@ -591,18 +604,160 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
   </div>
 </section>
 
-<!-- CTA -->
-<section style="background:var(--dark);padding:120px 56px;text-align:center">
-  <div style="max-width:600px;margin:0 auto">
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,72px);color:var(--cream);line-height:1.05;margin-bottom:24px">
-      Bereit?<br><em style="color:var(--pink);font-style:italic">Los.</em>
+<!-- ABO-MODELL -->
+<section style="background:var(--accent);padding:100px 56px;border-bottom:1px solid var(--border)" id="abo">
+  <div style="max-width:900px;margin:0 auto">
+    <div class="snum r" style="color:var(--pink)">05 — Abo-Modell</div>
+    <div class="stitle r">Regelmäßig bestellen,<br><em>dauerhaft sparen.</em></div>
+    <div style="font-size:15px;color:var(--warm-gray);font-weight:300;margin-top:16px;margin-bottom:56px;line-height:1.8">
+      Buche deine Cups als 12-Monats-Abo und spare <strong style="color:var(--pink)">5%</strong> auf jede Lieferung — monatlich oder alle zwei Monate.
     </div>
-    <div style="font-size:15px;color:rgba(247,242,232,0.4);margin-bottom:40px;font-weight:300;line-height:1.8">
-      Schreib uns einfach — wir melden uns innerhalb von 24 Stunden.
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:48px">
+      <!-- MONATLICH -->
+      <div class="rd" style="background:var(--dark);padding:48px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;right:0;background:var(--pink);padding:8px 20px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cream)">Monatlich</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:56px;color:var(--cream);font-weight:300;line-height:1;margin-top:24px">5%</div>
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.3);margin-top:8px;margin-bottom:24px">Rabatt dauerhaft</div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(247,242,232,0.6);font-weight:300">
+            <span style="color:var(--pink)">→</span> Monatliche Lieferung deiner gewählten Menge
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(247,242,232,0.6);font-weight:300">
+            <span style="color:var(--pink)">→</span> 12 Monate Laufzeit, danach monatlich kündbar
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(247,242,232,0.6);font-weight:300">
+            <span style="color:var(--pink)">→</span> 5% Rabatt auf jeden Listenpreis
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(247,242,232,0.6);font-weight:300">
+            <span style="color:var(--pink)">→</span> Designänderung einmal pro Quartal kostenlos
+          </div>
+        </div>
+        <a href="#bestellung" class="bp" onclick="document.getElementById('aboTyp').value='Monatliches Abo'">Monatliches Abo anfragen →</a>
+      </div>
+      <!-- ZWEIMONATLICH -->
+      <div class="rd" style="background:var(--dark);padding:48px;position:relative;overflow:hidden;border-left:1px solid rgba(247,242,232,0.04)">
+        <div style="position:absolute;top:0;right:0;background:rgba(229,12,125,0.3);border:1px solid var(--pink);padding:8px 20px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink)">Alle 2 Monate</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:56px;color:var(--cream);font-weight:300;line-height:1;margin-top:24px">5%</div>
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.3);margin-top:8px;margin-bottom:24px">Rabatt dauerhaft</div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(247,242,232,0.6);font-weight:300">
+            <span style="color:var(--pink)">→</span> Lieferung alle zwei Monate
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(247,242,232,0.6);font-weight:300">
+            <span style="color:var(--pink)">→</span> 12 Monate Laufzeit, danach monatlich kündbar
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(247,242,232,0.6);font-weight:300">
+            <span style="color:var(--pink)">→</span> 5% Rabatt auf jeden Listenpreis
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(247,242,232,0.6);font-weight:300">
+            <span style="color:var(--pink)">→</span> Größere Mengen, weniger Lieferungen
+          </div>
+        </div>
+        <a href="#bestellung" class="bp" style="background:transparent;border:1px solid var(--pink);color:var(--pink)" onclick="document.getElementById('aboTyp').value='Zweimonatliches Abo'" onmouseover="this.style.background='var(--pink)';this.style.color='var(--cream)'" onmouseout="this.style.background='transparent';this.style.color='var(--pink)'">Alle-2-Monate Abo anfragen →</a>
+      </div>
     </div>
-    <a href="mailto:cups@brandilla.de?subject=Cup Shop Anfrage" class="bp" style="margin:0 auto">Jetzt anfragen →</a>
-    <div style="margin-top:16px;font-size:13px;color:rgba(247,242,232,0.25)">
-      cups@brandilla.de · +49 172 743 55 15
+
+    <div style="font-size:12px;color:var(--warm-gray);font-weight:300;text-align:center;line-height:1.8">
+      Abo startet nach Druckfreigabe · Mindestmenge 1.000 Stück pro Lieferung · Kündigung nach 12 Monaten monatlich möglich
+    </div>
+  </div>
+</section>
+
+<!-- DIREKTBESTELLUNG / ANFRAGE FORMULAR -->
+<section style="background:var(--dark);padding:100px 56px" id="bestellung">
+  <div style="max-width:860px;margin:0 auto">
+    <div class="snum r" style="color:var(--pink)">06 — Bestellung & Anfrage</div>
+    <div class="stitle r" style="color:var(--cream)">Jetzt<br><em>bestellen.</em></div>
+    <div style="font-size:15px;color:rgba(247,242,232,0.4);font-weight:300;margin-top:16px;margin-bottom:56px;line-height:1.8">
+      Füll das Formular aus — wir melden uns innerhalb von 24 Stunden mit Angebot und Druckdaten-Info.
+    </div>
+
+    <form id="orderForm" style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+
+      <div>
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Vorname *</label>
+        <input type="text" id="oVorname" required placeholder="Max" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'" placeholder="Max">
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Nachname *</label>
+        <input type="text" id="oNachname" required style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'" placeholder="Mustermann">
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Unternehmen *</label>
+        <input type="text" id="oFirma" required style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'" placeholder="Musterfirma GmbH">
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">E-Mail *</label>
+        <input type="email" id="oEmail" required style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'" placeholder="max@musterfirma.de">
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Telefon</label>
+        <input type="tel" id="oTel" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'" placeholder="+49 ...">
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Bestelltyp *</label>
+        <select id="aboTyp" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s;appearance:none" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'">
+          <option value="Einmalbestellung" style="background:#1C1812">Einmalbestellung</option>
+          <option value="Monatliches Abo" style="background:#1C1812">Monatliches Abo (5% Rabatt)</option>
+          <option value="Zweimonatliches Abo" style="background:#1C1812">Alle 2 Monate Abo (5% Rabatt)</option>
+        </select>
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Cup-Größe *</label>
+        <select id="oCupSize" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s;appearance:none" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'">
+          <option value="4oz · 0,1l" style="background:#1C1812">4oz · 0,1l (Espresso)</option>
+          <option value="8oz · 0,2l" style="background:#1C1812" selected>8oz · 0,2l (Standard)</option>
+          <option value="12oz · 0,3l" style="background:#1C1812">12oz · 0,3l (Large)</option>
+        </select>
+      </div>
+      <div>
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Menge *</label>
+        <select id="oMenge" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s;appearance:none" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'">
+          <option value="500" style="background:#1C1812">500 Stück — 390 €</option>
+          <option value="1000" style="background:#1C1812" selected>1.000 Stück — 690 €</option>
+          <option value="5000" style="background:#1C1812">5.000 Stück — 2.900 €</option>
+          <option value="10000" style="background:#1C1812">10.000 Stück — 4.990 €</option>
+          <option value="25000" style="background:#1C1812">25.000 Stück — 10.900 €</option>
+          <option value="50000" style="background:#1C1812">50.000 Stück — 19.900 €</option>
+          <option value="custom" style="background:#1C1812">Individuelle Menge (Anfrage)</option>
+        </select>
+      </div>
+
+      <div style="grid-column:1/-1">
+        <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Anmerkungen / Druckdaten</label>
+        <textarea id="oAnmerkung" rows="4" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s;resize:vertical" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'" placeholder="Besondere Wünsche, Druckdaten-Hinweise, Lieferadresse..."></textarea>
+      </div>
+
+      <div style="grid-column:1/-1;display:flex;align-items:flex-start;gap:14px">
+        <input type="checkbox" id="oDsgvo" required style="width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--pink);cursor:pointer">
+        <label for="oDsgvo" style="font-size:13px;color:rgba(247,242,232,0.35);font-weight:300;line-height:1.6">
+          Ich stimme zu, dass meine Daten zur Bearbeitung dieser Anfrage gespeichert werden. <a href="https://brandilla.de/datenschutz.html" style="color:var(--pink)">Datenschutzerklärung</a>
+        </label>
+      </div>
+
+      <div style="grid-column:1/-1">
+        <button type="button" id="submitBtn" onclick="submitOrder()" class="bp" style="width:100%;justify-content:center;font-size:13px">
+          Bestellung absenden →
+        </button>
+        <div id="formMsg" style="margin-top:16px;font-size:13px;text-align:center;display:none"></div>
+      </div>
+
+    </form>
+
+    <div style="margin-top:48px;padding-top:32px;border-top:1px solid rgba(247,242,232,0.06);display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap">
+      <div style="text-align:center">
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.25);margin-bottom:6px">E-Mail</div>
+        <a href="mailto:cups@brandilla.de" style="color:rgba(247,242,232,0.6);text-decoration:none;font-size:14px;font-weight:300">cups@brandilla.de</a>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.25);margin-bottom:6px">Telefon</div>
+        <a href="tel:+491727435515" style="color:rgba(247,242,232,0.6);text-decoration:none;font-size:14px;font-weight:300">+49 172 743 55 15</a>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.25);margin-bottom:6px">Antwortzeit</div>
+        <div style="color:rgba(247,242,232,0.6);font-size:14px;font-weight:300">Innerhalb 24 Stunden</div>
+      </div>
     </div>
   </div>
 </section>
@@ -634,39 +789,94 @@ let selSize='8oz · 0,2l';
 let selMenge=1000;
 let selPreis=690;
 
+const mengePreise = {500:390, 1000:690, 5000:2900, 10000:4990, 25000:10900, 50000:19900};
+
 function selectSize(el,size,ml,use){
   document.querySelectorAll('.size-opt').forEach(o=>o.classList.remove('selected'));
   el.classList.add('selected');
   selSize = size+' · '+ml;
   updatePreview();
+  // Sync mit Bestellformular
+  const sf = document.getElementById('oCupSize');
+  if (sf) {
+    for (let opt of sf.options) {
+      if (opt.value.startsWith(size)) { sf.value = opt.value; break; }
+    }
+  }
 }
 function selectMenge(el,menge,preis){
   document.querySelectorAll('.menge-opt').forEach(o=>o.classList.remove('selected'));
   el.classList.add('selected');
   selMenge=menge; selPreis=preis;
   updatePreview();
+  // Sync mit Bestellformular
+  const sf = document.getElementById('oMenge');
+  if (sf) sf.value = menge;
 }
 function updatePreview(){
   document.getElementById('prevSize').textContent=selSize;
   document.getElementById('prevMenge').textContent=selMenge.toLocaleString('de')+' Stück';
   document.getElementById('prevPrice').textContent='ab '+selPreis.toLocaleString('de')+' €';
   const link=document.querySelector('.preview-cta a');
-  link.href='mailto:cups@brandilla.de?subject=Cup Shop Anfrage — '+selMenge.toLocaleString('de')+' Stück '+selSize;
+  if (link) link.href='#bestellung';
 }
 
-// Drag & Drop upload
-const ua=document.getElementById('uploadArea');
-ua.addEventListener('dragover',e=>{e.preventDefault();ua.style.borderColor='var(--pink)';ua.style.background='var(--cream)';});
-ua.addEventListener('dragleave',()=>{ua.style.borderColor='';ua.style.background='';});
-ua.addEventListener('drop',e=>{
-  e.preventDefault();
-  ua.style.borderColor='';
-  ua.style.background='';
-  const f=e.dataTransfer.files[0];
-  if(f) ua.querySelector('.upload-label').textContent='✓ '+f.name;
-});
-document.getElementById('fileInput').addEventListener('change',function(){
-  if(this.files[0]) ua.querySelector('.upload-label').textContent='✓ '+this.files[0].name;
+// Bestellformular absenden via mailto
+function submitOrder() {
+  const vorname = document.getElementById('oVorname').value.trim();
+  const nachname = document.getElementById('oNachname').value.trim();
+  const firma = document.getElementById('oFirma').value.trim();
+  const email = document.getElementById('oEmail').value.trim();
+  const tel = document.getElementById('oTel').value.trim();
+  const aboTyp = document.getElementById('aboTyp').value;
+  const cupSize = document.getElementById('oCupSize').value;
+  const menge = document.getElementById('oMenge').value;
+  const anmerkung = document.getElementById('oAnmerkung').value.trim();
+  const dsgvo = document.getElementById('oDsgvo').checked;
+  const msg = document.getElementById('formMsg');
+
+  if (!vorname || !nachname || !firma || !email || !menge) {
+    msg.style.display = 'block';
+    msg.style.color = '#E50C7D';
+    msg.textContent = 'Bitte fülle alle Pflichtfelder aus.';
+    return;
+  }
+  if (!dsgvo) {
+    msg.style.display = 'block';
+    msg.style.color = '#E50C7D';
+    msg.textContent = 'Bitte stimme der Datenschutzerklärung zu.';
+    return;
+  }
+
+  const mengeText = menge === 'custom' ? 'Individuelle Menge' : parseInt(menge).toLocaleString('de') + ' Stück';
+  const subject = `Cup Shop Anfrage — ${firma} — ${mengeText} ${cupSize}`;
+  const body = `Neue Cup-Bestellung / Anfrage\n\n`
+    + `Name: ${vorname} ${nachname}\n`
+    + `Unternehmen: ${firma}\n`
+    + `E-Mail: ${email}\n`
+    + `Telefon: ${tel || '—'}\n\n`
+    + `Bestelltyp: ${aboTyp}\n`
+    + `Cup-Größe: ${cupSize}\n`
+    + `Menge: ${mengeText}\n\n`
+    + `Anmerkungen: ${anmerkung || '—'}\n`;
+
+  window.location.href = `mailto:cups@brandilla.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  msg.style.display = 'block';
+  msg.style.color = '#4ade80';
+  msg.textContent = '✓ E-Mail-Client wird geöffnet — bitte sende die vorbereitete E-Mail ab.';
+}
+
+// Cup Designer: Logo-Text Vorschau live
+const logoInput = document.querySelector('#uploadArea .upload-label');
+document.getElementById('fileInput').addEventListener('change', function() {
+  if (this.files[0]) {
+    const name = this.files[0].name;
+    logoInput.textContent = '✓ ' + name;
+    // Zeige Dateiname als Preview-Text im SVG
+    const pt = document.getElementById('previewText');
+    if (pt) pt.textContent = name.replace(/\.[^/.]+$/, '').slice(0, 12);
+  }
 });
 </script>
 <script>
