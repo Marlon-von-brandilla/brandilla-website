@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#E50C7D">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Werbung die man nicht wegklicken kann. TakeAway Marketing auf Coffee Cups, Pizzaschachteln, Bierdeckeln & mehr. QR-Tracking inklusive. 100% plastikfrei. Berlin & DACH.">
+<meta name="keywords" content="TakeAway Marketing, Werbung Coffee Cups, Kaffeebecher Werbung, Offline Marketing Agentur, Coffee to go Werbung, Employer Branding Kaffeebecher">
+<meta name="author" content="brandilla UG, Sven Hanke">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandilla.de/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="brandilla">
+<meta property="og:title" content="brandilla — Werbung die man nicht wegklicken kann.">
+<meta property="og:description" content="TakeAway Marketing auf Coffee Cups, Pizzaschachteln, Bierdeckeln & mehr. Messbar per QR-Tracking. Plastikfrei. Berlin & DACH.">
+<meta property="og:url" content="https://brandilla.de/">
+<meta property="og:image" content="og-image.png">
+<meta property="og:locale" content="de_DE">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="brandilla — Werbung die man nicht wegklicken kann.">
+<meta name="twitter:description" content="TakeAway Marketing auf Coffee Cups, Pizzaschachteln, Bierdeckeln & mehr. Messbar per QR-Tracking. Plastikfrei. Berlin & DACH.">
+
+
+<title>brandilla — TakeAway Marketing Agentur | Werbung auf Coffee Cups & mehr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F7F2E8;
+  --dark: #1C1812;
+  --pink: #E50C7D;
+  --warm-gray: #8A857A;
+  --border: rgba(28,24,18,0.1);
+  --accent: #FDF8EF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--dark);font-family:'Jost',sans-serif;overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+.cur{width:10px;height:10px;background:var(--pink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform .15s;mix-blend-mode:multiply;top:0;left:0}
+.cur-r{width:32px;height:32px;border:1px solid rgba(229,12,125,.35);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:all .1s;transform:translate(-50%,-50%);top:0;left:0}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(28,24,18,.96);backdrop-filter:blur(24px);border-bottom:1px solid rgba(247,242,232,.05)}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+  .nav-brand-icon{display:none}
+  .nav-brand-name{display:none}
+  .nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+  .nav-links li{display:flex;align-items:center}
+  .nav-links a{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,242,232,.45);text-decoration:none;transition:color .2s;white-space:nowrap}
+  .nav-links a:hover{color:#F7F2E8}
+  .nav-cta{background:#E50C7D!important;color:#F7F2E8!important;padding:9px 22px!important}
+  .nav-cta:hover{background:#c5006a!important}
+
+/* HERO — dark two-col like pitch */
+.hero{min-height:100vh;background:var(--dark);display:grid;grid-template-columns:1fr 1fr;padding-top:68px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 75% 50%,rgba(229,12,125,.09) 0%,transparent 65%),radial-gradient(ellipse 30% 40% at 15% 85%,rgba(229,12,125,.04) 0%,transparent 55%);pointer-events:none}
+.hl{padding:80px 72px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid rgba(247,242,232,.06);position:relative;z-index:1}
+.hl-tag{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--pink);animation:fu .8s ease both}
+.hl-head{font-family:'Playfair Display',serif;font-size:clamp(64px,8.5vw,110px);font-weight:400;line-height:1.0;color:var(--cream);animation:fu .8s ease .1s both}
+.hl-head em{font-style:italic;color:var(--pink)}
+.hl-body{font-size:16px;line-height:1.9;color:rgba(247,242,232,.45);font-weight:300;max-width:380px;animation:fu .8s ease .2s both}
+.hl-act{display:flex;gap:16px;align-items:center;animation:fu .8s ease .3s both}
+.hr{padding:0 0 48px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;z-index:1}
+.hr-m{flex:1;display:flex;align-items:center;justify-content:center;animation:fu 1s ease .4s both;min-height:calc(100vh - 68px);position:relative}
+.mpl{border:1px dashed rgba(247,242,232,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.mpl-i{opacity:.15}
+.mpl-l{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.12);text-align:center;padding:0 16px;line-height:1.7}
+.mpl-lc{color:rgba(28,24,18,.14)}
+.hr-stats{display:flex;flex-direction:column;gap:28px;animation:fu .8s ease .5s both;padding:0 48px 0 48px}
+.hstat{border-left:2px solid var(--pink);padding-left:20px}
+.hstat-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--cream);line-height:1}
+.hstat-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,242,232,.3);margin-top:3px}
+.h-scroll{position:absolute;bottom:40px;right:72px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.2);display:flex;align-items:center;gap:12px}
+.h-scroll::before{content:'';width:40px;height:1px;background:rgba(247,242,232,.12)}
+@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* BUTTONS */
+.bp{display:inline-flex;align-items:center;gap:10px;background:var(--pink);color:var(--cream);padding:14px 32px;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:none;transition:all .25s}
+.bp:hover{background:#f0007a;transform:translateY(-2px);box-shadow:0 10px 32px rgba(229,12,125,.35)}
+.bg{display:inline-flex;align-items:center;gap:10px;background:transparent;color:rgba(247,242,232,.5);padding:14px 24px;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(247,242,232,.1);transition:all .25s;cursor:none}
+.bg:hover{color:var(--cream);border-color:rgba(247,242,232,.3)}
+.bd{display:inline-flex;align-items:center;gap:10px;background:var(--dark);color:var(--cream);padding:14px 32px;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s;cursor:none}
+.bd:hover{background:#2c261e;transform:translateX(6px)}
+.bw{display:inline-flex;align-items:center;gap:10px;background:var(--cream);color:var(--pink);padding:14px 28px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s;cursor:none}
+.bw:hover{transform:translateX(6px)}
+.bop{display:inline-flex;align-items:center;gap:10px;background:transparent;color:rgba(247,242,232,.55);padding:14px 24px;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(247,242,232,.2);transition:all .25s;cursor:none}
+.bop:hover{color:var(--cream);border-color:rgba(247,242,232,.4)}
+
+/* SUSTAIN BAR */
+.sbar{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding:14px 56px;display:flex;align-items:center;justify-content:center;gap:48px;overflow-x:auto}
+.si{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,242,232,.28);white-space:nowrap}
+.si b{color:var(--pink);font-size:13px;font-style:normal}
+
+/* SECTIONS */
+.sec{padding:112px 72px;border-bottom:1px solid var(--border)}
+.sec-dark{background:var(--dark);border-color:rgba(247,242,232,.05)}
+.sec-pink{background:var(--pink);border-color:rgba(0,0,0,.08)}
+.sec-acc{background:var(--accent)}
+.sec-cream{background:var(--cream)}
+
+.snum{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--pink);margin-bottom:48px;display:flex;align-items:center;gap:16px}
+.snum::after{content:'';width:56px;height:1px;background:var(--border)}
+.snum-d::after{background:rgba(247,242,232,.08)}
+.snum-p{color:rgba(247,242,232,.45)}
+.snum-p::after{background:rgba(247,242,232,.15)}
+
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(44px,5.5vw,72px);font-weight:400;line-height:1.06;color:var(--dark)}
+.stitle em{font-style:italic;color:var(--pink)}
+.stitle-c{color:var(--cream)}
+.stitle-xl{font-size:clamp(56px,7.5vw,100px);line-height:.97}
+
+.bt{font-size:16px;line-height:1.9;color:var(--warm-gray);font-weight:300}
+.bt strong{color:var(--dark);font-weight:500}
+.bt-c{color:rgba(247,242,232,.55)}
+.bt-c strong{color:var(--cream)}
+
+.tcol{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1280px;margin:0 auto}
+.tcol-c{align-items:center}
+.mw{max-width:1280px;margin:0 auto}
+
+/* FEAT LIST */
+.fl{display:flex;flex-direction:column;gap:0;margin-top:40px}
+.fr{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border)}
+.fr:last-child{border-bottom:none}
+.fr-d{border-color:rgba(247,242,232,.06)}
+.fr-p{border-color:rgba(247,242,232,.15)}
+.fa{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--pink);flex-shrink:0;margin-top:-2px}
+.fa-p{color:rgba(247,242,232,.45)}
+.fn{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dark);font-weight:600;margin-bottom:4px}
+.fn-c{color:var(--cream)}
+.fd{font-size:13px;color:var(--warm-gray);line-height:1.7;font-weight:300}
+.fd-c{color:rgba(247,242,232,.4)}
+
+/* STEPS — cream bg */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px}
+.step{background:var(--cream);padding:52px 44px;transition:background .35s;cursor:none}
+.step:hover{background:var(--dark)}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:88px;font-weight:300;font-style:italic;color:rgba(28,24,18,.05);line-height:1;margin-bottom:28px;transition:color .35s}
+.step:hover .step-n{color:rgba(247,242,232,.04)}
+.step-t{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--dark);margin-bottom:12px;transition:color .35s}
+.step:hover .step-t{color:var(--cream)}
+.step-d{font-size:14px;color:var(--warm-gray);line-height:1.8;font-weight:300;transition:color .35s}
+.step:hover .step-d{color:rgba(247,242,232,.4)}
+
+/* SUSTAIN GRID — dark bg */
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(247,242,232,.07);margin-top:56px}
+.sc{background:rgba(247,242,232,.03);padding:40px 36px;position:relative;overflow:hidden;cursor:none;transition:background .3s}
+.sc::after{content:'';position:absolute;bottom:0;left:36px;right:36px;height:2px;background:var(--cream);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.sc:hover{background:rgba(247,242,232,.07)}
+.sc:hover::after{transform:scaleX(1)}
+.sc-i{font-size:28px;margin-bottom:18px}
+.sc-t{font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);margin-bottom:10px}
+.sc-d{font-size:13px;color:rgba(247,242,232,.4);line-height:1.75;font-weight:300}
+.sc-tag{margin-top:14px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--pink)}
+
+/* PRODUCTS — dark */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(247,242,232,.06);margin-top:56px}
+.pc{background:rgba(247,242,232,.03);padding:44px 36px;transition:all .3s;cursor:none;position:relative;overflow:hidden}
+.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.pc:hover{background:rgba(247,242,232,.06);border-color:rgba(229,12,125,.15)}
+.pc:hover::after{transform:scaleX(1)}
+.pc-flag{position:absolute;top:20px;right:20px;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px}
+.pc-fg{background:transparent;color:rgba(247,242,232,.22);border:1px solid rgba(247,242,232,.1)}
+.pc-fn{background:var(--pink);color:var(--cream)}
+.pc-e{font-size:36px;margin-bottom:20px;display:block}
+.pc-n{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--cream);margin-bottom:10px}
+.pc-d{font-size:13px;color:rgba(247,242,232,.38);line-height:1.75;font-weight:300;margin-bottom:18px}
+.pc-p{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--pink)}
+
+/* DASH MOCKUP */
+.dash{border:1px solid rgba(247,242,232,.07);padding:28px;background:rgba(247,242,232,.03)}
+.dash-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid rgba(247,242,232,.05)}
+.dash-tl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.25)}
+.dash-live{display:flex;align-items:center;gap:6px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#34D399}
+.dash-dot{width:5px;height:5px;background:#34D399;border-radius:50%;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.dash-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.dkpi{background:rgba(247,242,232,.03);border:1px solid rgba(247,242,232,.04);padding:14px}
+.dkpi-v{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--cream);line-height:1}
+.dkpi-v.pk{color:var(--pink)}
+.dkpi-l{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,242,232,.25);margin-top:4px}
+.dash-chart{background:rgba(247,242,232,.03);border:1px solid rgba(247,242,232,.04);padding:18px}
+.dcl{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,242,232,.25);margin-bottom:12px}
+.bars{display:flex;align-items:flex-end;gap:5px;height:52px}
+.bar{flex:1;background:rgba(229,12,125,.22);border-radius:1px;transition:background .3s;cursor:none}
+.bar:hover,.bar.hi{background:var(--pink)}
+
+/* CLIENTS — cream bg */
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);margin-top:56px}
+.cc{padding:26px 18px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(28,24,18,.24);font-weight:500;transition:all .25s;cursor:none;display:flex;flex-direction:column;align-items:center;gap:3px}
+.cc:nth-child(4n){border-right:none}
+.cc:hover{color:var(--dark);background:var(--accent)}
+.cc-s{font-size:10px;letter-spacing:0;text-transform:none;color:rgba(28,24,18,.18);font-weight:300}
+.cc:hover .cc-s{color:var(--pink)}
+
+/* QUOTE BLOCK */
+.qb{background:var(--accent);border:1px solid var(--border);padding:44px}
+.qt{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;font-weight:300;color:var(--dark);line-height:1.65;margin-bottom:18px}
+.qs{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:600}
+
+/* GORILLA TALK card */
+.gtc{background:rgba(247,242,232,.05);border:1px solid rgba(247,242,232,.08);padding:44px}
+.gts{display:inline-block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.25);border:1px solid rgba(247,242,232,.1);padding:8px 16px;margin-bottom:24px}
+.gtp{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:rgba(247,242,232,.15);margin-top:18px}
+
+/* BADGES */
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.badge{padding:7px 16px;border:1px solid rgba(247,242,232,.22);color:var(--cream);font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+
+/* CTA — dark like pitch */
+.cta{background:var(--dark);padding:140px 72px}
+.cta-in{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:end;max-width:1280px;margin:0 auto}
+.cta-t{font-family:'Playfair Display',serif;font-size:clamp(56px,7.5vw,96px);font-weight:400;color:var(--cream);line-height:1.0}
+.cta-t em{font-style:italic;color:var(--pink)}
+.cta-q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;font-weight:300;color:rgba(247,242,232,.28);line-height:1.85;margin-top:28px;border-top:1px solid rgba(247,242,232,.06);padding-top:28px}
+.cta-d{display:flex;flex-direction:column;gap:22px}
+.cl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.22);margin-bottom:4px}
+.cv{font-size:15px;color:var(--cream);font-weight:300}
+.cv a{color:var(--cream);text-decoration:none;transition:color .2s}
+.cv a:hover{color:var(--pink)}
+.cta-btns{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding:64px 72px 40px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:52px}
+.fb{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--cream);margin-bottom:14px}
+.ft{font-size:13px;color:rgba(247,242,232,.28);line-height:1.8;font-weight:300;max-width:260px}
+.fc h4{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.18);margin-bottom:18px}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fc ul li a{font-size:13px;color:rgba(247,242,232,.38);text-decoration:none;font-weight:300;transition:color .2s}
+.fc ul li a:hover{color:var(--cream)}
+.fbot{border-top:1px solid rgba(247,242,232,.05);padding-top:28px;display:flex;align-items:center;justify-content:space-between}
+.fcopy{font-size:11px;color:rgba(247,242,232,.18);letter-spacing:.05em;font-weight:300}
+.fsoc{display:flex;gap:24px}
+.fsoc a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,242,232,.18);text-decoration:none;transition:color .2s}
+.fsoc a:hover{color:var(--pink)}
+
+/* FLOAT MARLON */
+.mf{position:fixed;bottom:32px;right:32px;z-index:200;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.mfbtn{width:60px;height:60px;background:#E50C7D;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;cursor:none;box-shadow:0 8px 28px rgba(229,12,125,0.45);transition:transform 0.25s,box-shadow 0.25s}
+.mfbtn:hover{transform:scale(1.08) rotate(5deg);box-shadow:0 12px 36px rgba(229,12,125,0.55)}
+
+
+
+
+
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(30px);transition:all .9s cubic-bezier(.16,1,.3,1)}
+.r.on{opacity:1;transform:none}
+.rd{opacity:0;transform:translateY(30px);transition:all .9s .18s cubic-bezier(.16,1,.3,1)}
+.rd.on{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 24px}.nav-links{display:none}
+  .hero{grid-template-columns:1fr}.hr{display:none}.hl{padding:56px 24px}
+  .sec{padding:72px 24px}
+  .tcol{grid-template-columns:1fr;gap:44px}
+  .steps,.pgrid,.sgrid{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:repeat(2,1fr)}
+  .cta-in{grid-template-columns:1fr;gap:52px}.cta{padding:80px 24px}
+  footer{padding:52px 24px 36px}.fg{grid-template-columns:1fr 1fr;gap:32px}
+  .sbar{gap:24px;padding:12px 24px}
+}
+
+.marlon-float-btn {
+  width: 60px; height: 60px;
+  background: #E50C7D;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: none;
+  box-shadow: 0 8px 28px rgba(229,12,125,0.45);
+  transition: transform 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+}
+.marlon-float-btn:hover { transform: scale(1.08) rotate(5deg); box-shadow: 0 12px 36px rgba(229,12,125,0.55); }
+
+</style>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://brandilla.de/#organization",
+      "name": "brandilla",
+      "legalName": "brandilla UG",
+      "url": "https://brandilla.de",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://brandilla.de/logo.png"
+      },
+      "description": "TakeAway Marketing Agentur. Werbung auf Coffee Cups, Pizzaschachteln, Bierdeckeln und mehr. Messbar per QR-Tracking. 100% plastikfrei.",
+      "foundingDate": "2016",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Großbeerenstr. 60",
+        "addressLocality": "Berlin",
+        "postalCode": "10965",
+        "addressCountry": "DE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+49-172-743-55-15",
+        "email": "kampagne@brandilla.de",
+        "contactType": "sales",
+        "availableLanguage": "German"
+      },
+      "sameAs": [
+        "https://www.instagram.com/brandilla_official/",
+        "https://www.linkedin.com/company/brandilla",
+        "https://www.youtube.com/@marlon_brandilla"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://brandilla.de/#localbusiness",
+      "name": "brandilla",
+      "image": "https://brandilla.de/logo.png",
+      "url": "https://brandilla.de",
+      "telephone": "+49-172-743-55-15",
+      "email": "kampagne@brandilla.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Großbeerenstr. 60",
+        "addressLocality": "Berlin",
+        "postalCode": "10965",
+        "addressCountry": "DE"
+      },
+      "priceRange": "€€",
+      "areaServed": ["DE", "AT", "CH"],
+      "knowsAbout": [
+        "TakeAway Marketing",
+        "Coffee Cup Werbung",
+        "Employer Branding",
+        "Offline Marketing",
+        "QR Code Tracking",
+        "Nachhaltige Werbung"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://brandilla.de/#website",
+      "url": "https://brandilla.de",
+      "name": "brandilla",
+      "description": "TakeAway Marketing Agentur — Werbung die man nicht wegklicken kann.",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://brandilla.de/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "TakeAway Marketing Kampagnen",
+      "provider": {"@id": "https://brandilla.de/#organization"},
+      "serviceType": "Offline Marketing",
+      "areaServed": ["DE", "AT", "CH"],
+      "description": "Werbung auf Coffee Cups, Pizzaschachteln, Bierdeckeln und mehr. QR-Tracking inklusive.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "4350",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "4350",
+          "priceCurrency": "EUR"
+        }
+      }
+    }
+  ]
+}
+</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-02C7GTHDB3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-02C7GTHDB3');
+  </script>
+
+<style id="gorilla-popup-style">
+.mf-popup {
+  display: none;
+  position: fixed;
+  bottom: 104px;
+  right: 32px;
+  z-index: 91;
+  background: #1C1812;
+  border: 1px solid rgba(247,242,232,0.1);
+  padding: 24px;
+  width: 240px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  animation: popupIn 0.2s ease;
+}
+@keyframes popupIn {
+  from { opacity:0; transform: translateY(12px) scale(0.96); }
+  to   { opacity:1; transform: translateY(0) scale(1); }
+}
+.mf-popup.open { display: block; }
+.mf-popup-title {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(247,242,232,0.3); margin-bottom: 16px;
+  font-family: 'Jost', sans-serif;
+}
+.mf-popup-btn {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 16px; margin-bottom: 10px;
+  text-decoration: none; font-family: 'Jost', sans-serif;
+  font-size: 13px; font-weight: 500; cursor: none;
+  transition: all 0.2s; border: 1px solid rgba(247,242,232,0.08);
+  color: rgba(247,242,232,0.8);
+}
+.mf-popup-btn:last-child { margin-bottom: 0; }
+.mf-popup-btn:hover { background: rgba(247,242,232,0.06); color: #F7F2E8; border-color: rgba(247,242,232,0.2); }
+.mf-popup-btn.whatsapp:hover { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.3); color: #25D366; }
+.mf-popup-btn .btn-icon { font-size: 18px; flex-shrink: 0; }
+.mf-popup-close {
+  position: absolute; top: 10px; right: 12px;
+  font-size: 16px; color: rgba(247,242,232,0.2);
+  cursor: none; background: none; border: none;
+  line-height: 1; padding: 4px; transition: color 0.2s;
+  font-family: 'Jost', sans-serif;
+}
+.mf-popup-close:hover { color: rgba(247,242,232,0.6); }
+</style>
+
+</head>
+<body>
+
+<div class="cur" id="c"></div>
+<div class="cur-r" id="cr"></div>
+
+<div class="mf-popup" id="marlonPopup">
+  <button class="mf-popup-close" onclick="document.getElementById('marlonPopup').classList.remove('open')">✕</button>
+  <div class="mf-popup-title">Wie können wir helfen?</div>
+  <a href="kontakt.html" class="mf-popup-btn">
+    <span class="btn-icon">📋</span>
+    <span>Kampagne anfragen</span>
+  </a>
+  <a href="https://wa.me/491727435515" target="_blank" rel="noopener" class="mf-popup-btn whatsapp">
+    <span class="btn-icon">💬</span>
+    <span>WhatsApp schreiben</span>
+  </a>
+  <a href="tel:+491727435515" class="mf-popup-btn">
+    <span class="btn-icon">📞</span>
+    <span>+49 172 743 55 15</span>
+  </a>
+</div>
+<div class="mf">
+  <div class="mfbtn"><img src="marlon-float.png" alt="brandilla" style="width:60px;height:60px;object-fit:cover;border-radius:50%"></div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo-nav.png" alt="brandilla" style="height:40px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="produkte.html">Produkte</a></li>
+    <li><a href="kampagnen.html">Kampagnen</a></li>
+    <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+    <li><a href="partner.html">Partner</a></li>
+    <li><a href="https://app.brandilla.de/shop.html" target="_blank">Cup Shop</a></li>
+    <li><a href="https://app.brandilla.de" target="_blank" style="font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,242,232,0.4);text-decoration:none;transition:color .2s;white-space:nowrap" onmouseover="this.style.color='#F7F2E8'" onmouseout="this.style.color='rgba(247,242,232,0.4)'">Dashboard</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — dark two-col, pitch style -->
+<section class="hero">
+
+  <div class="hl" style="position:relative;z-index:1">
+    <div class="hl-tag">TakeAway Marketing · Berlin · DACH</div>
+    <div class="hl-head">Your<br><em>Brand</em><br>in the<br>Right Hands.</div>
+    <div class="hl-body">Werbung, die buchstäblich in die Hände Eurer Zielgruppe gelangt — haptisch, emotional, messbar.</div>
+    <div class="hl-act">
+      <a href="kontakt.html" class="bp">Kampagne anfragen →</a>
+      <a href="https://app.brandilla.de/shop.html" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:rgba(247,242,232,0.5);padding:14px 28px;font-family:'Jost',sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(247,242,232,0.15);transition:all .25s;cursor:none" onmouseover="this.style.color='#F7F2E8';this.style.borderColor='rgba(247,242,232,0.35)'" onmouseout="this.style.color='rgba(247,242,232,0.5)';this.style.borderColor='rgba(247,242,232,0.15)'">☕ Cup Shop →</a>
+      
+    </div>
+  </div>
+  <div class="hr" style="position:relative;z-index:1;padding:0;overflow:hidden">
+    <div class="hr-m">
+      <div style="position:relative;width:100%;height:100%;min-height:500px;overflow:hidden">
+        <video autoplay muted loop playsinline
+          style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;background:#1C1812"
+          poster="marlon-cup-produkt.png">
+          <source src="hero-marlon-cup.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="hr-stats">
+      <div class="hstat"><div class="hstat-n">6–8×</div><div class="hstat-l">Wahrnehmung pro Cup</div></div>
+      <div class="hstat"><div class="hstat-n">1–3%</div><div class="hstat-l">Conversion Rate</div></div>
+      <div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">Plastikfrei & kompostierbar</div></div>
+    </div>
+  </div>
+  <div class="h-scroll">Scroll</div>
+</section>
+
+<!-- SUSTAIN BAR -->
+<div class="sbar">
+  <div class="si"><b>🌱</b> 0,0% Plastik</div>
+  <div class="si"><b>♻️</b> 100% kompostierbar</div>
+  <div class="si"><b>🇩🇪</b> Made in Germany</div>
+  <div class="si"><b>📜</b> FSC-Zertifiziert</div>
+  <div class="si"><b>🌳</b> Plant-A-Tree Partner</div>
+</div>
+
+<!-- 01 WAS IST BRANDILLA — cream bg -->
+<section class="sec sec-cream">
+  <div class="tcol tcol-c mw">
+    <div>
+      <div class="snum r">01 — TakeAway Marketing</div>
+      <div class="stitle r" style="font-size:clamp(48px,6vw,80px)">TakeAway<br>Marketing,<br><em>neu gedacht.</em></div>
+      <div class="fl rd">
+        <div class="fr"><div class="fa">→</div><div><div class="fn">Individuelle Beratung</div><div class="fd">Medium-Auswahl, Zielgruppe, Design, Kampagnenstruktur — alles aus einer Hand.</div></div></div>
+        <div class="fr"><div class="fa">→</div><div><div class="fn">Geomarketing</div><div class="fd">Standortgenaue POS-Auswahl nach Region, Stadt oder Straße. Europaweit.</div></div></div>
+        <div class="fr"><div class="fa">→</div><div><div class="fn">QR-Tracking & Dashboard</div><div class="fd">Jeder Standort, jeder Scan — sichtbar in Echtzeit in deinem persönlichen Dashboard.</div></div></div>
+        <div class="fr"><div class="fa">→</div><div><div class="fn">Alle Kampagnen-Formate</div><div class="fd">Recruiting · Branding · Coupons · Shop-Eröffnung · Gewinnspiele · Employer Branding</div></div></div>
+      </div>
+    </div>
+    <div class="rd">
+      <div class="qb">
+        <div class="qt">„Was wir greifen, ergreift uns."</div>
+        <div class="qs">— Daniel Kahneman, Wirtschaftsnobelpreisträger</div>
+      </div>
+      <img src="marlon-neue-medien.png" alt="Marlon erklärt TakeAway Marketing" style="max-width:380px;width:100%;display:block;margin:32px auto 0"
+        style="width:100%;max-width:340px;display:block;margin:24px auto 0">
+    </div>
+  </div>
+</section>
+
+<!-- 02 NACHHALTIGKEIT — pink like pitch -->
+<section class="sec sec-pink">
+  <div class="tcol tcol-c mw">
+    <div>
+      <div class="snum snum-p r">02 — Nachhaltigkeit</div>
+      <div class="stitle stitle-c stitle-xl r">Nö,<br><em>Wasserlack.</em></div>
+      <div class="badges rd">
+        <div class="badge">0,0% Plastik</div>
+        <div class="badge">100% Papier</div>
+        <div class="badge">Double-Wall</div>
+        <div class="badge">Kompostierbar</div>
+        <div class="badge">Recyclebar</div>
+        <div class="badge">Made in Germany</div>
+        <div class="badge">FSC-Zertifiziert</div>
+      </div>
+    </div>
+    <div class="rd">
+      <p class="bt bt-c" style="font-size:17px">
+        Unsere Innenbeschichtung besteht aus <strong>Wasserlack</strong> — nicht Plastik. Das macht unsere Cups komplett biologisch abbaubar und recyclebar.<br><br>
+        73 % der Konsumenten bevorzugen Produkte mit Bio-Siegel. Die Kaufwahrscheinlichkeit steigt um <strong>4,2 %</strong>, wenn ein Bio-Siegel die Verpackung ziert.
+      </p>
+      <div style="margin-top:28px;padding:18px 24px;border:1px solid rgba(247,242,232,.15)">
+        <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.35);margin-bottom:5px">Quelle</div>
+        <div style="font-size:13px;color:rgba(247,242,232,.55);font-weight:300">Gütesiegel Monitor 2016, N=122</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 PLANT A TREE — dark bg -->
+<section class="sec sec-dark">
+  <div class="mw">
+    <div class="snum snum-d r" style="color:var(--pink)">03 — Plant a Tree</div>
+    <div class="stitle stitle-c r">Mehr Bäume<br>als <em>nötig.</em></div>
+    <div class="sgrid rd">
+      <div class="sc"><div class="sc-i">🌿</div><div class="sc-t">Produktion</div><div class="sc-d">Für 10.000 Cups werden im Schnitt 5 Bäume benötigt. Pro Cup entstehen ca. 110 g CO₂ — also 1.110 kg bei 10k.</div><div class="sc-tag">10k Cups = 1.110 kg CO₂</div></div>
+      <div class="sc"><div class="sc-i">🌳</div><div class="sc-t">Kompensation</div><div class="sc-d">Wir pflanzen mit euch innerhalb einer Kampagne mehr Bäume als für die Produktion benötigt werden — und gleichen die CO₂-Bilanz mehr als aus.</div><div class="sc-tag">10k Cups = 10 Bäume</div></div>
+      <div class="sc"><div class="sc-i">📜</div><div class="sc-t">Zertifikat</div><div class="sc-d">Ihr erhaltet ein offizielles Zertifikat durch unseren Partner Plant-A-Tree — nutzbar für ESG-Reporting, Employer Branding und Kommunikation.</div><div class="sc-tag">+220 € / 10k Cups</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 WIE ES FUNKTIONIERT — accent bg -->
+<section class="sec sec-acc">
+  <div class="mw">
+    <div class="snum r">04 — So funktioniert's</div>
+    <div class="stitle r">Drei Schritte.<br><em>Fertig.</em></div>
+    <div class="steps rd">
+      <div class="step"><div class="step-n">01</div><div class="step-t">Du gibst uns dein Ziel</div><div class="step-d">Zielgruppe, Stadt, Laufzeit — und dein Design. Das war's. Wir übernehmen den Rest vollständig.</div></div>
+      <div class="step"><div class="step-n">02</div><div class="step-t">Wir produzieren & verteilen</div><div class="step-d">Produktion, Qualitätskontrolle, Lieferung an alle Standorte. Pünktlich, zuverlässig, ohne Stress.</div></div>
+      <div class="step"><div class="step-n">03</div><div class="step-t">Du siehst jeden Scan live</div><div class="step-d">Dein persönliches Dashboard zeigt Echtzeit-Daten: wer scannt, wann, wo — pro Standort aufgeschlüsselt.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PRODUKTE — dark bg -->
+<section class="sec sec-dark">
+  <div class="mw">
+    <div class="tcol" style="margin-bottom:0;align-items:end">
+      <div>
+        <div class="snum snum-d r" style="color:var(--pink)">05 — Unsere Medien</div>
+        <div class="stitle stitle-c r">Werbung überall wo<br>Menschen etwas <em>anfassen.</em></div>
+      </div>
+      <div class="rd" style="align-self:end;padding-bottom:8px">
+        <p class="bt bt-c">Coffee-to-go ist unser Flaggschiff — bewährt, messbar, mit starken Referenzen. Die neuen Formate erweitern deine Kampagne auf alle Momente des Alltags.</p>
+      </div>
+    </div>
+    <div class="pgrid rd">
+      <div class="pc"><div class="pc-flag pc-fg">Flaggschiff</div><span class="pc-e">☕</span><div class="pc-n">Coffee Cup</div><div class="pc-d">Das Original. Biologisch abbaubar, plastikfrei. Der perfekte Morgenmoment — täglich in tausend Händen.</div><div class="pc-p" style="color:#E50C7D;font-weight:600">Ab 4.350 €</div></div>
+      <div class="pc"><div class="pc-flag pc-fn">Neu</div><span class="pc-e">🍕</span><div class="pc-n">Pizzaschachtel</div><div class="pc-d">Abendessen mit Botschaft. Deine Werbung kommt direkt nach Hause — zum entspannten Feierabend.</div><div class="pc-p">Preis auf Anfrage</div></div>
+      <div class="pc"><div class="pc-flag pc-fn">Neu</div><span class="pc-e">🥐</span><div class="pc-n">Bäckertüte</div><div class="pc-d">Der Morgenmoment gehört dir. Wenn die Aufmerksamkeit am höchsten ist — vor dem ersten Kaffee.</div><div class="pc-p">Preis auf Anfrage</div></div>
+      <div class="pc"><div class="pc-flag pc-fn">Neu</div><span class="pc-e">🍺</span><div class="pc-n">Bierdeckel</div><div class="pc-d">Gastro-Marketing neu gedacht. Bars, Restaurants, Events — wo Menschen Zeit haben und entspannt sind.</div><div class="pc-p">Preis auf Anfrage</div></div>
+      <div class="pc"><div class="pc-flag pc-fn">Neu</div><span class="pc-e">📦</span><div class="pc-n">Snackbox</div><div class="pc-d">Pause ist Aufmerksamkeit. Co-Working, Büros, Universitäten — deine Zielgruppe im entspannten Moment.</div><div class="pc-p">Preis auf Anfrage</div></div>
+      <div class="pc" style="border-color:rgba(229,12,125,.2)"><div class="pc-flag pc-fn">Neu</div><span class="pc-e">⚡</span><div class="pc-n">Activated Cup</div><div class="pc-d">QR scannen → E-Mail → Gratis-Kaffee. Qualifizierte Leads statt nur Reichweite. Direkt ins CRM.</div><div class="pc-p">Preis auf Anfrage</div></div>
+    </div>
+    <div style="margin-top:24px;text-align:right" class="rd">
+      <a href="produkte.html" style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.25);text-decoration:none;display:inline-flex;align-items:center;gap:10px">Alle Produkte & Preise <span style="color:var(--pink)">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 06 DASHBOARD — cream bg -->
+<section class="sec sec-cream">
+  <div class="tcol tcol-c mw">
+    <div>
+      <div class="snum r">06 — Dashboard & Tracking</div>
+      <div class="stitle r">Live.<br>Messbar.<br><em>Dein Dashboard.</em></div>
+      <p class="bt rd" style="margin-top:24px">Jeder POS erhält einen individuellen QR-Code. Ihr seht in Echtzeit welcher Standort wie viele Scans generiert — nach Uhrzeit, Wochentag und Ort.</p>
+      <div class="fl rd">
+        <div class="fr"><div class="fa">→</div><div><div class="fn">Echtzeit-Tracking</div><div class="fd">Alle Scans pro Standort, live und standortgenau.</div></div></div>
+        <div class="fr"><div class="fa">→</div><div><div class="fn">Automatische Reports</div><div class="fd">Bei 1/3, 2/3 und Kampagnenende — vollständig und automatisch.</div></div></div>
+        <div class="fr"><div class="fa">→</div><div><div class="fn">In jedem Paket inklusive</div><div class="fd">Kein Aufpreis. Tracking gehört bei brandilla immer dazu.</div></div></div>
+      </div>
+      <div style="margin-top:32px" class="rd"></div>
+    </div>
+    <div class="rd">
+      <img src="marlon-dashboard.png" alt="Marlon zeigt brandilla Dashboard"
+        style="width:100%;max-width:320px;display:block;margin:0 auto 16px">
+      <div class="dash" style="background:var(--dark)">
+        <div class="dash-top"><div class="dash-tl">Kampagnen-Dashboard</div><div class="dash-live"><div class="dash-dot"></div>LIVE</div></div>
+        <div class="dash-kpis">
+          <div class="dkpi"><div class="dkpi-v pk">2.847</div><div class="dkpi-l">Scans heute</div></div>
+          <div class="dkpi"><div class="dkpi-v">12</div><div class="dkpi-l">Standorte</div></div>
+          <div class="dkpi"><div class="dkpi-v">4,2%</div><div class="dkpi-l">Scan-Rate</div></div>
+        </div>
+        <div class="dash-chart">
+          <div class="dcl">Scans diese Woche</div>
+          <div class="bars">
+            <div class="bar" style="height:42%"></div>
+            <div class="bar" style="height:66%"></div>
+            <div class="bar" style="height:51%"></div>
+            <div class="bar" style="height:80%"></div>
+            <div class="bar" style="height:71%"></div>
+            <div class="bar hi" style="height:96%"></div>
+            <div class="bar" style="height:58%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 REFERENZEN — accent bg -->
+<section class="sec sec-acc">
+  <div class="mw">
+    <div class="tcol" style="margin-bottom:0;align-items:end">
+      <div>
+        <div class="snum r">07 — Unsere Freunde</div>
+        <div class="stitle r">Sie vertrauen<br>uns <em>bereits.</em></div>
+      </div>
+      <div class="rd" style="align-self:end;padding-bottom:8px">
+        <p class="bt">Von Startups bis DAX-Konzerne — Werbung die in den richtigen Händen landet.</p>
+      </div>
+    </div>
+    <div class="cgrid rd">
+      <div class="cc"><span>Deutsche Bahn</span><span class="cc-s">50.000 Cups · ganz Baden-Württemberg</span></div>
+      <div class="cc"><span>Amazon</span><span class="cc-s">30.000 Cups · Berlin · Hamburg · München</span></div>
+      <div class="cc"><span>Qatar Airways</span><span class="cc-s">30.000 Cups · Unis & Studentencafés</span></div>
+      <div class="cc"><span>N26</span><span class="cc-s">100.000 Cups · 6 Städte</span></div>
+      <div class="cc"><span>Pirelli</span><span class="cc-s">100.000 Cups · 10 Standorte</span></div>
+      <div class="cc"><span>Europa-Park</span><span class="cc-s">20.000 Cups · 20 km Radius</span></div>
+      <div class="cc"><span>Woolworth</span><span class="cc-s">20.000 Cups · Unna & Umgebung</span></div>
+      <div class="cc"><span>Capgemini</span><span class="cc-s">20.000 Cups · Jena & Erfurt</span></div>
+      <div class="cc"><span>Paracelsus Kliniken</span><span class="cc-s">100.000 Cups · 10 Kliniken</span></div>
+      <div class="cc"><span>Apleona</span><span class="cc-s">20.000 Cups · Frankfurt</span></div>
+      <div class="cc"><span>auxmoney</span><span class="cc-s">50.000 Cups · Düsseldorf</span></div>
+      <div class="cc"><span>Droemer Knaur</span><span class="cc-s">60.000 Cups · Berlin · Hamburg · München</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 GORILLA TALK — pink like pitch -->
+<section class="sec sec-pink">
+  <div class="tcol tcol-c mw">
+    <div>
+      <div class="snum snum-p r">08 — Content & Media</div>
+      <div class="stitle stitle-c stitle-xl r">Der<br><em>Gorilla</em><br>Talk.</div>
+      <p class="bt bt-c rd" style="margin-top:24px">Euer Unternehmen als Gast in unserem Interview-Format mit Marlon. Ca. 12 Minuten, 1 Long-Video + 5 Shorts, veröffentlicht auf YouTube & LinkedIn.</p>
+      <div class="fl rd">
+        <div class="fr fr-p"><div class="fa fa-p">→</div><div><div class="fn fn-c">Format</div><div class="fd fd-c">1 Long-Video (~12 Min.) + 5 Shorts für Social Media</div></div></div>
+        <div class="fr fr-p"><div class="fa fa-p">→</div><div><div class="fn fn-c">Veröffentlichung</div><div class="fd fd-c">YouTube & LinkedIn — mit vollem Nutzungsrecht</div></div></div>
+        <div class="fr fr-p"><div class="fa fa-p">→</div><div><div class="fn fn-c">Investment</div><div class="fd fd-c">6.300 € als Gast · individuelle Sponsoring-Pakete</div></div></div>
+      </div>
+      <div style="display:flex;gap:14px;margin-top:32px;flex-wrap:wrap" class="rd">
+        <a href="gorilla-talk.html" class="bw">Mehr erfahren →</a>
+        <a href="kontakt.html" class="bop">Gast werden</a>
+      </div>
+    </div>
+    <div class="rd">
+      <!-- HeyGen Prompt: Marlon mit Podcaster-Headset und Mikrofon, pinker Hintergrund, expressiv und einladend, PNG transparent, Hochformat 2:3 -->
+      <div class="gtc">
+        <div class="gts">Demnächst · Coming Soon</div>
+        <img src="marlon-podcast.png" alt="Marlon — Der Gorilla Talk"
+          style="width:100%;max-width:280px;display:block;margin:0 auto 20px;border-radius:4px">
+        <div style="font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);margin-bottom:8px">Der Gorilla Talk</div>
+        <div style="font-size:13px;color:rgba(247,242,232,.35);font-weight:300;line-height:1.7">Marketing-Interviews ohne Filter. Marlon fragt. Profis antworten.</div>
+        <div class="gtp">6.300 €</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — dark like pitch contact page -->
+<section class="cta">
+  <div class="cta-in">
+    <div>
+      <div class="cta-t r">Bereit<br>zu<br>starten?<br><em>Los.</em></div>
+      <div class="cta-q rd">„Was wir greifen, ergreift uns."<br>— Daniel Kahneman, Wirtschaftsnobelpreisträger</div>
+    </div>
+    <div class="cta-d rd">
+      <img src="marlon-kontakt.png" alt="Marlon lädt ein"
+        style="width:100%;max-width:240px;display:block;margin:0 auto 8px">
+      <div><div class="cl">Gründer</div><div class="cv">Sven Hanke</div></div>
+      <div><div class="cl">Telefon</div><div class="cv"><a href="tel:+491727435515">+49 172 743 55 15</a></div></div>
+      <div><div class="cl">E-Mail</div><div class="cv"><a href="mailto:kampagne@brandilla.de">kampagne@brandilla.de</a></div></div>
+      <div><div class="cl">Adresse</div><div class="cv">Großbeerenstr. 60, 10965 Berlin</div></div>
+      <div class="cta-btns">
+        <a href="kontakt.html" class="bp">Kampagne anfragen →</a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg">
+    <div>
+      <div class="fb">brandilla</div>
+      <div class="ft">TakeAway Marketing neu gedacht. Werbung die man nicht wegklicken kann — messbar, nachhaltig, einzigartig.</div>
+    </div>
+    <div class="fc"><h4>Produkte</h4><ul>
+      <li><a href="produkte.html">Coffee Cup</a></li>
+      <li><a href="produkte.html">Pizzaschachtel</a></li>
+      <li><a href="produkte.html">Bäckertüte</a></li>
+      <li><a href="produkte.html">Bierdeckel</a></li>
+      <li><a href="produkte.html">Snackbox</a></li>
+      <li><a href="produkte.html">Activated Cup</a></li>
+    </ul></div>
+    <div class="fc"><h4>Unternehmen</h4><ul>
+      <li><a href="kampagnen.html">Kampagnen</a></li>
+      <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li></li>
+      <li><a href="https://app.brandilla.de/shop.html">Cup Shop</a></li>
+    </ul></div>
+    <div class="fc"><h4>Kontakt & Recht</h4><ul>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="agb.html">AGB</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot">
+    <div class="fcopy">© 2016–2026 brandilla UG · Großbeerenstr. 60, 10965 Berlin</div>
+    <div class="fsoc">
+      <a href="https://www.instagram.com/brandilla_official/">Instagram</a>
+      <a href="https://www.linkedin.com/company/brandilla">LinkedIn</a>
+      <a href="https://www.youtube.com/@marlon_brandilla">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const c=document.getElementById('c'),cr=document.getElementById('cr');
+document.addEventListener('mousemove',e=>{
+  c.style.left=e.clientX-5+'px';c.style.top=e.clientY-5+'px';
+  cr.style.left=e.clientX+'px';cr.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,.step,.pc,.cc').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{c.style.transform='scale(2.5)';cr.style.transform='translate(-50%,-50%) scale(1.5)';});
+  el.addEventListener('mouseleave',()=>{c.style.transform='scale(1)';cr.style.transform='translate(-50%,-50%) scale(1)';});
+});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');}),{threshold:0.1});
+document.querySelectorAll('.r,.rd').forEach(el=>obs.observe(el));
+const bars=document.querySelectorAll('.bar');
+const bo=new IntersectionObserver(es=>{
+  if(es[0].isIntersecting)bars.forEach(b=>{const h=b.style.height;b.style.height='0';setTimeout(()=>{b.style.height=h;b.style.transition='height .7s cubic-bezier(.16,1,.3,1)';},150);});
+},{threshold:.5});
+if(bars.length)bo.observe(bars[0].parentElement);
+</script>
+
+<script>
+// Gorilla Float Popup
+(function() {
+  var btn = document.querySelector('.marlon-float-btn, .mfbtn');
+  var popup = document.getElementById('marlonPopup');
+  if (!btn || !popup) return;
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    popup.classList.toggle('open');
+  });
+  document.addEventListener('click', function(e) {
+    if (!popup.contains(e.target) && !btn.contains(e.target)) {
+      popup.classList.remove('open');
+    }
+  });
+})();
+</script>
+</body>
+</html>
