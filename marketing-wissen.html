@@ -96,6 +96,73 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   .nav-links a { font-size: 10px; }
 }
 
+
+/* HAMBURGER MOBILE MENU */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: none;
+  padding: 6px;
+  background: none;
+  border: none;
+  z-index: 200;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #F7F2E8;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background: rgba(28,24,18,0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(247,242,232,0.08);
+  padding: 24px 32px 32px;
+  z-index: 99;
+  flex-direction: column;
+  gap: 0;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247,242,232,0.7);
+  text-decoration: none;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(247,242,232,0.06);
+  transition: color 0.2s;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  cursor: none;
+}
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a:hover { color: #F7F2E8; }
+.nav-mobile-menu .nav-cta {
+  margin-top: 16px;
+  background: #E50C7D !important;
+  color: #F7F2E8 !important;
+  padding: 14px 24px !important;
+  text-align: center;
+  border-bottom: none !important;
+}
+
+@media(max-width: 768px) {
+  .nav-hamburger { display: flex !important; }
+}
 </style>
 <style>
 /* HERO */
@@ -608,7 +675,19 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
     <li><a href="https://app.brandilla.de" target="_blank" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,0.4);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F7F2E8'" onmouseout="this.style.color='rgba(247,242,232,0.4)'">Dashboard</a></li>
     <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="produkte.html">Produkte</a>
+  <a href="kampagnen.html">Kampagnen</a>
+  <a href="gorilla-talk.html">Gorilla Talk</a>
+  <a href="preise.html">Preise</a>
+  <a href="marketing-wissen.html" style="color:#F7F2E8">Marketing-Wissen</a>
+  <a href="https://app.brandilla.de" target="_blank" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,0.4);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F7F2E8'" onmouseout="this.style.color='rgba(247,242,232,0.4)'">Dashboard</a>
+  <a href="kontakt.html" class="nav-cta">Kampagne anfragen</a>
+</div>
 
 <!-- HERO -->
 <section class="mw-hero">
@@ -998,6 +1077,33 @@ function showFallbackVideos() {
     }
   });
 })();
+</script>
+<script>
+// Mobile Nav
+function toggleMobileMenu() {
+  const btn = document.getElementById('navHamburger');
+  const menu = document.getElementById('navMobileMenu');
+  if (!btn || !menu) return;
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+// Close on outside click
+document.addEventListener('click', function(e) {
+  const btn = document.getElementById('navHamburger');
+  const menu = document.getElementById('navMobileMenu');
+  if (!btn || !menu) return;
+  if (!btn.contains(e.target) && !menu.contains(e.target)) {
+    btn.classList.remove('open');
+    menu.classList.remove('open');
+  }
+});
+// Close on link click
+document.querySelectorAll('.nav-mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navHamburger')?.classList.remove('open');
+    document.getElementById('navMobileMenu')?.classList.remove('open');
+  });
+});
 </script>
 </body>
 </html>
