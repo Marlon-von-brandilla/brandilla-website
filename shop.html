@@ -226,11 +226,32 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
     gtag('js', new Date());
     gtag('config', 'G-02C7GTHDB3');
   </script>
+
+<style id="gorilla-popup-style">
+.mf-popup { display:none; position:fixed; bottom:104px; right:32px; z-index:91; background:#1C1812; border:1px solid rgba(247,242,232,0.1); padding:24px; width:240px; box-shadow:0 16px 48px rgba(0,0,0,0.4); animation:popupIn 0.2s ease; }
+@keyframes popupIn { from{opacity:0;transform:translateY(12px) scale(0.96)} to{opacity:1;transform:translateY(0) scale(1)} }
+.mf-popup.open{display:block}
+.mf-popup-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.3);margin-bottom:16px;font-family:'Jost',sans-serif}
+.mf-popup-btn{display:flex;align-items:center;gap:12px;padding:13px 16px;margin-bottom:10px;text-decoration:none;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;cursor:none;transition:all 0.2s;border:1px solid rgba(247,242,232,0.08);color:rgba(247,242,232,0.8)}
+.mf-popup-btn:last-child{margin-bottom:0}
+.mf-popup-btn:hover{background:rgba(247,242,232,0.06);color:#F7F2E8;border-color:rgba(247,242,232,0.2)}
+.mf-popup-btn.whatsapp:hover{background:rgba(37,211,102,0.08);border-color:rgba(37,211,102,0.3);color:#25D366}
+.mf-popup-btn .btn-icon{font-size:18px;flex-shrink:0}
+.mf-popup-close{position:absolute;top:10px;right:12px;font-size:16px;color:rgba(247,242,232,0.2);cursor:none;background:none;border:none;line-height:1;padding:4px;transition:color 0.2s;font-family:'Jost',sans-serif}
+.mf-popup-close:hover{color:rgba(247,242,232,0.6)}
+</style>
 </head>
 <body>
 
 <div class="cur" id="c"></div>
 <div class="cur-r" id="cr"></div>
+<div class="mf-popup" id="marlonPopup">
+  <button class="mf-popup-close" onclick="document.getElementById('marlonPopup').classList.remove('open')">✕</button>
+  <div class="mf-popup-title">Wie können wir helfen?</div>
+  <a href="kontakt.html" class="mf-popup-btn"><span class="btn-icon">📋</span><span>Kampagne anfragen</span></a>
+  <a href="https://wa.me/491727435515" target="_blank" rel="noopener" class="mf-popup-btn whatsapp"><span class="btn-icon">💬</span><span>WhatsApp schreiben</span></a>
+  <a href="tel:+491727435515" class="mf-popup-btn"><span class="btn-icon">📞</span><span>+49 172 743 55 15</span></a>
+</div>
 <div class="mf">
   <div class="mfb"><p>Dein Logo. Täglich in tausend Händen. 🦍</p></div>
   <div class="mfbtn">🦍</div>
@@ -246,6 +267,9 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
     <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
     <li><a href="preise.html">Preise</a></li>
     <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+    <li><a href="partner.html">Partner</a></li>
+    <li><a href="shop.html" style="color:#E50C7D!important">Cup Shop</a></li>
+    <li><a href="https://app.brandilla.de" target="_blank" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,0.4);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F7F2E8'" onmouseout="this.style.color='rgba(247,242,232,0.4)'">Dashboard</a></li>
     <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
   </ul>
 </nav>
@@ -494,32 +518,32 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
     <div class="stitle r" style="color:#F7F2E8">So sehen<br><em>eure Cups aus.</em></div>
     <div class="gallery-grid rd">
       <div class="gallery-card">
-        <img src="https://brandilla.de/wp-content/uploads/2026/01/Amazon-Cups_Berlin-2-scaled.jpg" alt="Amazon Coffee Cup Kampagne Berlin" class="gallery-img" loading="lazy">
+        <img src="kampagnen-hero.png" alt="Amazon Coffee Cup Kampagne Berlin" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">Amazon</div><div class="gallery-type">Recruiting · Berlin</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/wp-content/uploads/2026/01/DB-Cup.jpg" alt="Deutsche Bahn Coffee Cup Employer Branding" class="gallery-img" loading="lazy">
+        <img src="marlon-cup-produkt.png" alt="Deutsche Bahn Coffee Cup Employer Branding" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">Deutsche Bahn</div><div class="gallery-type">Employer Branding</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/wp-content/uploads/2026/01/Europapark.jpg" alt="Europa-Park Coffee Cup Kampagne" class="gallery-img" loading="lazy">
+        <img src="marlon-neue-medien.png" alt="Europa-Park Coffee Cup Kampagne" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">Europa-Park</div><div class="gallery-type">Promotion</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/wp-content/uploads/2026/01/brandilla.jpg" alt="brandilla Gorilla Cup" class="gallery-img" loading="lazy">
+        <img src="og-image.png" alt="brandilla Gorilla Cup" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">brandilla</div><div class="gallery-type">Signature Cup</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/wp-content/uploads/2026/01/6F169366-4A7F-484F-9C7D-A09F0DEFE8F0-scaled.jpg" alt="Dr. Smile Coffee Cup" class="gallery-img" loading="lazy">
+        <img src="thumbnail-takeaway.png" alt="Dr. Smile Coffee Cup" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">Dr. Smile</div><div class="gallery-type">B2C</div></div>
       </div>
       <div class="gallery-card">
-        <img src="https://brandilla.de/wp-content/uploads/2026/01/4BA5AC32-2CB9-4008-965B-503BA2C9AFA0-scaled.jpg" alt="Coffee Cup individuelles Design" class="gallery-img" loading="lazy">
+        <img src="thumbnail-qr.png" alt="Coffee Cup individuelles Design" class="gallery-img" loading="lazy">
         <div class="gallery-overlay"></div>
         <div class="gallery-info"><div class="gallery-client">Individuell</div><div class="gallery-type">Custom Design</div></div>
       </div>
@@ -644,6 +668,15 @@ ua.addEventListener('drop',e=>{
 document.getElementById('fileInput').addEventListener('change',function(){
   if(this.files[0]) ua.querySelector('.upload-label').textContent='✓ '+this.files[0].name;
 });
+</script>
+<script>
+(function() {
+  var btn = document.querySelector('.marlon-float-btn, .mfbtn');
+  var popup = document.getElementById('marlonPopup');
+  if (!btn || !popup) return;
+  btn.addEventListener('click', function(e) { e.stopPropagation(); popup.classList.toggle('open'); });
+  document.addEventListener('click', function(e) { if (!popup.contains(e.target) && !btn.contains(e.target)) popup.classList.remove('open'); });
+})();
 </script>
 </body>
 </html>
