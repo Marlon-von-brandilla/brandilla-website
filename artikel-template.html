@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[ARTIKEL TITEL] — brandilla Marketing-Wissen</title>
+  <meta name="description" content="[META BESCHREIBUNG — 1–2 Sätze, ca. 155 Zeichen]">
+  <link rel="canonical" href="https://brandilla.de/[DATEINAME]">
+  <link rel="stylesheet" href="shared.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400&display=swap" rel="stylesheet">
+  <style>
+    :root { --dark:#1C1812; --cream:#F7F2E8; --pink:#E50C7D; --warm-gray:#8A857A; --light-border:rgba(28,24,18,0.08); }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--cream); color:var(--dark); font-family:'Jost',sans-serif; cursor:none; }
+
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; height:68px; display:flex; align-items:center; justify-content:space-between; padding:0 56px; background:rgba(28,24,18,0.96); backdrop-filter:blur(24px); border-bottom:1px solid rgba(247,242,232,0.05); }
+    .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
+    .nav-links a { font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(247,242,232,0.55); text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:#F7F2E8; }
+    .nav-cta { background:#E50C7D !important; color:#F7F2E8 !important; padding:9px 22px !important; }
+    .nav-cta:hover { background:#c5006a !important; }
+
+    /* ARTIKEL HERO */
+    .art-hero {
+      padding: 140px 0 80px;
+      background: var(--dark);
+      text-align: center;
+    }
+    .art-cat {
+      font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--pink); margin-bottom: 24px;
+    }
+    .art-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400; color: var(--cream);
+      line-height: 1.1; max-width: 800px;
+      margin: 0 auto 24px;
+    }
+    .art-title em { font-style: italic; color: var(--pink); }
+    .art-meta {
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(247,242,232,0.3);
+    }
+
+    /* ARTIKEL BODY */
+    .art-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 120px;
+    }
+    .art-body p {
+      font-size: 17px; line-height: 1.85;
+      color: rgba(28,24,18,0.8);
+      font-weight: 300; margin-bottom: 28px;
+    }
+    .art-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; font-weight: 400;
+      color: var(--dark); margin: 56px 0 20px;
+      line-height: 1.2;
+    }
+    .art-body h3 {
+      font-family: 'Jost', sans-serif;
+      font-size: 14px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--pink); margin: 40px 0 16px;
+    }
+    .art-body ul {
+      margin: 0 0 28px 0; padding-left: 0; list-style: none;
+    }
+    .art-body ul li {
+      font-size: 17px; line-height: 1.85;
+      color: rgba(28,24,18,0.8);
+      font-weight: 300; padding: 8px 0;
+      border-bottom: 1px solid var(--light-border);
+      display: flex; gap: 16px;
+    }
+    .art-body ul li::before {
+      content: '→'; color: var(--pink); flex-shrink: 0;
+    }
+    .art-body blockquote {
+      border-left: 3px solid var(--pink);
+      padding: 24px 32px; margin: 40px 0;
+      background: rgba(229,12,125,0.04);
+    }
+    .art-body blockquote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-style: italic;
+      color: var(--dark); margin: 0;
+    }
+    .art-highlight {
+      background: var(--dark); color: var(--cream);
+      padding: 40px 48px; margin: 48px 0;
+    }
+    .art-highlight strong { color: var(--pink); }
+
+    /* BACK LINK */
+    .art-back {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--pink); text-decoration: none; margin-bottom: 48px;
+    }
+    .art-back:hover { opacity: 0.7; }
+
+    /* CTA */
+    .art-cta {
+      background: var(--dark); padding: 80px 24px; text-align: center;
+    }
+    .art-cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 52px);
+      color: var(--cream); margin-bottom: 20px;
+    }
+    .art-cta-title em { color: var(--pink); font-style: italic; }
+    .art-cta-sub {
+      font-size: 15px; color: rgba(247,242,232,0.4);
+      font-weight: 300; margin-bottom: 36px;
+    }
+    .art-cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--pink); color: var(--cream);
+      padding: 14px 36px; font-family: 'Jost', sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+    }
+
+    @media(max-width:768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .art-body { padding: 60px 24px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo-nav.png" alt="brandilla" style="height:40px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="produkte.html">Produkte</a></li>
+    <li><a href="kampagnen.html">Kampagnen</a></li>
+    <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+    <li><a href="https://app.brandilla.de" target="_blank" style="color:rgba(247,242,232,0.4)">Dashboard</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="art-hero">
+  <div class="art-cat">[KATEGORIE z.B. TakeAway Marketing]</div>
+  <h1 class="art-title">[ARTIKEL TITEL —<br><em>so klingt er gut.</em>]</h1>
+  <div class="art-meta">von Sven Hanke · [DATUM z.B. März 2026] · [LESEZEIT z.B. 4 Min. Lesezeit]</div>
+</div>
+
+<!-- INHALT -->
+<div class="art-body">
+
+  <a href="marketing-wissen.html" class="art-back">← Zurück zu Marketing-Wissen</a>
+
+  <!-- 
+  ===================================================
+  HIER DEINEN TEXT EINFÜGEN:
+  
+  Absatz:        <p>Text...</p>
+  Zwischenüberschrift groß: <h2>Titel</h2>
+  Zwischenüberschrift klein (pink): <h3>Titel</h3>
+  Liste:         <ul><li>Punkt 1</li><li>Punkt 2</li></ul>
+  Zitat:         <blockquote><p>"Zitat..."</p></blockquote>
+  Highlight-Box: <div class="art-highlight"><p>Text mit <strong>pink</strong></p></div>
+  ===================================================
+  -->
+
+  <p>[EINLEITUNGSABSATZ — ca. 3–4 Sätze. Warum ist das Thema wichtig? Was lernt der Leser?]</p>
+
+  <h2>[ERSTE ZWISCHENÜBERSCHRIFT]</h2>
+
+  <p>[ABSATZ TEXT]</p>
+
+  <h3>[KLEINER ABSCHNITTSTITEL IN PINK]</h3>
+
+  <ul>
+    <li>[Listenpunkt 1]</li>
+    <li>[Listenpunkt 2]</li>
+    <li>[Listenpunkt 3]</li>
+  </ul>
+
+  <blockquote>
+    <p>"[ZITAT oder prägnante Aussage]"</p>
+  </blockquote>
+
+  <div class="art-highlight">
+    <p><strong>Das Wichtigste in Kürze:</strong> [Zusammenfassung oder Key Takeaway]</p>
+  </div>
+
+  <p>[SCHLUSSABSATZ]</p>
+
+</div>
+
+<!-- CTA -->
+<div class="art-cta">
+  <div class="art-cta-title">Bereit für deine<br><em>Kampagne?</em></div>
+  <div class="art-cta-sub">Kostenlose Beratung. Innerhalb von 24 Stunden zurück.</div>
+  <a href="kontakt.html" class="art-cta-btn">Kampagne anfragen →</a>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand-name">brandilla</div><div class="footer-tagline">TakeAway Marketing neu gedacht.</div></div>
+    <div class="footer-col"><h4>Produkte</h4><ul><li><a href="produkte.html">Coffee Cup</a></li></ul></div>
+    <div class="footer-col"><h4>Wissen</h4><ul><li><a href="marketing-wissen.html">Alle Artikel</a></li><li><a href="gorilla-talk.html">Gorilla Talk</a></li></ul></div>
+    <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="kontakt.html">Anfrage stellen</a></li><li><a href="impressum.html">Impressum</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2016–2026 brandilla UG · Berlin</div>
+    <div class="footer-social"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

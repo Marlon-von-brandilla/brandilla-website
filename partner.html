@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner werden — Cups kaufen & POS-Netz beitreten | brandilla</title>
+  <meta name="description" content="Bäckereien, Cafés und Bistros: Kauft eure eigenen bedruckten Cups oder werdet Teil des brandilla POS-Netzwerks und erhaltet kostenlose Werbe-Cups für euren Tresen.">
+  <link rel="canonical" href="https://brandilla.de/partner">
+  <link rel="stylesheet" href="shared.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #1C1812;
+      --cream: #F7F2E8;
+      --pink: #E50C7D;
+      --warm-gray: #8A857A;
+      --light-border: rgba(28,24,18,0.08);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background: var(--cream); color: var(--dark); font-family: 'Jost', sans-serif; cursor: none; overflow-x: hidden; }
+
+    .cursor { width:10px; height:10px; background:var(--pink); border-radius:50%; position:fixed; pointer-events:none; z-index:9999; transition:transform 0.15s ease; mix-blend-mode:multiply; }
+    .cursor-ring { width:32px; height:32px; border:1px solid rgba(229,12,125,0.4); border-radius:50%; position:fixed; pointer-events:none; z-index:9998; transition:all 0.12s ease; transform:translate(-50%,-50%); }
+
+    /* NAV */
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; height:68px; display:flex; align-items:center; justify-content:space-between; padding:0 56px; background:rgba(28,24,18,0.96); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border-bottom:1px solid rgba(247,242,232,0.05); }
+    .nav-brand { display:flex; align-items:center; gap:14px; text-decoration:none; }
+    .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
+    .nav-links a { font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(247,242,232,0.55); text-decoration:none; transition:color .2s; cursor:none; }
+    .nav-links a:hover { color:#F7F2E8; }
+    .nav-cta { background:#E50C7D !important; color:#F7F2E8 !important; padding:9px 22px !important; }
+    .nav-cta:hover { background:#c5006a !important; }
+
+    /* HERO */
+    .p-hero {
+      min-height: 100vh;
+      background: var(--dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 68px;
+      position: relative;
+      overflow: hidden;
+    }
+    .p-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 30% 50%, rgba(229,12,125,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .p-hero-left {
+      padding: 80px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(247,242,232,0.06);
+      position: relative; z-index: 1;
+    }
+    .p-tag {
+      font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--pink); margin-bottom: 48px;
+    }
+    .p-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 7vw, 88px);
+      font-weight: 400; line-height: 1.0;
+      color: var(--cream); margin-bottom: 32px;
+    }
+    .p-title em { font-style: italic; color: var(--pink); }
+    .p-sub {
+      font-size: 16px; line-height: 1.9;
+      color: rgba(247,242,232,0.45);
+      font-weight: 300; max-width: 400px;
+      margin-bottom: 56px;
+    }
+    .p-hero-btns { display: flex; flex-direction: column; gap: 16px; }
+    .btn-hero-primary {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: var(--pink); color: var(--cream);
+      padding: 18px 40px; font-family: 'Jost', sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      width: fit-content; transition: all 0.25s; cursor: none;
+    }
+    .btn-hero-primary:hover { background: #f0007a; transform: translateX(6px); }
+    .btn-hero-outline {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: transparent; color: rgba(247,242,232,0.5);
+      padding: 18px 40px; font-family: 'Jost', sans-serif;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      width: fit-content; border: 1px solid rgba(247,242,232,0.12);
+      transition: all 0.25s; cursor: none;
+    }
+    .btn-hero-outline:hover { color: var(--cream); border-color: rgba(247,242,232,0.35); transform: translateX(6px); }
+
+    .p-hero-right {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 72px; position: relative; z-index: 1; gap: 48px;
+    }
+    .p-hero-card {
+      border: 1px solid rgba(247,242,232,0.06);
+      padding: 40px 44px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .p-hero-card:hover { border-color: rgba(229,12,125,0.3); }
+    .p-hero-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px; font-weight: 300;
+      color: rgba(247,242,232,0.06);
+      position: absolute; top: 16px; right: 28px;
+      line-height: 1;
+    }
+    .p-hero-card-label {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--pink); margin-bottom: 16px;
+    }
+    .p-hero-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px; color: var(--cream);
+      font-weight: 400; margin-bottom: 12px; line-height: 1.2;
+    }
+    .p-hero-card-desc {
+      font-size: 14px; color: rgba(247,242,232,0.4);
+      font-weight: 300; line-height: 1.7;
+    }
+
+    /* SECTION DIVIDER */
+    .sec-div { height: 1px; background: var(--light-border); margin: 0 56px; }
+
+    /* PATH 1: SHOP */
+    .shop-sec {
+      padding: 120px 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .sec-label {
+      font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--pink); margin-bottom: 24px;
+    }
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4.5vw, 58px);
+      font-weight: 400; color: var(--dark);
+      line-height: 1.08; margin-bottom: 24px;
+    }
+    .sec-title em { font-style: italic; color: var(--pink); }
+    .sec-desc {
+      font-size: 16px; line-height: 1.85;
+      color: rgba(28,24,18,0.55);
+      font-weight: 300; margin-bottom: 40px;
+      max-width: 440px;
+    }
+
+    .shop-steps { display: flex; flex-direction: column; gap: 28px; margin-bottom: 48px; }
+    .shop-step { display: flex; gap: 24px; align-items: flex-start; }
+    .shop-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 300;
+      color: var(--pink); line-height: 1;
+      flex-shrink: 0; width: 40px;
+    }
+    .shop-step-text { padding-top: 4px; }
+    .shop-step-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+    .shop-step-desc { font-size: 13px; color: var(--warm-gray); font-weight: 300; line-height: 1.6; }
+
+    .shop-visual {
+      background: var(--dark);
+      padding: 64px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .shop-visual::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(229,12,125,0.15) 0%, transparent 60%);
+    }
+    .shop-price-tag {
+      position: relative; z-index: 1;
+      font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+      color: rgba(247,242,232,0.3); margin-bottom: 32px;
+    }
+    .shop-price-tiers { display: flex; flex-direction: column; gap: 20px; position: relative; z-index: 1; }
+    .shop-tier {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 24px;
+      border: 1px solid rgba(247,242,232,0.06);
+      transition: border-color 0.25s;
+    }
+    .shop-tier:hover { border-color: rgba(229,12,125,0.35); }
+    .shop-tier-name { font-size: 13px; color: rgba(247,242,232,0.5); font-weight: 300; }
+    .shop-tier-cups { font-size: 12px; color: rgba(247,242,232,0.3); }
+    .shop-tier-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; color: var(--pink); font-weight: 300;
+    }
+    .shop-note {
+      font-size: 11px; color: rgba(247,242,232,0.2);
+      margin-top: 20px; font-weight: 300;
+      position: relative; z-index: 1; line-height: 1.7;
+    }
+
+    .btn-shop {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--dark); color: var(--cream);
+      padding: 16px 36px; font-family: 'Jost', sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      transition: all 0.25s; cursor: none;
+    }
+    .btn-shop:hover { background: var(--pink); transform: translateX(6px); }
+
+    /* DIVIDER — full dark */
+    .dark-div {
+      background: var(--dark);
+      padding: 80px 72px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 40px;
+    }
+    .dark-div-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 34px);
+      color: rgba(247,242,232,0.2);
+      font-weight: 400; max-width: 600px;
+    }
+    .dark-div-text em { color: var(--pink); font-style: italic; }
+
+    /* PATH 2: POS PARTNER */
+    .pos-sec {
+      padding: 120px 72px;
+      background: var(--cream);
+    }
+    .pos-inner { max-width: 1280px; margin: 0 auto; }
+    .pos-head { text-align: center; margin-bottom: 80px; }
+
+    .pos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 80px;
+    }
+    .pos-card {
+      background: var(--dark);
+      padding: 56px 48px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .pos-card:hover { background: #241e16; }
+    .pos-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--pink);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .pos-card:hover::after { transform: scaleX(1); }
+    .pos-card-icon { font-size: 36px; margin-bottom: 32px; }
+    .pos-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; color: var(--cream);
+      font-weight: 400; margin-bottom: 16px;
+    }
+    .pos-card-desc {
+      font-size: 14px; color: rgba(247,242,232,0.4);
+      font-weight: 300; line-height: 1.7;
+    }
+    .pos-card-tag {
+      display: inline-block; margin-top: 24px;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--pink); border: 1px solid rgba(229,12,125,0.25);
+      padding: 6px 14px;
+    }
+
+    /* REGISTRIERUNGSFORMULAR */
+    .pos-form-wrap {
+      background: var(--dark);
+      padding: 80px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .pos-form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      color: var(--cream); font-weight: 400;
+      margin-bottom: 12px; line-height: 1.1;
+    }
+    .pos-form-title em { color: var(--pink); font-style: italic; }
+    .pos-form-sub {
+      font-size: 14px; color: rgba(247,242,232,0.35);
+      font-weight: 300; margin-bottom: 56px; line-height: 1.8;
+    }
+    .pos-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .pos-form .full { grid-column: 1 / -1; }
+    .pos-label {
+      display: block; font-size: 10px; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(247,242,232,0.35);
+      margin-bottom: 10px;
+    }
+    .pos-input, .pos-select, .pos-textarea {
+      width: 100%; background: rgba(247,242,232,0.04);
+      border: 1px solid rgba(247,242,232,0.1);
+      color: var(--cream); padding: 14px 18px;
+      font-family: 'Jost', sans-serif; font-size: 14px;
+      font-weight: 300; outline: none; cursor: none;
+      transition: border-color 0.2s;
+    }
+    .pos-input::placeholder { color: rgba(247,242,232,0.2); }
+    .pos-input:focus, .pos-select:focus, .pos-textarea:focus {
+      border-color: rgba(229,12,125,0.5);
+    }
+    .pos-select option { background: var(--dark); }
+    .pos-textarea { resize: vertical; min-height: 100px; }
+    .pos-checkbox-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      grid-column: 1 / -1;
+    }
+    .pos-checkbox {
+      width: 18px; height: 18px; flex-shrink: 0;
+      border: 1px solid rgba(247,242,232,0.2);
+      background: transparent; cursor: pointer;
+      accent-color: var(--pink); margin-top: 2px;
+    }
+    .pos-checkbox-label {
+      font-size: 13px; color: rgba(247,242,232,0.35);
+      font-weight: 300; line-height: 1.6;
+    }
+    .pos-submit {
+      grid-column: 1 / -1;
+      background: var(--pink); color: var(--cream);
+      border: none; padding: 18px 48px;
+      font-family: 'Jost', sans-serif; font-size: 12px;
+      font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; cursor: pointer;
+      transition: all 0.25s; width: fit-content;
+    }
+    .pos-submit:hover { background: #f0007a; transform: translateX(6px); }
+
+    /* VORTEILE ZAHLEN */
+    .stats-strip {
+      background: var(--pink);
+      padding: 56px 72px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px; color: var(--cream);
+      font-weight: 300; line-height: 1;
+    }
+    .stat-l {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(247,242,232,0.65); margin-top: 8px;
+    }
+
+    /* CTA FINAL */
+    .final-cta {
+      background: var(--dark); padding: 100px 72px;
+      text-align: center;
+    }
+    .final-cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 64px);
+      color: var(--cream); margin-bottom: 20px; line-height: 1.08;
+    }
+    .final-cta-title em { color: var(--pink); font-style: italic; }
+    .final-cta-sub {
+      font-size: 15px; color: rgba(247,242,232,0.35);
+      font-weight: 300; margin-bottom: 48px;
+    }
+    .final-cta-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 80px 72px 40px; border-top: 1px solid rgba(247,242,232,0.05); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 56px; }
+    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 16px; }
+    .footer-tagline { font-size: 13px; color: rgba(247,242,232,0.3); line-height: 1.8; font-weight: 300; max-width: 280px; }
+    .footer-col h4 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,242,232,0.3); margin-bottom: 24px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul a { font-size: 14px; color: rgba(247,242,232,0.5); text-decoration: none; transition: color .2s; }
+    .footer-col ul a:hover { color: var(--cream); }
+    .footer-bottom { border-top: 1px solid rgba(247,242,232,0.05); padding-top: 32px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-copy { font-size: 12px; color: rgba(247,242,232,0.2); }
+    .footer-social { display: flex; gap: 20px; }
+    .footer-social a { font-size: 12px; color: rgba(247,242,232,0.3); text-decoration: none; transition: color .2s; }
+    .footer-social a:hover { color: var(--pink); }
+
+    /* MARLON FLOAT */
+    .marlon-float { position: fixed; bottom: 32px; right: 32px; z-index: 90; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .marlon-float-bubble { background: var(--dark); padding: 16px 20px; max-width: 240px; border: 1px solid rgba(247,242,232,0.08); display: none; }
+    .marlon-float-bubble p { font-size: 12px; color: rgba(247,242,232,0.7); line-height: 1.6; font-weight: 300; }
+    .marlon-float:hover .marlon-float-bubble { display: block; }
+    .marlon-float-btn { width: 60px; height: 60px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: none; transition: all 0.25s; margin-left: auto; box-shadow: 0 8px 28px rgba(229,12,125,0.35); border-radius: 50%; overflow: hidden; }
+    .marlon-float-btn:hover { transform: scale(1.08) rotate(5deg); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s; }
+    .reveal-delay.visible { opacity: 1; transform: translateY(0); }
+
+    @media(max-width: 1024px) {
+      .p-hero, .shop-sec { grid-template-columns: 1fr; }
+      .p-hero-left, .p-hero-right { padding: 60px 40px; border-right: none; border-bottom: 1px solid rgba(247,242,232,0.06); }
+      .pos-grid { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+    }
+    @media(max-width: 768px) {
+      .shop-sec, .pos-sec { padding: 80px 24px; }
+      .dark-div { flex-direction: column; padding: 60px 24px; }
+      .pos-form-wrap { padding: 48px 24px; }
+      .pos-form { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: 1fr 1fr; padding: 40px 24px; }
+      .final-cta { padding: 80px 24px; }
+      footer { padding: 60px 24px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- MARLON FLOAT -->
+<div class="marlon-float">
+  <div class="marlon-float-bubble">
+    <p>Interesse? Ich helfe euch gerne den richtigen Weg zu finden — Shop oder POS-Partner. 🦍</p>
+  </div>
+  <div class="marlon-float-btn">
+    <img src="marlon-float.png" alt="Marlon" style="width:60px;height:60px;object-fit:cover">
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo-nav.png" alt="brandilla" style="height:40px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="produkte.html">Produkte</a></li>
+    <li><a href="kampagnen.html">Kampagnen</a></li>
+    <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+    <li><a href="https://app.brandilla.de" target="_blank" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,0.4);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F7F2E8'" onmouseout="this.style.color='rgba(247,242,232,0.4)'">Dashboard</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="p-hero">
+  <div class="p-hero-left">
+    <div class="p-tag reveal">Für Bäckereien, Cafés & Bistros</div>
+    <h1 class="p-title reveal">Euer<br>Becher.<br><em>Euer</em><br>Netz.</h1>
+    <p class="p-sub reveal-delay">Bedruckte Cups mit eurem Logo — oder kostenlose Werbebecher als POS-Partner. Zwei Wege, ein Ziel: ein voller Tresen.</p>
+    <div class="p-hero-btns reveal-delay">
+      <a href="https://shop.brandilla.de" target="_blank" class="btn-hero-primary">☕ Cups kaufen →</a>
+      <a href="#pos-partner" class="btn-hero-outline">📍 POS-Partner werden →</a>
+    </div>
+  </div>
+  <div class="p-hero-right">
+    <div class="p-hero-card reveal">
+      <div class="p-hero-card-num">01</div>
+      <div class="p-hero-card-label">Cup Shop</div>
+      <div class="p-hero-card-title">Cups mit<br>eurem Logo.</div>
+      <div class="p-hero-card-desc">Bedruckte 0,2l Bio-Cups in eurem Design — für euren Laden, euren Kaffe, eure Marke. Ab 500 Stück, schnelle Lieferzeit.</div>
+    </div>
+    <div class="p-hero-card reveal-delay">
+      <div class="p-hero-card-num">02</div>
+      <div class="p-hero-card-label">POS-Partner</div>
+      <div class="p-hero-card-title">Kostenlose Cups<br>für euren Tresen.</div>
+      <div class="p-hero-card-desc">Ihr stellt den Tresen, wir stellen die Cups. Als Teil des brandilla POS-Netzwerks erhaltet ihr regelmäßig bedruckte Becher — gratis.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div>
+    <div class="stat-n">10.000+</div>
+    <div class="stat-l">POS-Standorte in DACH</div>
+  </div>
+  <div>
+    <div class="stat-n">1,5 Mio+</div>
+    <div class="stat-l">Cups ausgegeben</div>
+  </div>
+  <div>
+    <div class="stat-n">80+</div>
+    <div class="stat-l">Marken-Kampagnen</div>
+  </div>
+  <div>
+    <div class="stat-n">9</div>
+    <div class="stat-l">Jahre Erfahrung</div>
+  </div>
+</div>
+
+<!-- SHOP SECTION -->
+<section style="background:var(--cream)">
+  <div class="shop-sec">
+    <div>
+      <div class="sec-label reveal">01 — Cup Shop</div>
+      <h2 class="sec-title reveal">Cups mit<br>eurem <em>eigenen Logo.</em></h2>
+      <p class="sec-desc reveal-delay">Ihr wollt euren Kaffee in einem Becher verkaufen, der auch wirklich zu euch passt? Unser Shop macht das möglich — schnell, einfach, nachhaltig.</p>
+      <div class="shop-steps reveal-delay">
+        <div class="shop-step">
+          <div class="shop-step-num">1</div>
+          <div class="shop-step-text">
+            <div class="shop-step-title">Menge & Größe wählen</div>
+            <div class="shop-step-desc">0,2l Bio-Cup, ab 500 Stück. Staffelpreise ab 1.000 Stück.</div>
+          </div>
+        </div>
+        <div class="shop-step">
+          <div class="shop-step-num">2</div>
+          <div class="shop-step-text">
+            <div class="shop-step-title">Druckdatei hochladen</div>
+            <div class="shop-step-desc">Euer Logo, eure Farben. PDF oder AI-Datei, wir übernehmen den Rest.</div>
+          </div>
+        </div>
+        <div class="shop-step">
+          <div class="shop-step-num">3</div>
+          <div class="shop-step-text">
+            <div class="shop-step-title">Lieferung in 3–4 Wochen</div>
+            <div class="shop-step-desc">Direkt zu euch — plastikfrei, wasserlackbeschichtet, FSC-zertifiziert.</div>
+          </div>
+        </div>
+      </div>
+      <a href="https://shop.brandilla.de" target="_blank" class="btn-shop reveal-delay">Zum Cup-Shop →</a>
+    </div>
+    <div class="shop-visual reveal-delay">
+      <div class="shop-price-tag">Preisübersicht · zzgl. MwSt.</div>
+      <div class="shop-price-tiers">
+        <div class="shop-tier">
+          <div>
+            <div class="shop-tier-name">Starter</div>
+            <div class="shop-tier-cups">500 Cups</div>
+          </div>
+          <div class="shop-tier-price">auf Anfrage</div>
+        </div>
+        <div class="shop-tier">
+          <div>
+            <div class="shop-tier-name">Standard</div>
+            <div class="shop-tier-cups">1.000 Cups</div>
+          </div>
+          <div class="shop-tier-price">auf Anfrage</div>
+        </div>
+        <div class="shop-tier">
+          <div>
+            <div class="shop-tier-name">Business</div>
+            <div class="shop-tier-cups">5.000 Cups</div>
+          </div>
+          <div class="shop-tier-price">auf Anfrage</div>
+        </div>
+        <div class="shop-tier">
+          <div>
+            <div class="shop-tier-name">Volume</div>
+            <div class="shop-tier-cups">10.000+ Cups</div>
+          </div>
+          <div class="shop-tier-price">auf Anfrage</div>
+        </div>
+      </div>
+      <div class="shop-note">Alle Cups · 0,2l · Bio-zertifiziert · plastikfrei · Wasserlack<br>Druckkosten inklusive · Individuelle Preise im Shop</div>
+    </div>
+  </div>
+</section>
+
+<div class="dark-div">
+  <div class="dark-div-text">
+    Oder: statt selbst zu zahlen — <em>einfach Teil des Netzwerks werden</em> und Cups kostenlos erhalten.
+  </div>
+  <a href="#pos-partner" style="display:inline-flex;align-items:center;gap:12px;background:var(--pink);color:var(--cream);padding:16px 36px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s;cursor:none;flex-shrink:0" onmouseover="this.style.background='#f0007a'" onmouseout="this.style.background='var(--pink)'">
+    POS-Partner werden →
+  </a>
+</div>
+
+<!-- POS PARTNER SECTION -->
+<section class="pos-sec" id="pos-partner">
+  <div class="pos-inner">
+    <div class="pos-head">
+      <div class="sec-label reveal">02 — POS-Netzwerk</div>
+      <h2 class="sec-title reveal" style="text-align:center;margin:0 auto 20px">Kostenlose Cups für<br><em>euren Laden.</em></h2>
+      <p class="sec-desc reveal-delay" style="text-align:center;margin:0 auto">Als POS-Partner stellt ihr euren Tresen zur Verfügung. Wir liefern regelmäßig bedruckte Cups von Marken, die eure Zielgruppe ansprechen — ihr profitiert, ohne etwas zu zahlen.</p>
+    </div>
+
+    <div class="pos-grid reveal-delay">
+      <div class="pos-card">
+        <div class="pos-card-icon">☕</div>
+        <div class="pos-card-title">Kostenlose Cups</div>
+        <div class="pos-card-desc">Ihr erhaltet regelmäßig hochwertige Bio-Cups — vollständig bezahlt von unseren Werbekunden. Kein Aufwand, keine Kosten für euch.</div>
+        <div class="pos-card-tag">Gratis</div>
+      </div>
+      <div class="pos-card">
+        <div class="pos-card-icon">🎯</div>
+        <div class="pos-card-title">Passende Kampagnen</div>
+        <div class="pos-card-desc">Wir wählen nur Kampagnen, die zu eurer Location passen. Keine unpassende Werbung — nur Marken, die zu eurer Kundschaft passen.</div>
+        <div class="pos-card-tag">Kuratiert</div>
+      </div>
+      <div class="pos-card">
+        <div class="pos-card-icon">📊</div>
+        <div class="pos-card-title">Einfache Abwicklung</div>
+        <div class="pos-card-desc">Lieferung direkt zu euch. Ihr verteilt die Cups über euren normalen Betrieb. Kein extra Aufwand, keine Berichtspflicht.</div>
+        <div class="pos-card-tag">Unkompliziert</div>
+      </div>
+    </div>
+
+    <!-- REGISTRIERUNGSFORMULAR -->
+    <div class="pos-form-wrap reveal-delay">
+      <h3 class="pos-form-title">Jetzt als POS-Partner<br><em>registrieren.</em></h3>
+      <p class="pos-form-sub">Wir melden uns innerhalb von 48 Stunden und prüfen ob euer Standort zu unserem Netzwerk passt. Kein Vertrag, keine Mindestlaufzeit.</p>
+      <form class="pos-form" action="mailto:info@brandilla.de" method="post" enctype="text/plain">
+        <div>
+          <label class="pos-label">Name des Betriebs *</label>
+          <input type="text" class="pos-input" placeholder="Bäckerei Müller" required>
+        </div>
+        <div>
+          <label class="pos-label">Art des Betriebs *</label>
+          <select class="pos-select pos-input" required>
+            <option value="" disabled selected>Bitte wählen...</option>
+            <option>Bäckerei</option>
+            <option>Café / Coffee Shop</option>
+            <option>Bistro / Imbiss</option>
+            <option>Supermarkt / REWE / Edeka</option>
+            <option>Tankstelle</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div>
+          <label class="pos-label">Ansprechpartner *</label>
+          <input type="text" class="pos-input" placeholder="Max Mustermann" required>
+        </div>
+        <div>
+          <label class="pos-label">Telefon *</label>
+          <input type="tel" class="pos-input" placeholder="+49 ..." required>
+        </div>
+        <div>
+          <label class="pos-label">E-Mail *</label>
+          <input type="email" class="pos-input" placeholder="info@bäckerei.de" required>
+        </div>
+        <div>
+          <label class="pos-label">Straße & Hausnummer *</label>
+          <input type="text" class="pos-input" placeholder="Hauptstr. 12" required>
+        </div>
+        <div>
+          <label class="pos-label">PLZ *</label>
+          <input type="text" class="pos-input" placeholder="10115" required>
+        </div>
+        <div>
+          <label class="pos-label">Stadt *</label>
+          <input type="text" class="pos-input" placeholder="Berlin" required>
+        </div>
+        <div>
+          <label class="pos-label">Tägliche Kunden (ca.)</label>
+          <select class="pos-select pos-input">
+            <option value="" disabled selected>Bitte wählen...</option>
+            <option>Unter 50</option>
+            <option>50–150</option>
+            <option>150–300</option>
+            <option>Über 300</option>
+          </select>
+        </div>
+        <div>
+          <label class="pos-label">Bereits Coffee-to-go im Angebot?</label>
+          <select class="pos-select pos-input">
+            <option value="" disabled selected>Bitte wählen...</option>
+            <option>Ja, mit eigenem Becher</option>
+            <option>Ja, mit fremden Bechern</option>
+            <option>Nein, noch nicht</option>
+          </select>
+        </div>
+        <div class="full">
+          <label class="pos-label">Anmerkungen (optional)</label>
+          <textarea class="pos-textarea pos-input" placeholder="Besonderheiten eures Standorts, Fragen, etc."></textarea>
+        </div>
+        <div class="pos-checkbox-row">
+          <input type="checkbox" class="pos-checkbox" id="dsgvo" required>
+          <label class="pos-checkbox-label" for="dsgvo">Ich stimme zu, dass meine Daten zur Bearbeitung dieser Anfrage gespeichert werden. Weitere Infos in der <a href="datenschutz.html" style="color:var(--pink)">Datenschutzerklärung</a>.</label>
+        </div>
+        <button type="submit" class="pos-submit">Registrierung absenden →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <div class="final-cta-title">Zwei Wege.<br><em>Ein Becher.</em></div>
+  <p class="final-cta-sub">Ob Shop oder POS-Netzwerk — wir finden das Modell das zu euch passt.</p>
+  <div class="final-cta-btns">
+    <a href="https://shop.brandilla.de" target="_blank" class="btn-hero-primary">☕ Zum Cup-Shop →</a>
+    <a href="#pos-partner" class="btn-hero-outline">📍 POS-Partner werden →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">brandilla</div>
+      <div class="footer-tagline">TakeAway Marketing neu gedacht. Für Marken. Und für die Menschen dahinter dem Tresen.</div>
+    </div>
+    <div class="footer-col">
+      <h4>Produkte</h4>
+      <ul>
+        <li><a href="produkte.html">Coffee Cup</a></li>
+        <li><a href="https://shop.brandilla.de" target="_blank">Cup Shop</a></li>
+        <li><a href="partner.html">Partner werden</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Wissen</h4>
+      <ul>
+        <li><a href="kampagnen.html">Kampagnen</a></li>
+        <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+        <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="kontakt.html">Kampagne anfragen</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2016–2026 brandilla UG · Berlin</div>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="https://www.youtube.com/@marlon_brandilla" target="_blank">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+if (cursor && ring) {
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX - 5 + 'px';
+    cursor.style.top = e.clientY - 5 + 'px';
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  });
+}
+document.querySelectorAll('a,button').forEach(el => {
+  el.style.cursor = 'none';
+});
+
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal, .reveal-delay');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
