@@ -243,11 +243,11 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
 
 /* FLOAT MARLON */
 .mf{position:fixed;bottom:32px;right:32px;z-index:200}
-.mfb{background:var(--dark);border:1px solid rgba(229,12,125,.2);padding:14px 18px;max-width:190px;position:absolute;bottom:60px;right:0;opacity:0;pointer-events:none;transform:translateY(8px);transition:all .3s}
-.mfb p{font-size:12px;color:rgba(247,242,232,.7);line-height:1.55;font-weight:300}
-.mf:hover .mfb{opacity:1;pointer-events:auto;transform:translateY(0)}
-.mfbtn{width:50px;height:50px;background:var(--pink);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:none;transition:all .25s;margin-left:auto;box-shadow:0 6px 24px rgba(229,12,125,.4)}
-.mfbtn:hover{transform:scale(1.1) rotate(6deg)}
+
+
+
+
+
 
 /* REVEAL */
 .r{opacity:0;transform:translateY(30px);transition:all .9s cubic-bezier(.16,1,.3,1)}
@@ -442,7 +442,6 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
   </a>
 </div>
 <div class="mf">
-  <div class="mfb"><p>Kein Skip-Button. Kein Algorithmus. Nur deine Marke. 🦍</p></div>
   <div class="mfbtn">🦍</div>
 </div>
 
@@ -789,13 +788,7 @@ if(bars.length)bo.observe(bars[0].parentElement);
 <script>
 // Gorilla Float Popup
 (function() {
-  const btn = document.querySelector('.marlon-float-btn, .mfbtn');
-  const popup = document.getElementById('marlonPopup');
-  if (!btn || !popup) return;
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    popup.classList.toggle('open');
-  });
+  const btn = document.querySelector('.marlon-float-btn, );
   document.addEventListener('click', function(e) {
     if (!popup.contains(e.target) && !btn.contains(e.target)) {
       popup.classList.remove('open');

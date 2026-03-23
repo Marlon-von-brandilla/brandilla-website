@@ -86,9 +86,9 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
 .footer-social a:hover { color: var(--pink); }
 
 .marlon-float { position: fixed; bottom: 32px; right: 32px; z-index: 200; }
-.marlon-float-bubble { background: var(--dark); border: 1px solid rgba(229,12,125,0.2); padding: 14px 18px; max-width: 200px; margin-bottom: 10px; position: absolute; bottom: 62px; right: 0; opacity: 0; pointer-events: none; transform: translateY(8px); transition: all 0.3s; }
-.marlon-float-bubble p { font-size: 12px; color: rgba(247,242,232,0.7); line-height: 1.6; font-weight: 300; }
-.marlon-float:hover .marlon-float-bubble { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+
+.marlon-float:hover 
 .marlon-float-btn { width: 60px; height: 60px; background: transparent; display: flex; align-items: center; justify-content: center; cursor: none; transition: all 0.25s; margin-left: auto; box-shadow: 0 8px 28px rgba(229,12,125,0.35); border-radius: 50%; overflow: hidden; }
 .marlon-float-btn:hover { transform: scale(1.08) rotate(5deg); }
 
@@ -224,7 +224,6 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   </a>
 </div>
 <div class="marlon-float">
-  <div class="marlon-float-bubble"><p>Ich freu mich auf dich als Gast! 🎙️</p></div>
   <div class="marlon-float-btn"><img src="marlon-float.png" alt="Marlon" style="width:60px;height:60px;object-fit:cover"></div>
 </div>
 
@@ -361,13 +360,7 @@ if ('IntersectionObserver' in window) {
 <script>
 // Gorilla Float Popup
 (function() {
-  const btn = document.querySelector('.marlon-float-btn, .mfbtn');
-  const popup = document.getElementById('marlonPopup');
-  if (!btn || !popup) return;
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    popup.classList.toggle('open');
-  });
+  const btn = document.querySelector('.marlon-float-btn, );
   document.addEventListener('click', function(e) {
     if (!popup.contains(e.target) && !btn.contains(e.target)) {
       popup.classList.remove('open');
