@@ -356,10 +356,17 @@ if ('IntersectionObserver' in window) {
 }
 
 </script>
+
 <script>
 // Gorilla Float Popup
 (function() {
-  const btn = document.querySelector('.marlon-float-btn, );
+  var btn = document.querySelector('.marlon-float-btn, .mfbtn');
+  var popup = document.getElementById('marlonPopup');
+  if (!btn || !popup) return;
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    popup.classList.toggle('open');
+  });
   document.addEventListener('click', function(e) {
     if (!popup.contains(e.target) && !btn.contains(e.target)) {
       popup.classList.remove('open');

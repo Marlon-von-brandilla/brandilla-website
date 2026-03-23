@@ -457,7 +457,7 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
   </a>
 </div>
 <div class="mf">
-  <div class="mfbtn">🦍</div>
+  <div class="mfbtn"><img src="marlon-float.png" alt="brandilla" style="width:60px;height:60px;object-fit:cover;border-radius:50%"></div>
 </div>
 
 <nav>
@@ -800,10 +800,17 @@ const bo=new IntersectionObserver(es=>{
 },{threshold:.5});
 if(bars.length)bo.observe(bars[0].parentElement);
 </script>
+
 <script>
 // Gorilla Float Popup
 (function() {
-  const btn = document.querySelector('.marlon-float-btn, .mfbtn');
+  var btn = document.querySelector('.marlon-float-btn, .mfbtn');
+  var popup = document.getElementById('marlonPopup');
+  if (!btn || !popup) return;
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    popup.classList.toggle('open');
+  });
   document.addEventListener('click', function(e) {
     if (!popup.contains(e.target) && !btn.contains(e.target)) {
       popup.classList.remove('open');
