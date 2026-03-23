@@ -41,10 +41,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 56px;d
 .nb-i{width:34px;height:34px;background:var(--pink);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:17px}
 .nb-n{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--cream)}
 .nb-sub{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.3);margin-left:4px}
-.nl{display:flex;align-items:center;gap:28px;list-style:none}
-.nl a{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,.45);text-decoration:none;transition:color .2s}
-.nl a:hover{color:var(--cream)}
-.nl .cta{background:var(--pink)!important;color:var(--cream)!important;padding:9px 20px}
+.nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,.55);text-decoration:none;transition:color .2s;cursor:none;white-space:nowrap}
+.nav-links a:hover{color:#F7F2E8}
+.nav-cta{background:#E50C7D!important;color:#F7F2E8!important;padding:9px 22px!important}
 
 /* HERO */
 .hero{min-height:100vh;background:var(--dark);display:grid;grid-template-columns:1fr 1fr;padding-top:68px;position:relative;overflow:hidden}
@@ -207,7 +208,7 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
 .fsoc a:hover{color:var(--pink)}
 
 @media(max-width:900px){
-  nav{padding:0 24px}.nl{display:none}
+  nav{padding:0 24px}.nav-links{display:none}
   .hero{grid-template-columns:1fr}.hr{display:none}.hl{padding:56px 24px}
   .konfigurator{padding:60px 24px}.konfig-inner{grid-template-columns:1fr;gap:40px}
   .preview-panel{position:static}
@@ -338,8 +339,13 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
 </div>
 
 <!-- KONFIGURATOR -->
+<!-- Three.js 3D Cup Designer -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <section class="konfigurator" id="konfigurator">
   <div class="konfig-inner">
+
+    <!-- LINKE SPALTE: Controls -->
     <div class="konfig-form">
       <div>
         <div class="snum r">01 — Konfigurator</div>
@@ -349,128 +355,95 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
       <!-- GRÖSSE -->
       <div class="form-block r">
         <div class="form-label">Größe wählen</div>
-        <div class="size-grid">
-          <div class="size-opt" onclick="selectSize(this,'4oz','0,1l','Espresso, Ristretto')">
-            <div class="size-name">4oz</div>
-            <div class="size-ml">0,1 Liter</div>
-            <div class="size-use">Espresso</div>
+        <div class="size-cards-3d">
+          <div class="size-card-3d" data-size="klein" onclick="selectSize3D('klein', this)">
+            <div class="sc-oz">4oz</div>
+            <div class="sc-label">Klein</div>
+            <div class="sc-desc">0,1l · Espresso</div>
           </div>
-          <div class="size-opt selected" onclick="selectSize(this,'8oz','0,2l','Cappuccino, Latte')">
-            <div class="size-name">8oz</div>
-            <div class="size-ml">0,2 Liter</div>
-            <div class="size-use">Cappuccino</div>
+          <div class="size-card-3d active" data-size="medium" onclick="selectSize3D('medium', this)">
+            <div class="sc-oz">8oz</div>
+            <div class="sc-label">Medium</div>
+            <div class="sc-desc">0,2l · Cappuccino</div>
           </div>
-          <div class="size-opt" onclick="selectSize(this,'12oz','0,3l','Latte, Americano')">
-            <div class="size-name">12oz</div>
-            <div class="size-ml">0,3 Liter</div>
-            <div class="size-use">Latte</div>
+          <div class="size-card-3d" data-size="gross" onclick="selectSize3D('gross', this)">
+            <div class="sc-oz">12oz</div>
+            <div class="sc-label">Groß</div>
+            <div class="sc-desc">0,3l · Latte</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FARBE & DESIGN -->
+      <div class="form-block rd">
+        <div class="form-label">Farbe & Design</div>
+        <div class="color-swatches">
+          <div class="color-swatch-3d active" data-color="#E50C7D" onclick="setCupColor3D(this)" style="background:#E50C7D"></div>
+          <div class="color-swatch-3d" data-color="#1C1812" onclick="setCupColor3D(this)" style="background:#1C1812"></div>
+          <div class="color-swatch-3d" data-color="#FFFFFF" onclick="setCupColor3D(this)" style="background:#FFFFFF;border:2px solid #ddd"></div>
+          <div class="color-swatch-3d" data-color="#1E3A5F" onclick="setCupColor3D(this)" style="background:#1E3A5F"></div>
+          <div class="color-swatch-3d" data-color="#2D8C3C" onclick="setCupColor3D(this)" style="background:#2D8C3C"></div>
+          <div class="color-swatch-3d" data-color="#F5A623" onclick="setCupColor3D(this)" style="background:#F5A623"></div>
+        </div>
+        <input type="text" id="cupText3D" placeholder="Text auf dem Cup (z.B. Firmenname)..." maxlength="40"
+          style="width:100%;padding:12px 16px;border:1px solid var(--border);background:var(--accent);font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;margin-bottom:12px;transition:border-color .2s"
+          oninput="updateCupText3D()" onfocus="this.style.borderColor='var(--pink)'" onblur="this.style.borderColor='var(--border)'">
+        <div class="konfigDesignDrop" id="konfigDropZone"
+          onclick="document.getElementById('konfigDesignUpload').click()"
+          ondragover="event.preventDefault();this.style.borderColor='var(--pink)'"
+          ondragleave="this.style.borderColor=''"
+          ondrop="event.preventDefault();this.style.borderColor='';handleKonfigDrop3D(event)">
+          <input type="file" id="konfigDesignUpload" accept="image/*,.pdf" style="display:none" onchange="handleKonfigDesign3D(this)">
+          <div id="konfigUploadLabel">
+            <div style="font-size:28px;margin-bottom:8px">📤</div>
+            <div style="font-size:13px;font-weight:500;color:var(--dark)">Logo oder Design hochladen</div>
+            <div style="font-size:11px;color:var(--warm-gray);margin-top:4px">PNG, JPG, PDF · Direkte Vorschau auf dem Cup</div>
           </div>
         </div>
       </div>
 
       <!-- MENGE -->
       <div class="form-block rd">
-        <div class="form-label">Menge wählen</div>
-        <div class="menge-grid">
-          <div class="menge-opt" onclick="selectMenge(this,500,390)">
-            <div class="menge-num">500</div>
-            <div class="menge-preis">ab 390 €</div>
-          </div>
-          <div class="menge-opt selected" onclick="selectMenge(this,1000,690)">
-            <div class="menge-num">1.000</div>
-            <div class="menge-preis">ab 690 €</div>
-          </div>
-          <div class="menge-opt" onclick="selectMenge(this,5000,2900)">
-            <div class="menge-num">5.000</div>
-            <div class="menge-preis">ab 2.900 €</div>
-          </div>
-          <div class="menge-opt" onclick="selectMenge(this,10000,4990)">
-            <div class="menge-num">10.000</div>
-            <div class="menge-preis">ab 4.990 €</div>
-          </div>
+        <div class="form-label">Menge</div>
+        <div class="qty-btns-3d">
+          <div class="qty-btn-3d active" onclick="selectQty3D(500, this)">500</div>
+          <div class="qty-btn-3d" onclick="selectQty3D(1000, this)">1.000</div>
+          <div class="qty-btn-3d" onclick="selectQty3D(5000, this)">5.000</div>
+          <div class="qty-btn-3d" onclick="selectQty3D(10000, this)">10.000</div>
         </div>
-        <div style="font-size:11px;color:var(--warm-gray);margin-top:8px;font-weight:300">Min. 500 · Max. 50.000 Stück · Individuelle Mengen auf Anfrage</div>
+        <input type="number" id="qtyInput3D" value="500" min="500" max="50000" step="100"
+          style="width:100%;padding:12px 16px;border:1px solid var(--border);background:var(--accent);font-family:'Jost',sans-serif;font-size:15px;font-weight:600;outline:none;transition:border-color .2s"
+          oninput="selectQtyInput3D(this.value)" onfocus="this.style.borderColor='var(--pink)'" onblur="this.style.borderColor='var(--border)'">
+        <div style="font-size:11px;color:var(--warm-gray);margin-top:6px;font-weight:300">Min. 500 · Max. 50.000 · Individuelle Mengen auf Anfrage</div>
       </div>
 
-      <!-- DESIGN UPLOAD -->
-      <div class="form-block rd">
-        <div class="form-label">Design hochladen</div>
-        <div class="upload-area" id="uploadArea">
-          <div class="upload-icon">📤</div>
-          <div class="upload-label">Logo oder Design hochladen</div>
-          <div class="upload-sub">
-            Drag & Drop oder klicken<br>
-            PNG, JPG, PDF, AI · Max. 50 MB<br>
-            Mindestauflösung 300 dpi
-          </div>
-          <input type="file" accept=".png,.jpg,.pdf,.ai" style="display:none" id="fileInput">
-          <div class="upload-btn" onclick="document.getElementById('fileInput').click()">
-            Datei auswählen →
-          </div>
+      <!-- PREIS BAR -->
+      <div class="konfig-price-bar rd">
+        <div>
+          <div class="kp-label">Stückpreis (netto)</div>
+          <div class="kp-value" id="konfigPriceUnit">0,245 €</div>
         </div>
-        <a href="#" style="display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--warm-gray);text-decoration:none;margin-top:12px;transition:color .2s">
-          📄 Druckvorlage herunterladen
-        </a>
+        <div style="text-align:right">
+          <div class="kp-label">Gesamtpreis (brutto)</div>
+          <div class="kp-value" id="konfigPriceTotal">145 €</div>
+        </div>
       </div>
+
+      <a href="#bestellung" class="bp" style="width:100%;justify-content:center;margin-top:16px">
+        Jetzt bestellen →
+      </a>
     </div>
 
-    <!-- PREVIEW PANEL -->
-    <div class="preview-panel rd">
-      <div class="preview-card">
-        <div class="preview-label">Live-Vorschau</div>
-        <div class="preview-cup">
-          <svg viewBox="0 0 200 260" width="200" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 20px 40px rgba(229,12,125,0.2))">
-            <!-- Cup body -->
-            <path d="M35 48 L22 232 Q21 244 34 244 L166 244 Q179 244 178 232 L165 48 Z" fill="rgba(247,242,232,0.07)" stroke="rgba(247,242,232,0.25)" stroke-width="1.5"/>
-            <!-- Cup highlight left -->
-            <path d="M38 55 L27 220" stroke="rgba(247,242,232,0.08)" stroke-width="6" stroke-linecap="round"/>
-            <!-- Print area (label zone) -->
-            <path d="M40 95 L160 95 L168 185 L32 185 Z" fill="rgba(229,12,125,0.12)" stroke="rgba(229,12,125,0.35)" stroke-width="1"/>
-            <!-- Logo text in print area -->
-            <text x="100" y="138" font-family="'Playfair Display', serif" font-size="18" fill="rgba(229,12,125,0.8)" text-anchor="middle" font-style="italic" id="previewText">brandilla</text>
-            <text x="100" y="158" font-family="'Jost', sans-serif" font-size="8" fill="rgba(247,242,232,0.3)" text-anchor="middle" letter-spacing="3">DEIN LOGO HIER</text>
-            <!-- Cup rim top -->
-            <ellipse cx="100" cy="48" rx="65" ry="13" fill="rgba(247,242,232,0.05)" stroke="rgba(247,242,232,0.3)" stroke-width="1.5"/>
-            <!-- Cup rim inner -->
-            <ellipse cx="100" cy="48" rx="58" ry="10" fill="none" stroke="rgba(247,242,232,0.08)" stroke-width="1"/>
-            <!-- Cup bottom -->
-            <ellipse cx="100" cy="240" rx="44" ry="7" fill="rgba(247,242,232,0.04)" stroke="rgba(247,242,232,0.1)" stroke-width="1"/>
-            <!-- Steam lines -->
-            <path d="M78 28 Q82 18 78 10" stroke="rgba(247,242,232,0.15)" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M100 24 Q104 14 100 6" stroke="rgba(247,242,232,0.15)" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <path d="M122 28 Q126 18 122 10" stroke="rgba(247,242,232,0.15)" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <!-- Brandilla watermark bottom -->
-            <text x="100" y="230" font-family="'Jost', sans-serif" font-size="7" fill="rgba(247,242,232,0.08)" text-anchor="middle" letter-spacing="2">BRANDILLA · BIO CUP</text>
-          </svg>
-        </div>
-        <div class="preview-specs">
-          <div class="spec-row">
-            <span class="spec-key">Größe</span>
-            <span class="spec-val" id="prevSize">8oz · 0,2l</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Menge</span>
-            <span class="spec-val" id="prevMenge">1.000 Stück</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Lieferzeit</span>
-            <span class="spec-val">3–4 Wochen</span>
-          </div>
-          <div class="spec-row">
-            <span class="spec-key">Preis</span>
-            <span class="spec-val price" id="prevPrice">ab 690 €</span>
-          </div>
-        </div>
-        <div class="preview-cta">
-          <a href="#bestellung" class="bp" style="width:100%;justify-content:center">
-            Jetzt bestellen →
-          </a>
-          <div style="font-size:10px;letter-spacing:1px;color:rgba(247,242,232,.2);text-align:center;margin-top:10px;font-weight:300">Kostenlose Druckdaten-Prüfung inklusive</div>
+    <!-- RECHTE SPALTE: 3D Viewer -->
+    <div class="preview-panel">
+      <div class="konfig-viewer-wrap">
+        <div id="cupViewer">
+          <canvas id="cup-canvas"></canvas>
+          <div class="viewer-hint">🖱 Ziehen zum Drehen · Scrollen zum Zoomen</div>
         </div>
       </div>
-
-      <!-- VORTEILE -->
-      <div style="margin-top:16px;display:flex;flex-direction:column;gap:0;border:1px solid var(--border)">
+      <!-- Vorteile -->
+      <div style="display:flex;flex-direction:column;gap:0;border:1px solid var(--border);margin-top:2px">
         <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid var(--border)">
           <span style="font-size:16px">🌱</span>
           <span style="font-size:13px;color:var(--warm-gray);font-weight:300">100% plastikfrei & kompostierbar</span>
@@ -484,11 +457,12 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
           <span style="font-size:13px;color:var(--warm-gray);font-weight:300">Kostenlose Druckdaten-Prüfung</span>
         </div>
         <div style="display:flex;align-items:center;gap:14px;padding:16px 20px">
-          <span style="font-size:16px">📦</span>
-          <span style="font-size:13px;color:var(--warm-gray);font-weight:300">3–4 Wochen Lieferzeit</span>
+          <span style="font-size:16px">↻</span>
+          <span style="font-size:13px;color:var(--warm-gray);font-weight:300">3D-Cup drehen & zoomen</span>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -499,27 +473,61 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
     <div class="stitle r">0,2l Bio-<em>Cups</em></div>
     <div class="r" style="margin-top:8px;font-size:15px;color:var(--warm-gray);font-weight:300">Alle Preise zzgl. MwSt. · Inkl. 4-farbigem Druck</div>
 
-    <table class="preise-table rd">
+    <!-- Größen-Tabs -->
+    <div style="display:flex;gap:2px;margin-bottom:2px" id="sizeTabs">
+      <button onclick="switchSizeTab('klein')" id="tab-klein" style="flex:1;padding:12px;background:rgba(28,24,18,0.06);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:var(--warm-gray)">4oz · 0,1l</button>
+      <button onclick="switchSizeTab('medium')" id="tab-medium" style="flex:1;padding:12px;background:var(--pink);border:1px solid var(--pink);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:#F7F2E8">8oz · 0,2l ★</button>
+      <button onclick="switchSizeTab('gross')" id="tab-gross" style="flex:1;padding:12px;background:rgba(28,24,18,0.06);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:var(--warm-gray)">12oz · 0,3l</button>
+    </div>
+
+    <table class="preise-table rd" id="preiseTableShop">
       <thead>
         <tr>
           <th>Menge</th>
-          <th>Preis gesamt</th>
-          <th>Preis pro Stück</th>
+          <th>Preis / Stück (netto)</th>
+          <th>Gesamtpreis (netto)</th>
+          <th>Gesamtpreis (brutto)</th>
           <th>Lieferzeit</th>
-          <th>Druck</th>
         </tr>
       </thead>
-      <tbody>
-        <tr><td>500</td><td class="td-price">390 €</td><td class="td-pp">0,78 € / Stk.</td><td>3–4 Wochen</td><td>4-farbig</td></tr>
-        <tr><td>1.000</td><td class="td-price">690 €</td><td class="td-pp">0,69 € / Stk.</td><td>3–4 Wochen</td><td>4-farbig</td></tr>
-        <tr class="popular-row"><td>5.000 <span class="pop-badge">Beliebt</span></td><td class="td-price">2.900 €</td><td class="td-pp">0,58 € / Stk.</td><td>3–4 Wochen</td><td>4-farbig</td></tr>
-        <tr><td>10.000</td><td class="td-price">4.990 €</td><td class="td-pp">0,50 € / Stk.</td><td>3–4 Wochen</td><td>4-farbig</td></tr>
-        <tr><td>25.000</td><td class="td-price">10.900 €</td><td class="td-pp">0,44 € / Stk.</td><td>4–5 Wochen</td><td>4-farbig</td></tr>
-        <tr><td>50.000</td><td class="td-price">19.900 €</td><td class="td-pp">0,40 € / Stk.</td><td>4–5 Wochen</td><td>4-farbig</td></tr>
+      <tbody id="preiseBodyShop">
+        <!-- Wird per JS befüllt -->
       </tbody>
     </table>
-    <div style="margin-top:16px;font-size:12px;color:var(--warm-gray);font-weight:300;line-height:2">
-      Auch als 4oz und 12oz erhältlich · Individuelle Mengen und Preise auf Anfrage · <a href="mailto:cups@brandilla.de" style="color:var(--pink);text-decoration:none">cups@brandilla.de</a>
+
+    <!-- Live Preisrechner -->
+    <div class="rd" style="background:var(--dark);padding:32px 40px;margin-top:2px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
+      <div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.3);margin-bottom:16px">Live-Kalkulation</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;font-size:14px;color:rgba(247,242,232,0.5);font-weight:300;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,0.06)">
+            <span>Preis / Stück</span><span id="calcUnit" style="color:var(--cream)">0,245 €</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;color:rgba(247,242,232,0.5);font-weight:300;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,0.06)">
+            <span>Gesamtpreis netto</span><span id="calcNetto" style="color:var(--cream)">122,50 €</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:14px;color:rgba(247,242,232,0.5);font-weight:300;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,0.06)">
+            <span>MwSt. 19%</span><span id="calcMwst" style="color:var(--cream)">23,28 €</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:16px;font-weight:600;color:var(--cream)">
+            <span>Gesamtpreis brutto</span><span id="calcBrutto" style="color:var(--pink)">145,78 €</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.3);margin-bottom:12px">Menge eingeben</div>
+        <input type="number" id="calcMenge" value="500" min="500" max="50000" step="100"
+          style="width:100%;background:rgba(247,242,232,0.06);border:1px solid rgba(247,242,232,0.15);color:#F7F2E8;padding:14px 18px;font-family:'Jost',sans-serif;font-size:18px;font-weight:600;outline:none;margin-bottom:12px"
+          oninput="updateCalc()">
+        <div style="font-size:11px;color:rgba(247,242,232,0.25);line-height:1.6">
+          Min. 500 · Max. 50.000 Stück<br>
+          Individuelle Mengen auf Anfrage: <a href="mailto:cups@brandilla.de" style="color:var(--pink)">cups@brandilla.de</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;font-size:12px;color:var(--warm-gray);font-weight:300;line-height:2">
+      Alle Preise zzgl. MwSt. · Inkl. 4-farbigem Druck · Bio-zertifiziert · plastikfrei · Made in Germany
     </div>
   </div>
 </section>
@@ -785,11 +793,289 @@ document.querySelectorAll('a,button,.size-opt,.menge-opt,.feat-card,.gallery-car
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');}),{threshold:0.1});
 document.querySelectorAll('.r,.rd').forEach(el=>obs.observe(el));
 
-let selSize='8oz · 0,2l';
-let selMenge=1000;
-let selPreis=690;
+// ── 3D CUP DESIGNER (Three.js) ──
+const CUP_SIZES = {
+  klein:  { topR: 0.75,  bottomR: 0.60, height: 1.8,  label: '4oz · 0,1l' },
+  medium: { topR: 0.95,  bottomR: 0.78, height: 2.4,  label: '8oz · 0,2l' },
+  gross:  { topR: 1.10,  bottomR: 0.90, height: 2.9,  label: '12oz · 0,3l' }
+};
 
-const mengePreise = {500:390, 1000:690, 5000:2900, 10000:4990, 25000:10900, 50000:19900};
+let cupMesh = null, cupGroup = null;
+let cupScene, cupCamera, cupRenderer;
+let autoRotate = true, autoRotateTimeout = null;
+let uploadedTexture = null;
+let currentCupColor3D = '#E50C7D';
+let currentCupText3D = '';
+let currentSize3D = 'medium';
+let currentQty3D = 500;
+
+(function initCupViewer() {
+  const container = document.getElementById('cupViewer');
+  const canvas = document.getElementById('cup-canvas');
+  if (!container || !canvas || !window.THREE) return;
+
+  cupRenderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  cupRenderer.setPixelRatio(window.devicePixelRatio);
+  cupRenderer.setClearColor(0x000000, 0);
+
+  cupScene = new THREE.Scene();
+  cupCamera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+  cupCamera.position.set(0, 1.5, 6);
+  cupCamera.lookAt(0, 1.2, 0);
+
+  cupScene.add(new THREE.AmbientLight(0xffffff, 0.7));
+  const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+  dir.position.set(3, 5, 4);
+  cupScene.add(dir);
+  const back = new THREE.DirectionalLight(0xffffff, 0.3);
+  back.position.set(-2, 3, -3);
+  cupScene.add(back);
+
+  cupGroup = new THREE.Group();
+  cupScene.add(cupGroup);
+
+  buildCup3D('medium');
+
+  function resize() {
+    const w = container.offsetWidth;
+    const h = container.offsetHeight || 420;
+    cupRenderer.setSize(w, h);
+    cupCamera.aspect = w / h;
+    cupCamera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  (function animate() {
+    requestAnimationFrame(animate);
+    if (autoRotate && cupGroup) cupGroup.rotation.y += 0.005;
+    cupRenderer.render(cupScene, cupCamera);
+  })();
+
+  // Mouse drag
+  let isDragging = false, prevX = 0, prevY = 0;
+  container.addEventListener('mousedown', e => { isDragging = true; prevX = e.clientX; prevY = e.clientY; autoRotate = false; clearTimeout(autoRotateTimeout); });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    cupGroup.rotation.y += (e.clientX - prevX) * 0.008;
+    cupGroup.rotation.x = Math.max(-0.8, Math.min(0.8, cupGroup.rotation.x + (e.clientY - prevY) * 0.008));
+    prevX = e.clientX; prevY = e.clientY;
+  });
+  window.addEventListener('mouseup', () => { if (isDragging) { isDragging = false; autoRotateTimeout = setTimeout(() => autoRotate = true, 2000); } });
+  container.addEventListener('wheel', e => { e.preventDefault(); cupCamera.position.z = Math.max(3, Math.min(12, cupCamera.position.z + e.deltaY * 0.005)); }, { passive: false });
+
+  // Touch
+  let tpx = 0, tpy = 0;
+  container.addEventListener('touchstart', e => { if (e.touches.length === 1) { tpx = e.touches[0].clientX; tpy = e.touches[0].clientY; autoRotate = false; } }, { passive: true });
+  container.addEventListener('touchmove', e => {
+    if (e.touches.length !== 1) return;
+    cupGroup.rotation.y += (e.touches[0].clientX - tpx) * 0.008;
+    cupGroup.rotation.x = Math.max(-0.8, Math.min(0.8, cupGroup.rotation.x + (e.touches[0].clientY - tpy) * 0.008));
+    tpx = e.touches[0].clientX; tpy = e.touches[0].clientY;
+  }, { passive: true });
+  container.addEventListener('touchend', () => { autoRotateTimeout = setTimeout(() => autoRotate = true, 2000); }, { passive: true });
+})();
+
+function buildCup3D(size) {
+  if (!window.THREE || !cupGroup) return;
+  if (cupMesh) { cupGroup.remove(cupMesh); cupMesh.geometry.dispose(); cupMesh.material.dispose(); }
+  const s = CUP_SIZES[size];
+  const geo = new THREE.CylinderGeometry(s.topR, s.bottomR, s.height, 64, 1, true);
+  const tex = uploadedTexture || createDefaultTexture3D();
+  const mat = new THREE.MeshStandardMaterial({ map: tex, side: THREE.DoubleSide, roughness: 0.4, metalness: 0.05 });
+  cupMesh = new THREE.Mesh(geo, mat);
+  cupMesh.position.y = s.height / 2;
+  cupGroup.add(cupMesh);
+  // Bottom cap
+  const bot = new THREE.Mesh(new THREE.CircleGeometry(s.bottomR, 64), new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }));
+  bot.rotation.x = -Math.PI / 2;
+  bot.position.y = -s.height / 2;
+  cupMesh.add(bot);
+  // Inner wall
+  const inn = new THREE.Mesh(new THREE.CylinderGeometry(s.topR * 0.97, s.bottomR * 0.97, s.height * 0.99, 64, 1, true), new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.BackSide, roughness: 0.6 }));
+  cupMesh.add(inn);
+  updateKonfigPrice();
+}
+
+function createDefaultTexture3D() {
+  const cv = document.createElement('canvas');
+  cv.width = 1024; cv.height = 512;
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, 1024, 512);
+  ctx.fillStyle = currentCupColor3D || '#E50C7D';
+  ctx.fillRect(0, 140, 1024, 230);
+  const label = currentCupText3D || 'brandilla';
+  const fs = Math.min(72, 900 / label.length);
+  ctx.fillStyle = currentCupColor3D === '#FFFFFF' ? '#1C1812' : '#FFFFFF';
+  ctx.font = `bold ${Math.round(fs)}px Jost, Arial, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.fillText(label, 512, 275);
+  const tex = new THREE.CanvasTexture(cv);
+  tex.wrapS = THREE.RepeatWrapping;
+  return tex;
+}
+
+function selectSize3D(size, el) {
+  currentSize3D = size;
+  document.querySelectorAll('.size-card-3d').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  buildCup3D(size);
+  // Sync Preistabelle
+  switchSizeTab(size === 'klein' ? 'klein' : size === 'gross' ? 'gross' : 'medium');
+}
+
+function setCupColor3D(el) {
+  currentCupColor3D = el.dataset.color;
+  document.querySelectorAll('.color-swatch-3d').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  if (!uploadedTexture) buildCup3D(currentSize3D);
+}
+
+function updateCupText3D() {
+  currentCupText3D = document.getElementById('cupText3D').value;
+  if (!uploadedTexture) buildCup3D(currentSize3D);
+}
+
+function selectQty3D(qty, el) {
+  currentQty3D = qty;
+  document.querySelectorAll('.qty-btn-3d').forEach(b => b.classList.remove('active'));
+  if (el) el.classList.add('active');
+  const inp = document.getElementById('qtyInput3D');
+  if (inp) inp.value = qty;
+  updateKonfigPrice();
+  updateCalc();
+}
+
+function selectQtyInput3D(val) {
+  currentQty3D = Math.max(500, Math.min(50000, parseInt(val) || 500));
+  document.querySelectorAll('.qty-btn-3d').forEach(b => b.classList.remove('active'));
+  updateKonfigPrice();
+  updateCalc();
+}
+
+function updateKonfigPrice() {
+  const sizeKey = currentSize3D;
+  const pp = getStaffelPrice(currentQty3D, sizeKey);
+  const brutto = pp * currentQty3D * 1.19;
+  if (document.getElementById('konfigPriceUnit')) document.getElementById('konfigPriceUnit').textContent = eurUnit(pp);
+  if (document.getElementById('konfigPriceTotal')) document.getElementById('konfigPriceTotal').textContent = eur(brutto) + ' brutto';
+}
+
+function applyImageToCup3D(img, name) {
+  const cv = document.createElement('canvas');
+  cv.width = 1024; cv.height = 512;
+  cv.getContext('2d').drawImage(img, 0, 0, 1024, 512);
+  uploadedTexture = new THREE.CanvasTexture(cv);
+  uploadedTexture.wrapS = THREE.RepeatWrapping;
+  buildCup3D(currentSize3D);
+  document.getElementById('konfigUploadLabel').innerHTML = `<div style="font-size:28px;margin-bottom:8px">✅</div><div style="font-size:13px;font-weight:600;color:var(--dark)">${name}</div><div style="font-size:11px;color:var(--pink);margin-top:4px;cursor:pointer" onclick="resetKonfigDesign3D()">Ändern</div>`;
+}
+
+function handleKonfigDesign3D(input) {
+  const file = input.files?.[0];
+  if (!file || !file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = e => { const img = new Image(); img.onload = () => applyImageToCup3D(img, file.name); img.src = e.target.result; };
+  reader.readAsDataURL(file);
+}
+
+function handleKonfigDrop3D(e) {
+  const file = e.dataTransfer?.files?.[0];
+  if (file) handleKonfigDesign3D({ files: [file] });
+}
+
+function resetKonfigDesign3D() {
+  uploadedTexture = null;
+  document.getElementById('konfigDesignUpload').value = '';
+  document.getElementById('konfigUploadLabel').innerHTML = '<div style="font-size:28px;margin-bottom:8px">📤</div><div style="font-size:13px;font-weight:500;color:var(--dark)">Logo oder Design hochladen</div><div style="font-size:11px;color:var(--warm-gray);margin-top:4px">PNG, JPG, PDF · Direkte Vorschau auf dem Cup</div>';
+  buildCup3D(currentSize3D);
+}
+let selPreis=0;
+
+// ── Originale Staffelpreise (Preis pro Stück in EUR netto) ──
+const PRICE_TABLE = {
+  500:   { klein: 0.225, medium: 0.245, gross: 0.265 },
+  1000:  { klein: 0.210, medium: 0.230, gross: 0.250 },
+  2000:  { klein: 0.208, medium: 0.235, gross: 0.255 },
+  3000:  { klein: 0.205, medium: 0.222, gross: 0.242 },
+  4000:  { klein: 0.200, medium: 0.220, gross: 0.240 },
+  5000:  { klein: 0.195, medium: 0.215, gross: 0.235 },
+  6000:  { klein: 0.192, medium: 0.212, gross: 0.232 },
+  7000:  { klein: 0.190, medium: 0.210, gross: 0.230 },
+  8000:  { klein: 0.185, medium: 0.205, gross: 0.225 },
+  9000:  { klein: 0.180, medium: 0.200, gross: 0.220 },
+  10000: { klein: 0.175, medium: 0.195, gross: 0.215 },
+  15000: { klein: 0.155, medium: 0.175, gross: 0.195 },
+  20000: { klein: 0.141, medium: 0.161, gross: 0.181 },
+  25000: { klein: 0.139, medium: 0.159, gross: 0.179 },
+  30000: { klein: 0.137, medium: 0.157, gross: 0.177 },
+  40000: { klein: 0.132, medium: 0.152, gross: 0.172 },
+  50000: { klein: 0.129, medium: 0.149, gross: 0.169 }
+};
+const STAFFELN = Object.keys(PRICE_TABLE).map(Number).sort((a,b)=>a-b);
+const DISPLAY_ROWS = [500,1000,2000,5000,10000,20000,30000,50000];
+let activeSize = 'medium';
+
+function eur(v){return v.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+function eurUnit(v){return v.toLocaleString('de-DE',{minimumFractionDigits:3,maximumFractionDigits:3})+' €';}
+
+function getStaffelPrice(qty, size) {
+  let staffel = STAFFELN[0];
+  for (const s of STAFFELN) { if (s<=qty) staffel=s; else break; }
+  return PRICE_TABLE[staffel][size];
+}
+
+function renderPriceTable(size) {
+  const tbody = document.getElementById('preiseBodyShop');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  DISPLAY_ROWS.forEach(qty => {
+    const pp = getStaffelPrice(qty, size);
+    const netto = pp * qty;
+    const brutto = netto * 1.19;
+    const isPopular = qty === 5000;
+    const tr = document.createElement('tr');
+    if (isPopular) tr.style.background = 'rgba(229,12,125,0.05)';
+    tr.innerHTML = `
+      <td style="font-family:'Playfair Display',serif;font-size:20px;color:var(--dark)">
+        ${qty.toLocaleString('de')}${isPopular?' <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--pink);color:#F7F2E8;padding:3px 8px;vertical-align:middle">Beliebt</span>':''}
+      </td>
+      <td class="td-price">${eurUnit(pp)}</td>
+      <td style="font-size:14px;color:var(--warm-gray)">${eur(netto)}</td>
+      <td style="font-size:14px;color:var(--warm-gray)">${eur(brutto)}</td>
+      <td style="font-size:13px;color:var(--warm-gray)">${qty<=10000?'3–4 Wochen':'4–5 Wochen'}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function switchSizeTab(size) {
+  activeSize = size;
+  ['klein','medium','gross'].forEach(s => {
+    const btn = document.getElementById('tab-'+s);
+    if (!btn) return;
+    if (s===size) { btn.style.background='var(--pink)'; btn.style.borderColor='var(--pink)'; btn.style.color='#F7F2E8'; }
+    else { btn.style.background='rgba(28,24,18,0.06)'; btn.style.borderColor='var(--border)'; btn.style.color='var(--warm-gray)'; }
+  });
+  renderPriceTable(size);
+  updateCalc();
+}
+
+function updateCalc() {
+  const qty = Math.max(500, Math.min(50000, parseInt(document.getElementById('calcMenge')?.value)||500));
+  const isAbo = (document.getElementById('aboTyp')?.value||'').includes('Abo');
+  const pp = getStaffelPrice(qty, activeSize) * (isAbo ? 0.95 : 1);
+  const netto = pp * qty;
+  const mwst = netto * 0.19;
+  const brutto = netto + mwst;
+  if (document.getElementById('calcUnit')) document.getElementById('calcUnit').textContent = eurUnit(pp);
+  if (document.getElementById('calcNetto')) document.getElementById('calcNetto').textContent = eur(netto);
+  if (document.getElementById('calcMwst')) document.getElementById('calcMwst').textContent = eur(mwst);
+  if (document.getElementById('calcBrutto')) document.getElementById('calcBrutto').textContent = eur(brutto);
+  if (document.getElementById('prevPrice')) document.getElementById('prevPrice').textContent = eur(brutto)+' brutto';
+}
+
+const mengePreise = {}; // Legacy — nicht mehr verwendet
 
 function selectSize(el,size,ml,use){
   document.querySelectorAll('.size-opt').forEach(o=>o.classList.remove('selected'));
@@ -887,6 +1173,16 @@ document.getElementById('fileInput').addEventListener('change', function() {
   btn.addEventListener('click', function(e) { e.stopPropagation(); popup.classList.toggle('open'); });
   document.addEventListener('click', function(e) { if (!popup.contains(e.target) && !btn.contains(e.target)) popup.classList.remove('open'); });
 })();
+<script>
+// Init Preistabelle + Kalkulation
+document.addEventListener('DOMContentLoaded', function() {
+  renderPriceTable('medium');
+  updateCalc();
+  const aboSelect = document.getElementById('aboTyp');
+  if (aboSelect) aboSelect.addEventListener('change', updateCalc);
+  const calcInput = document.getElementById('calcMenge');
+  if (calcInput) calcInput.addEventListener('input', updateCalc);
+});
 </script>
 </body>
 </html>
