@@ -431,29 +431,107 @@ tbody td:first-child{font-weight:500;color:var(--white)}
 
 <script>
 (function(){
+  /* ── Pitch Tracking v2 ── */
+  const TRACK_URL='https://brandilla-app.netlify.app/.netlify/functions/pitch-track';
   const ref=new URLSearchParams(window.location.search).get('ref');
-  const sections={};let lastSection=null;let startTime=Date.now();
-  function track(event,data){
-    if(!ref)return;
-    fetch('/.netlify/functions/pitch-track',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ref,event,...data,ts:new Date().toISOString()})}).catch(()=>{});
+  if(!ref) return initReveal();
+
+  const sections={};
+  let lastSection=null;
+  let startTime=Date.now();
+  let maxScrollDepth=0;
+  const scrollFired={25:false,50:false,75:false,100:false};
+
+  /* Device Type */
+  const device_type=window.innerWidth<768?'mobile':'desktop';
+
+  /* Referrer Source */
+  function parseReferrer(){
+    const r=(document.referrer||'').toLowerCase();
+    if(!r) return 'direct';
+    if(r.includes('linkedin')) return 'linkedin';
+    if(r.includes('mail')||r.includes('outlook')||r.includes('gmail')) return 'email';
+    return 'other';
   }
-  track('pitch_opened',{url:window.location.href,referrer:document.referrer});
-  const io=new IntersectionObserver((entries)=>{
+  const referrer_source=parseReferrer();
+  const referrer_raw=document.referrer||'';
+
+  /* Track Helper */
+  function track(event,data){
+    const payload={ref,event,device_type,referrer_source,referrer_raw,url:window.location.href,ts:new Date().toISOString(),...data};
+    if(navigator.sendBeacon){
+      navigator.sendBeacon(TRACK_URL,JSON.stringify(payload));
+    } else {
+      fetch(TRACK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(()=>{});
+    }
+  }
+
+  /* pitch_opened — einmal pro Session */
+  if(!sessionStorage.getItem('pitch_opened_'+ref)){
+    track('pitch_opened',{});
+    sessionStorage.setItem('pitch_opened_'+ref,'1');
+  }
+
+  /* Section Tracking via IntersectionObserver */
+  const sectionObs=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
         const id=e.target.id;
         if(id&&id!==lastSection){
-          if(lastSection&&sections[lastSection]){const spent=Math.round((Date.now()-sections[lastSection])/1000);track('section_leave',{section:lastSection,seconds:spent});}
-          sections[id]=Date.now();lastSection=id;track('section_enter',{section:id});
+          if(lastSection&&sections[lastSection]){
+            const spent=Math.round((Date.now()-sections[lastSection])/1000);
+            track('section_leave',{section:lastSection,seconds:spent});
+          }
+          sections[id]=Date.now();
+          lastSection=id;
+          track('section_enter',{section:id});
         }
       }
     });
   },{threshold:0.4});
-  document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
-  document.querySelectorAll('a.btn-primary,a.nav-cta').forEach(a=>{a.addEventListener('click',()=>track('cta_click',{label:a.textContent.trim(),href:a.href}));});
-  window.addEventListener('beforeunload',()=>{const total=Math.round((Date.now()-startTime)/1000);track('pitch_closed',{total_seconds:total,last_section:lastSection});});
-  const ro=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}})},{threshold:0.12});
-  document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+  document.querySelectorAll('section[id]').forEach(s=>sectionObs.observe(s));
+
+  /* Scroll Depth Tracking */
+  function checkScrollDepth(){
+    const scrollTop=window.pageYOffset||document.documentElement.scrollTop;
+    const docHeight=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)-window.innerHeight;
+    if(docHeight<=0) return;
+    const pct=Math.round(scrollTop/docHeight*100);
+    if(pct>maxScrollDepth) maxScrollDepth=pct;
+    [25,50,75,100].forEach(threshold=>{
+      if(pct>=threshold&&!scrollFired[threshold]){
+        scrollFired[threshold]=true;
+        track('scroll_depth',{scroll_depth:threshold});
+      }
+    });
+  }
+  let scrollTimer=null;
+  window.addEventListener('scroll',()=>{
+    if(scrollTimer) clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(checkScrollDepth,150);
+  },{passive:true});
+
+  /* CTA Click Tracking */
+  document.querySelectorAll('a.btn-primary,a.btn-secondary,a.nav-cta').forEach(a=>{
+    a.addEventListener('click',()=>{
+      track('cta_click',{section:lastSection,label:a.textContent.trim(),href:a.href});
+    });
+  });
+
+  /* pitch_closed on unload */
+  window.addEventListener('beforeunload',()=>{
+    const total=Math.round((Date.now()-startTime)/1000);
+    track('pitch_closed',{total_seconds:total,last_section:lastSection,scroll_depth:maxScrollDepth});
+  });
+
+  /* Reveal Animations (unchanged) */
+  function initReveal(){
+    const ro=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+  }
+  initReveal();
 })();
 </script>
 </body>
