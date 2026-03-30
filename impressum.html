@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#E50C7D">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Impressum der brandilla UG (haftungsbeschränkt) gemäß § 5 TMG. Anbieterkennung und Kontakt.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://brandilla.de/impressum">
+<title>Impressum — brandilla UG Berlin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F7F2E8;
+  --dark: #1C1812;
+  --pink: #E50C7D;
+  --warm-gray: #8A857A;
+  --light-border: rgba(28,24,18,0.1);
+  --accent-light: #FDF8EF;
+  --cream-dark: #EDE8DC;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--dark); font-family: 'Jost', sans-serif; overflow-x: hidden; cursor: none; }
+.cursor { width: 10px; height: 10px; background: var(--pink); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; mix-blend-mode: multiply; }
+.cursor-ring { width: 32px; height: 32px; border: 1px solid rgba(229,12,125,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; transform: translate(-50%,-50%); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; background: rgba(28,24,18,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(247,242,232,0.05); }
+.nav-brand { display: flex; align-items: center; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links li { display: flex; align-items: center; }
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: rgba(247,242,232,0.45); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover { color: #F7F2E8; }
+.nav-cta { background: #E50C7D !important; color: #F7F2E8 !important; padding: 9px 22px !important; }
+.nav-cta:hover { background: #c5006a !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: none; padding: 6px; background: none; border: none; z-index: 200; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: #F7F2E8; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: rgba(28,24,18,0.98); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(247,242,232,0.08); padding: 24px 32px 32px; z-index: 99; flex-direction: column; gap: 0; }
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(247,242,232,0.7); text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(247,242,232,0.06); transition: color 0.2s; font-family: 'Jost', sans-serif; font-weight: 500; cursor: none; }
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a:hover { color: #F7F2E8; }
+.nav-mobile-menu .nav-cta { margin-top: 16px; background: #E50C7D !important; color: #F7F2E8 !important; padding: 14px 24px !important; text-align: center; border-bottom: none !important; }
+@media(max-width: 768px) { .nav-hamburger { display: flex !important; } }
+@media(max-width:900px){ nav { padding: 0 24px; } .nav-links { display: none; } }
+@media(max-width:1100px){ .nav-links { gap: 20px; } .nav-links a { font-size: 10px; } }
+
+/* HERO */
+.legal-hero { padding-top: 68px; background: var(--dark); padding-bottom: 64px; }
+.legal-hero-inner { max-width: 900px; margin: 0 auto; padding: 72px 56px 0; }
+.legal-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(247,242,232,0.25); margin-bottom: 20px; }
+.legal-title { font-family: 'Playfair Display', serif; font-size: clamp(52px, 7vw, 88px); font-weight: 400; color: var(--cream); line-height: 1.0; }
+.legal-title em { font-style: italic; color: var(--pink); }
+
+/* CONTENT */
+.legal-content { max-width: 900px; margin: 0 auto; padding: 72px 56px 100px; }
+.legal-section { margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--light-border); }
+.legal-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.legal-section-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 24px; font-weight: 600; }
+.legal-h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--dark); margin-bottom: 20px; line-height: 1.3; }
+.legal-h2 em { font-style: italic; color: var(--pink); }
+.legal-p { font-size: 15px; color: var(--dark); line-height: 1.9; font-weight: 300; margin-bottom: 16px; }
+.legal-p:last-child { margin-bottom: 0; }
+.legal-p a { color: var(--pink); text-decoration: none; }
+.legal-p a:hover { text-decoration: underline; }
+.legal-address { font-size: 15px; line-height: 2.0; font-weight: 300; color: var(--dark); font-style: normal; }
+.legal-kv { display: grid; grid-template-columns: 200px 1fr; gap: 8px 24px; font-size: 15px; font-weight: 300; line-height: 1.8; }
+.legal-kv-key { color: var(--warm-gray); font-size: 12px; letter-spacing: 0.05em; display: flex; align-items: flex-start; padding-top: 3px; }
+.legal-kv-val { color: var(--dark); }
+.legal-kv-val a { color: var(--pink); text-decoration: none; }
+.legal-kv-val a:hover { text-decoration: underline; }
+
+/* FOOTER */
+footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); padding: 64px 56px 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 56px; }
+.footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 16px; }
+.footer-tagline { font-size: 13px; color: rgba(247,242,232,0.3); line-height: 1.8; font-weight: 300; max-width: 280px; }
+.footer-col h4 { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,242,232,0.2); margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul li a { font-size: 13px; color: rgba(247,242,232,0.4); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--cream); }
+.footer-bottom { border-top: 1px solid rgba(247,242,232,0.05); padding-top: 32px; display: flex; align-items: center; justify-content: space-between; }
+.footer-copy { font-size: 11px; color: rgba(247,242,232,0.2); letter-spacing: 0.05em; font-weight: 300; }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,242,232,0.2); text-decoration: none; transition: color 0.2s; }
+.footer-social a:hover { color: var(--pink); }
+.marlon-float { position: fixed; bottom: 32px; right: 32px; z-index: 200; }
+.marlon-float-btn { width: 60px; height: 60px; background: #E50C7D; display: flex; align-items: center; justify-content: center; cursor: none; transition: all 0.25s; margin-left: auto; box-shadow: 0 8px 28px rgba(229,12,125,0.35); border-radius: 50%; overflow: hidden; }
+.marlon-float-btn:hover { transform: scale(1.08) rotate(5deg); }
+.mf-popup { display: none; position: fixed; bottom: 104px; right: 32px; z-index: 91; background: #1C1812; border: 1px solid rgba(247,242,232,0.1); padding: 24px; width: 240px; box-shadow: 0 16px 48px rgba(0,0,0,0.4); animation: popupIn 0.2s ease; }
+@keyframes popupIn { from { opacity:0; transform: translateY(12px) scale(0.96); } to { opacity:1; transform: translateY(0) scale(1); } }
+.mf-popup.open { display: block; }
+.mf-popup-title { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,242,232,0.3); margin-bottom: 16px; font-family: 'Jost', sans-serif; }
+.mf-popup-btn { display: flex; align-items: center; gap: 12px; padding: 13px 16px; margin-bottom: 10px; text-decoration: none; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500; cursor: none; transition: all 0.2s; border: 1px solid rgba(247,242,232,0.08); color: rgba(247,242,232,0.8); }
+.mf-popup-btn:last-child { margin-bottom: 0; }
+.mf-popup-btn:hover { background: rgba(247,242,232,0.06); color: #F7F2E8; border-color: rgba(247,242,232,0.2); }
+.mf-popup-btn.whatsapp:hover { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.3); color: #25D366; }
+.mf-popup-close { position: absolute; top: 10px; right: 12px; font-size: 16px; color: rgba(247,242,232,0.2); cursor: none; background: none; border: none; line-height: 1; padding: 4px; transition: color 0.2s; font-family: 'Jost', sans-serif; }
+.mf-popup-close:hover { color: rgba(247,242,232,0.6); }
+@media(max-width:900px){ .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .legal-hero-inner, .legal-content { padding-left: 24px; padding-right: 24px; } .legal-kv { grid-template-columns: 1fr; gap: 2px; } .legal-kv-key { padding-top: 12px; } }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-02C7GTHDB3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-02C7GTHDB3');</script>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mf-popup" id="marlonPopup">
+  <button class="mf-popup-close" onclick="document.getElementById('marlonPopup').classList.remove('open')">✕</button>
+  <div class="mf-popup-title">Wie können wir helfen?</div>
+  <a href="kontakt.html" class="mf-popup-btn"><span style="font-size:18px">📋</span><span>Kampagne anfragen</span></a>
+  <a href="https://wa.me/491727435515" target="_blank" rel="noopener" class="mf-popup-btn whatsapp"><span style="font-size:18px">💬</span><span>WhatsApp schreiben</span></a>
+  <a href="tel:+491727435515" class="mf-popup-btn"><span style="font-size:18px">📞</span><span>+49 172 743 55 15</span></a>
+</div>
+<div class="marlon-float">
+  <div class="marlon-float-btn"><img src="marlon-float.png" alt="Marlon" style="width:60px;height:60px;object-fit:cover"></div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo-nav.png" alt="brandilla" style="height:40px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="produkte.html">Produkte</a></li>
+    <li><a href="kampagnen.html">Kampagnen</a></li>
+    <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+    <li><a href="partner.html">Partner</a></li>
+    <li><a href="https://app.brandilla.de" target="_blank" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,0.4);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F7F2E8'" onmouseout="this.style.color='rgba(247,242,232,0.4)'">Dashboard</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="produkte.html">Produkte</a>
+  <a href="kampagnen.html">Kampagnen</a>
+  <a href="gorilla-talk.html">Gorilla Talk</a>
+  <a href="preise.html">Preise</a>
+  <a href="marketing-wissen.html">Marketing-Wissen</a>
+  <a href="partner.html">Partner</a>
+  <a href="https://app.brandilla.de" target="_blank">Dashboard</a>
+  <a href="kontakt.html" class="nav-cta">Kampagne anfragen</a>
+</div>
+
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-label">Pflichtangaben</div>
+    <h1 class="legal-title">Impres<em>sum.</em></h1>
+  </div>
+</section>
+
+<main class="legal-content">
+
+  <div class="legal-section">
+    <div class="legal-section-title">§ 5 TMG — Angaben gemäß Telemediengesetz</div>
+    <h2 class="legal-h2">Anbieter</h2>
+    <address class="legal-address">
+      <strong>Brandilla UG (haftungsbeschränkt)</strong><br>
+      Großbeerenstr. 60<br>
+      10965 Berlin<br>
+      Deutschland
+    </address>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Kontakt</div>
+    <div class="legal-kv">
+      <div class="legal-kv-key">Geschäftsführer</div>
+      <div class="legal-kv-val">Sven Hanke</div>
+      <div class="legal-kv-key">Telefon</div>
+      <div class="legal-kv-val"><a href="tel:+491727435515">+49 (0) 172 743 55 15</a></div>
+      <div class="legal-kv-key">E-Mail</div>
+      <div class="legal-kv-val"><a href="mailto:info@brandilla.de">info@brandilla.de</a></div>
+      <div class="legal-kv-key">Website</div>
+      <div class="legal-kv-val"><a href="https://brandilla.de">https://brandilla.de</a></div>
+    </div>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Handelsregister</div>
+    <div class="legal-kv">
+      <div class="legal-kv-key">Registergericht</div>
+      <div class="legal-kv-val">Amtsgericht Berlin (Charlottenburg)</div>
+      <div class="legal-kv-key">Registernummer</div>
+      <div class="legal-kv-val">HRB 229716 B</div>
+    </div>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Umsatzsteuer</div>
+    <p class="legal-p">
+      Gemäß § 27a Umsatzsteuergesetz: Die Umsatzsteuer-Identifikationsnummer wird nach Erteilung durch das Finanzamt ergänzt.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Haftung für Inhalte</div>
+    <p class="legal-p">
+      Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+    </p>
+    <p class="legal-p">
+      Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Haftung für Links</div>
+    <p class="legal-p">
+      Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+    </p>
+    <p class="legal-p">
+      Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Urheberrecht</div>
+    <p class="legal-p">
+      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+    </p>
+    <p class="legal-p">
+      Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis unter <a href="mailto:info@brandilla.de">info@brandilla.de</a>.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Streitschlichtung</div>
+    <p class="legal-p">
+      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>
+    </p>
+    <p class="legal-p">
+      Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand-name">brandilla</div><div class="footer-tagline">TakeAway Marketing neu gedacht.</div></div>
+    <div class="footer-col"><h4>Produkte</h4><ul><li><a href="produkte.html">Coffee Cup</a></li><li><a href="produkte.html">Neue Medien</a></li></ul></div>
+    <div class="footer-col"><h4>Unternehmen</h4><ul><li><a href="kampagnen.html">Kampagnen</a></li><li><a href="preise.html">Preise</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+    <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">AGB</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2016–2026 brandilla UG · Berlin</div>
+    <div class="footer-social"><a href="https://www.instagram.com/brandilla_official/" target="_blank" rel="noopener">Instagram</a><a href="https://de.linkedin.com/company/brandilla" target="_blank" rel="noopener">LinkedIn</a></div>
+  </div>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+if(cursor&&ring){
+  document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX-5+'px';cursor.style.top=e.clientY-5+'px';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';});
+  document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2.5)';ring.style.transform='translate(-50%,-50%) scale(1.5)';});el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='translate(-50%,-50%) scale(1)';});});
+}
+(function(){var btn=document.querySelector('.marlon-float-btn'),popup=document.getElementById('marlonPopup');if(!btn||!popup)return;btn.addEventListener('click',function(e){e.stopPropagation();popup.classList.toggle('open');});document.addEventListener('click',function(e){if(!popup.contains(e.target)&&!btn.contains(e.target))popup.classList.remove('open');});})();
+function toggleMobileMenu(){const b=document.getElementById('navHamburger'),m=document.getElementById('navMobileMenu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+document.addEventListener('click',function(e){const b=document.getElementById('navHamburger'),m=document.getElementById('navMobileMenu');if(!b||!m)return;if(!b.contains(e.target)&&!m.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}});
+</script>
+</body>
+</html>

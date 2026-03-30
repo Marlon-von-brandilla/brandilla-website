@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#E50C7D">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Datenschutzerklärung der brandilla UG. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://brandilla.de/datenschutz">
+<title>Datenschutz — brandilla UG Berlin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root { --cream: #F7F2E8; --dark: #1C1812; --pink: #E50C7D; --warm-gray: #8A857A; --light-border: rgba(28,24,18,0.1); --accent-light: #FDF8EF; --cream-dark: #EDE8DC; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--dark); font-family: 'Jost', sans-serif; overflow-x: hidden; cursor: none; }
+.cursor { width: 10px; height: 10px; background: var(--pink); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; mix-blend-mode: multiply; }
+.cursor-ring { width: 32px; height: 32px; border: 1px solid rgba(229,12,125,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; transform: translate(-50%,-50%); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; background: rgba(28,24,18,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(247,242,232,0.05); }
+.nav-brand { display: flex; align-items: center; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links li { display: flex; align-items: center; }
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: rgba(247,242,232,0.45); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover { color: #F7F2E8; }
+.nav-cta { background: #E50C7D !important; color: #F7F2E8 !important; padding: 9px 22px !important; }
+.nav-cta:hover { background: #c5006a !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: none; padding: 6px; background: none; border: none; z-index: 200; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: #F7F2E8; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: rgba(28,24,18,0.98); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(247,242,232,0.08); padding: 24px 32px 32px; z-index: 99; flex-direction: column; gap: 0; }
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(247,242,232,0.7); text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(247,242,232,0.06); transition: color 0.2s; font-family: 'Jost', sans-serif; font-weight: 500; cursor: none; }
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a:hover { color: #F7F2E8; }
+.nav-mobile-menu .nav-cta { margin-top: 16px; background: #E50C7D !important; color: #F7F2E8 !important; padding: 14px 24px !important; text-align: center; border-bottom: none !important; }
+@media(max-width: 768px) { .nav-hamburger { display: flex !important; } }
+@media(max-width:900px){ nav { padding: 0 24px; } .nav-links { display: none; } }
+@media(max-width:1100px){ .nav-links { gap: 20px; } .nav-links a { font-size: 10px; } }
+.legal-hero { padding-top: 68px; background: var(--dark); padding-bottom: 64px; }
+.legal-hero-inner { max-width: 900px; margin: 0 auto; padding: 72px 56px 0; }
+.legal-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(247,242,232,0.25); margin-bottom: 20px; }
+.legal-title { font-family: 'Playfair Display', serif; font-size: clamp(52px, 7vw, 88px); font-weight: 400; color: var(--cream); line-height: 1.0; }
+.legal-title em { font-style: italic; color: var(--pink); }
+.legal-content { max-width: 900px; margin: 0 auto; padding: 72px 56px 100px; }
+.legal-section { margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--light-border); }
+.legal-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.legal-section-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 24px; font-weight: 600; }
+.legal-h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--dark); margin-bottom: 20px; line-height: 1.3; }
+.legal-h2 em { font-style: italic; color: var(--pink); }
+.legal-h3 { font-size: 14px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; margin-top: 28px; }
+.legal-p { font-size: 15px; color: var(--dark); line-height: 1.9; font-weight: 300; margin-bottom: 16px; }
+.legal-p:last-child { margin-bottom: 0; }
+.legal-p a { color: var(--pink); text-decoration: none; }
+.legal-p a:hover { text-decoration: underline; }
+.legal-ul { list-style: none; margin-bottom: 16px; }
+.legal-ul li { font-size: 15px; color: var(--dark); line-height: 1.9; font-weight: 300; padding-left: 20px; position: relative; }
+.legal-ul li::before { content: '—'; position: absolute; left: 0; color: var(--pink); }
+.legal-kv { display: grid; grid-template-columns: 200px 1fr; gap: 8px 24px; font-size: 15px; font-weight: 300; line-height: 1.8; margin-bottom: 16px; }
+.legal-kv-key { color: var(--warm-gray); font-size: 12px; letter-spacing: 0.05em; display: flex; align-items: flex-start; padding-top: 3px; }
+.legal-kv-val { color: var(--dark); }
+.legal-kv-val a { color: var(--pink); text-decoration: none; }
+footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); padding: 64px 56px 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 56px; }
+.footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 16px; }
+.footer-tagline { font-size: 13px; color: rgba(247,242,232,0.3); line-height: 1.8; font-weight: 300; max-width: 280px; }
+.footer-col h4 { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,242,232,0.2); margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul li a { font-size: 13px; color: rgba(247,242,232,0.4); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--cream); }
+.footer-bottom { border-top: 1px solid rgba(247,242,232,0.05); padding-top: 32px; display: flex; align-items: center; justify-content: space-between; }
+.footer-copy { font-size: 11px; color: rgba(247,242,232,0.2); letter-spacing: 0.05em; font-weight: 300; }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,242,232,0.2); text-decoration: none; transition: color 0.2s; }
+.footer-social a:hover { color: var(--pink); }
+.marlon-float { position: fixed; bottom: 32px; right: 32px; z-index: 200; }
+.marlon-float-btn { width: 60px; height: 60px; background: #E50C7D; display: flex; align-items: center; justify-content: center; cursor: none; transition: all 0.25s; margin-left: auto; box-shadow: 0 8px 28px rgba(229,12,125,0.35); border-radius: 50%; overflow: hidden; }
+.marlon-float-btn:hover { transform: scale(1.08) rotate(5deg); }
+.mf-popup { display: none; position: fixed; bottom: 104px; right: 32px; z-index: 91; background: #1C1812; border: 1px solid rgba(247,242,232,0.1); padding: 24px; width: 240px; box-shadow: 0 16px 48px rgba(0,0,0,0.4); }
+.mf-popup.open { display: block; }
+.mf-popup-title { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,242,232,0.3); margin-bottom: 16px; font-family: 'Jost', sans-serif; }
+.mf-popup-btn { display: flex; align-items: center; gap: 12px; padding: 13px 16px; margin-bottom: 10px; text-decoration: none; font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 500; cursor: none; transition: all 0.2s; border: 1px solid rgba(247,242,232,0.08); color: rgba(247,242,232,0.8); }
+.mf-popup-btn:last-child { margin-bottom: 0; }
+.mf-popup-btn:hover { background: rgba(247,242,232,0.06); color: #F7F2E8; border-color: rgba(247,242,232,0.2); }
+.mf-popup-btn.whatsapp:hover { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.3); color: #25D366; }
+.mf-popup-close { position: absolute; top: 10px; right: 12px; font-size: 16px; color: rgba(247,242,232,0.2); cursor: none; background: none; border: none; line-height: 1; padding: 4px; transition: color 0.2s; font-family: 'Jost', sans-serif; }
+.mf-popup-close:hover { color: rgba(247,242,232,0.6); }
+@media(max-width:900px){ .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } .legal-hero-inner, .legal-content { padding-left: 24px; padding-right: 24px; } .legal-kv { grid-template-columns: 1fr; gap: 2px; } }
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-02C7GTHDB3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-02C7GTHDB3',{'anonymize_ip':true});</script>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mf-popup" id="marlonPopup">
+  <button class="mf-popup-close" onclick="document.getElementById('marlonPopup').classList.remove('open')">✕</button>
+  <div class="mf-popup-title">Wie können wir helfen?</div>
+  <a href="kontakt.html" class="mf-popup-btn"><span style="font-size:18px">📋</span><span>Kampagne anfragen</span></a>
+  <a href="https://wa.me/491727435515" target="_blank" rel="noopener" class="mf-popup-btn whatsapp"><span style="font-size:18px">💬</span><span>WhatsApp schreiben</span></a>
+  <a href="tel:+491727435515" class="mf-popup-btn"><span style="font-size:18px">📞</span><span>+49 172 743 55 15</span></a>
+</div>
+<div class="marlon-float">
+  <div class="marlon-float-btn"><img src="marlon-float.png" alt="Marlon" style="width:60px;height:60px;object-fit:cover"></div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo-nav.png" alt="brandilla" style="height:40px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="produkte.html">Produkte</a></li>
+    <li><a href="kampagnen.html">Kampagnen</a></li>
+    <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+    <li><a href="partner.html">Partner</a></li>
+    <li><a href="https://app.brandilla.de" target="_blank" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,0.4);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F7F2E8'" onmouseout="this.style.color='rgba(247,242,232,0.4)'">Dashboard</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="produkte.html">Produkte</a>
+  <a href="kampagnen.html">Kampagnen</a>
+  <a href="gorilla-talk.html">Gorilla Talk</a>
+  <a href="preise.html">Preise</a>
+  <a href="marketing-wissen.html">Marketing-Wissen</a>
+  <a href="partner.html">Partner</a>
+  <a href="https://app.brandilla.de" target="_blank">Dashboard</a>
+  <a href="kontakt.html" class="nav-cta">Kampagne anfragen</a>
+</div>
+
+<section class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-label">DSGVO-konform</div>
+    <h1 class="legal-title">Daten<em>schutz.</em></h1>
+  </div>
+</section>
+
+<main class="legal-content">
+
+  <div class="legal-section">
+    <div class="legal-section-title">Überblick</div>
+    <p class="legal-p">
+      Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten auf der Website <strong>brandilla.de</strong> gemäß der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG).
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Art. 13 DSGVO — Verantwortlicher</div>
+    <h2 class="legal-h2">Verantwort<em>licher.</em></h2>
+    <div class="legal-kv">
+      <div class="legal-kv-key">Unternehmen</div>
+      <div class="legal-kv-val">Brandilla UG (haftungsbeschränkt)</div>
+      <div class="legal-kv-key">Vertreten durch</div>
+      <div class="legal-kv-val">Sven Hanke (Geschäftsführer)</div>
+      <div class="legal-kv-key">Anschrift</div>
+      <div class="legal-kv-val">Großbeerenstr. 60, 10965 Berlin</div>
+      <div class="legal-kv-key">E-Mail</div>
+      <div class="legal-kv-val"><a href="mailto:info@brandilla.de">info@brandilla.de</a></div>
+      <div class="legal-kv-key">Telefon</div>
+      <div class="legal-kv-val"><a href="tel:+491727435515">+49 (0) 172 743 55 15</a></div>
+    </div>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Hosting & Infrastruktur</div>
+    <h2 class="legal-h2">Server & <em>Hosting.</em></h2>
+    <p class="legal-p">
+      Diese Website wird über <strong>Netlify, Inc.</strong> (44 Montgomery Street, Suite 300, San Francisco, California 94104, USA) gehostet. Beim Aufruf unserer Website werden automatisch Informationen in sogenannten Server-Log-Dateien gespeichert, die Ihr Browser übermittelt:
+    </p>
+    <ul class="legal-ul">
+      <li>IP-Adresse (anonymisiert)</li>
+      <li>Datum und Uhrzeit des Zugriffs</li>
+      <li>Aufgerufene URL</li>
+      <li>Browsertyp und -version</li>
+      <li>Referrer-URL</li>
+    </ul>
+    <p class="legal-p">
+      Die Datenübertragung in die USA erfolgt auf Grundlage der Standardvertragsklauseln der Europäischen Kommission (Art. 46 Abs. 2 lit. c DSGVO). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am stabilen Betrieb der Website). Netlify ist zertifiziert nach dem EU-US Data Privacy Framework.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Kontaktformular & E-Mail</div>
+    <h2 class="legal-h2">Kontakt<em>anfragen.</em></h2>
+    <p class="legal-p">
+      Wenn Sie uns über unser Kontaktformular oder per E-Mail kontaktieren, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Telefonnummer, Nachricht) zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+    </p>
+    <div class="legal-kv">
+      <div class="legal-kv-key">Zweck</div>
+      <div class="legal-kv-val">Bearbeitung Ihrer Kontaktanfrage</div>
+      <div class="legal-kv-key">Rechtsgrundlage</div>
+      <div class="legal-kv-val">Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. lit. f DSGVO (berechtigtes Interesse)</div>
+      <div class="legal-kv-key">Speicherdauer</div>
+      <div class="legal-kv-val">Bis zur endgültigen Erledigung der Anfrage, danach gesetzliche Aufbewahrungsfristen (bis zu 10 Jahre)</div>
+    </div>
+    <p class="legal-p">
+      Eine Weitergabe der Daten an Dritte erfolgt nicht, es sei denn, dies ist zur Vertragserfüllung notwendig oder gesetzlich vorgeschrieben.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Webanalyse</div>
+    <h2 class="legal-h2">Google <em>Analytics.</em></h2>
+    <p class="legal-p">
+      Diese Website nutzt <strong>Google Analytics 4</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; Muttergesellschaft: Google LLC, Mountain View, CA, USA). Google Analytics verwendet Cookies und ähnliche Technologien, um das Nutzerverhalten auf unserer Website zu analysieren.
+    </p>
+    <div class="legal-kv">
+      <div class="legal-kv-key">Zweck</div>
+      <div class="legal-kv-val">Analyse des Nutzerverhaltens, Optimierung der Website</div>
+      <div class="legal-kv-key">Rechtsgrundlage</div>
+      <div class="legal-kv-val">Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse); IP-Anonymisierung ist aktiviert</div>
+      <div class="legal-kv-key">Datenübertragung</div>
+      <div class="legal-kv-val">USA (auf Basis des EU-US Data Privacy Framework)</div>
+      <div class="legal-kv-key">Speicherdauer</div>
+      <div class="legal-kv-val">14 Monate (Standard Google Analytics 4)</div>
+    </div>
+    <p class="legal-p">
+      Sie können die Erfassung durch Google Analytics verhindern, indem Sie das Browser-Add-on zur Deaktivierung von Google Analytics installieren: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">tools.google.com/dlpage/gaoptout</a>
+    </p>
+    <p class="legal-p">
+      Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Cookies</div>
+    <h2 class="legal-h2">Cookies &amp; <em>Tracking.</em></h2>
+    <p class="legal-p">
+      Diese Website verwendet ausschließlich technisch notwendige Cookies sowie, mit Ihrer impliziten Einwilligung durch Weiternutzung der Website, Analyse-Cookies von Google Analytics. Es werden keine Werbe-Cookies oder Cookies von sozialen Netzwerken gesetzt.
+    </p>
+    <ul class="legal-ul">
+      <li><strong>Technisch notwendig:</strong> Session-Cookies für die Grundfunktionen der Website (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO)</li>
+      <li><strong>Analyse:</strong> Google Analytics (_ga, _gid, _gat) zur Messung von Website-Besuchen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO)</li>
+    </ul>
+    <p class="legal-p">
+      Sie können die Speicherung von Cookies in Ihren Browser-Einstellungen deaktivieren. Bitte beachten Sie, dass dies die Funktionalität der Website beeinträchtigen kann.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Externe Dienste</div>
+    <h2 class="legal-h2">Externe <em>Links.</em></h2>
+    <p class="legal-p">
+      Unsere Website enthält Links zu Social-Media-Plattformen (Instagram, LinkedIn). Diese Links führen zu externen Websites, auf deren Datenschutzpraktiken wir keinen Einfluss haben. Beim Aufruf dieser Links gelten die jeweiligen Datenschutzbestimmungen der Plattformbetreiber.
+    </p>
+    <p class="legal-p">
+      Auf dieser Website sind keine Social-Media-Plugins direkt eingebunden — nur einfache Links, die beim Anklicken zur jeweiligen Plattform führen.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Art. 15–22 DSGVO — Ihre Rechte</div>
+    <h2 class="legal-h2">Ihre <em>Rechte.</em></h2>
+    <p class="legal-p">Sie haben gegenüber uns folgende Rechte bezüglich Ihrer personenbezogenen Daten:</p>
+    <ul class="legal-ul">
+      <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO) — Sie können eine Kopie der über Sie gespeicherten Daten anfordern</li>
+      <li><strong>Berichtigungsrecht</strong> (Art. 16 DSGVO) — Sie können die Berichtigung unrichtiger Daten verlangen</li>
+      <li><strong>Löschungsrecht</strong> (Art. 17 DSGVO) — Sie können die Löschung Ihrer Daten verlangen, sofern keine gesetzliche Aufbewahrungspflicht besteht</li>
+      <li><strong>Recht auf Einschränkung</strong> (Art. 18 DSGVO) — Sie können die Verarbeitung Ihrer Daten einschränken lassen</li>
+      <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO) — Sie können der Verarbeitung Ihrer Daten auf Basis berechtigter Interessen widersprechen</li>
+      <li><strong>Datenportabilität</strong> (Art. 20 DSGVO) — Sie können Ihre Daten in einem maschinenlesbaren Format anfordern</li>
+    </ul>
+    <p class="legal-p">
+      Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:info@brandilla.de">info@brandilla.de</a>
+    </p>
+    <p class="legal-p">
+      Sie haben außerdem das Recht, sich bei der zuständigen Datenschutzaufsichtsbehörde zu beschweren. In Berlin ist dies die <strong>Berliner Beauftragte für Datenschutz und Informationsfreiheit</strong>, Friedrichstr. 219, 10969 Berlin, <a href="https://www.datenschutz-berlin.de" target="_blank" rel="noopener noreferrer">www.datenschutz-berlin.de</a>.
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Aktualität</div>
+    <p class="legal-p">
+      Diese Datenschutzerklärung ist aktuell gültig und hat den Stand <strong>März 2026</strong>. Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand-name">brandilla</div><div class="footer-tagline">TakeAway Marketing neu gedacht.</div></div>
+    <div class="footer-col"><h4>Produkte</h4><ul><li><a href="produkte.html">Coffee Cup</a></li><li><a href="produkte.html">Neue Medien</a></li></ul></div>
+    <div class="footer-col"><h4>Unternehmen</h4><ul><li><a href="kampagnen.html">Kampagnen</a></li><li><a href="preise.html">Preise</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+    <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">AGB</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2016–2026 brandilla UG · Berlin</div>
+    <div class="footer-social"><a href="https://www.instagram.com/brandilla_official/" target="_blank" rel="noopener">Instagram</a><a href="https://de.linkedin.com/company/brandilla" target="_blank" rel="noopener">LinkedIn</a></div>
+  </div>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+if(cursor&&ring){
+  document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX-5+'px';cursor.style.top=e.clientY-5+'px';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';});
+  document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2.5)';ring.style.transform='translate(-50%,-50%) scale(1.5)';});el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='translate(-50%,-50%) scale(1)';});});
+}
+(function(){var btn=document.querySelector('.marlon-float-btn'),popup=document.getElementById('marlonPopup');if(!btn||!popup)return;btn.addEventListener('click',function(e){e.stopPropagation();popup.classList.toggle('open');});document.addEventListener('click',function(e){if(!popup.contains(e.target)&&!btn.contains(e.target))popup.classList.remove('open');});})();
+function toggleMobileMenu(){const b=document.getElementById('navHamburger'),m=document.getElementById('navMobileMenu');if(!b||!m)return;b.classList.toggle('open');m.classList.toggle('open');}
+document.addEventListener('click',function(e){const b=document.getElementById('navHamburger'),m=document.getElementById('navMobileMenu');if(!b||!m)return;if(!b.contains(e.target)&&!m.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}});
+</script>
+</body>
+</html>
