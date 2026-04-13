@@ -1036,28 +1036,34 @@ function filterVideos(cat, btn) {
 // Fallback: statische Platzhalter wenn API nicht erreichbar
 function showFallbackVideos() {
   const grid = document.getElementById('videoGrid');
-  const fallbacks = [
-    { cat: 'takeaway', title: 'Warum Offline-Werbung 2026 wieder boomt', desc: 'TakeAway Marketing erreicht Zielgruppen dort wo digitale Werbung versagt — direkt beim Morgenkaffee.' },
-    { cat: 'employer', title: 'Employer Branding auf Kaffeebechern', desc: 'Wie Deutsche Bahn und Amazon Coffee Cups für ihre Recruiting-Kampagnen nutzen.' },
-    { cat: 'tracking', title: 'QR-Tracking live Demo', desc: 'Jeder POS bekommt seinen eigenen QR-Code — so funktioniert das brandilla Dashboard in Echtzeit.' },
-  ];
-
-  const catLabels = { takeaway: 'TakeAway Marketing', employer: 'Employer Branding', tracking: 'QR & Tracking' };
-
-  grid.innerHTML = fallbacks.map(v => `
-    <div class="v-card" data-cat="${v.cat}">
-      <div class="v-thumb" style="position:relative;padding-bottom:56.25%;background:#1C1812">
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
-          <span style="font-size:28px;opacity:.2">▶</span>
-          <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,242,232,.15)">Demnächst</span>
-        </div>
-        <div class="v-cat" style="position:absolute;top:12px;left:12px;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:#E50C7D;color:#F7F2E8;padding:4px 10px;font-weight:600">${catLabels[v.cat]}</div>
+  grid.innerHTML = `
+    <div class="v-card" data-cat="employer">
+      <div class="v-thumb" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1C1812;border-radius:8px">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/TedUvAZnugk" title="Warum deine Stellenanzeige niemanden interessiert" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="v-body" style="padding:24px 24px 28px">
-        <div class="v-title" style="font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:#1C1812;margin-bottom:8px;line-height:1.3">${v.title}</div>
-        <div class="v-desc" style="font-size:12px;color:#8A857A;line-height:1.7;font-weight:300;margin-bottom:14px">${v.desc}</div>
+        <div class="v-cat" style="display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:#E50C7D;color:#F7F2E8;padding:4px 10px;font-weight:600;margin-bottom:10px">Employer Branding</div>
+        <div class="v-title" style="font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:#1C1812;line-height:1.3">Warum deine Stellenanzeige niemanden interessiert — und wie du das änderst</div>
       </div>
-    </div>`).join('');
+    </div>
+    <div class="v-card" data-cat="employer">
+      <div class="v-thumb" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1C1812;border-radius:8px">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/QVFK5Dyxwak" title="Werbepsychologie im Recruiting" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="v-body" style="padding:24px 24px 28px">
+        <div class="v-cat" style="display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:#E50C7D;color:#F7F2E8;padding:4px 10px;font-weight:600;margin-bottom:10px">Recruiting</div>
+        <div class="v-title" style="font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:#1C1812;line-height:1.3">Werbepsychologie im Recruiting</div>
+      </div>
+    </div>
+    <div class="v-card" data-cat="takeaway">
+      <div class="v-thumb" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1C1812;border-radius:8px">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/rNNZd1OuR6Y" title="Marlon gegen ChatGPT — Gorilla gegen KI" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="v-body" style="padding:24px 24px 28px">
+        <div class="v-cat" style="display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:#E50C7D;color:#F7F2E8;padding:4px 10px;font-weight:600;margin-bottom:10px">TakeAway Marketing</div>
+        <div class="v-title" style="font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:#1C1812;line-height:1.3">Marlon gegen ChatGPT — Gorilla gegen KI</div>
+      </div>
+    </div>`;
 
   grid.style.display = 'grid';
   document.getElementById('videosLoading').style.display = 'none';
