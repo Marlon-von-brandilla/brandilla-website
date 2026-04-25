@@ -57,6 +57,11 @@
   status = 200
 
 [[redirects]]
+  from = "/coffee-cup-werbung"
+  to = "/coffee-cup-werbung.html"
+  status = 200
+
+[[redirects]]
   from = "https://www.brandilla.de/*"
   to = "https://brandilla.de/:splat"
   status = 301

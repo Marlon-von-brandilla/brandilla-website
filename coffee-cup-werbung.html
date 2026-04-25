@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#E50C7D">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Cup Werbung — Werbung auf Kaffeebechern | brandilla</title>
+<meta name="description" content="Werbung auf Coffee Cups: haptisch, nicht wegklickbar, 59% Erinnerungswert. Deutschlandweit 1.431 aktive POS. Ab 4.350 € netto.">
+<meta name="keywords" content="Coffee Cup Werbung, Werbung auf Kaffeebechern, Kaffeebecher Werbung, TakeAway Marketing, haptische Werbung, Erinnerungswert Werbung">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://brandilla.de/coffee-cup-werbung">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="brandilla">
+<meta property="og:title" content="Coffee Cup Werbung — 59% Erinnerungswert, nicht wegklickbar">
+<meta property="og:description" content="Haptische Werbung auf Kaffeebechern — direkt in die Hände deiner Zielgruppe. Ab 4.350 € netto.">
+<meta property="og:url" content="https://brandilla.de/coffee-cup-werbung">
+<meta property="og:image" content="https://brandilla.de/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Was kostet Werbung auf Kaffeebechern?","acceptedAnswer":{"@type":"Answer","text":"Coffee Cup Werbung bei brandilla startet ab 4.350 € netto für 10.000 Cups an 5 POS (LOKAL-Paket). Größere Pakete, individuelle Budgets und bundesweite Kampagnen sind jederzeit möglich."}},
+    {"@type":"Question","name":"Wie viele Menschen sehen meinen Coffee Cup?","acceptedAnswer":{"@type":"Answer","text":"Beim LOKAL-Paket (10.000 Cups) erreichst du ca. 70.000 Kontakte. Jeder Cup wird 6–8 Mal wahrgenommen und ca. 48 Sekunden gehalten."}},
+    {"@type":"Question","name":"Wie lange dauert eine Coffee Cup Kampagne?","acceptedAnswer":{"@type":"Answer","text":"Vom Briefing bis zum Kampagnenstart vergehen in der Regel 4–6 Wochen — inklusive Design, Druck und Verteilung an die POS."}},
+    {"@type":"Question","name":"Was ist der Unterschied zu normaler Außenwerbung?","acceptedAnswer":{"@type":"Answer","text":"Coffee Cups werden gehalten, nicht nur gesehen. Statt eines flüchtigen Blickkontakts wie beim Plakat oder Display Ad entstehen pro Cup 6–8 bewusste Wahrnehmungen über rund 48 Sekunden Haltedauer."}},
+    {"@type":"Question","name":"Ist Coffee Cup Werbung nachhaltig?","acceptedAnswer":{"@type":"Answer","text":"Ja. Unsere Cups sind 100 % plastikfrei, FSC-zertifiziert und kompostierbar. Produktion erfolgt in Deutschland, für jede Kampagne pflanzen wir mindestens einen Baum über Plant-a-Tree."}}
+  ]
+}
+</script>
+
+<style>
+/* ── brandilla Design System (identisch zu kampagnen.html) ── */
+:root {
+  --cream: #F7F2E8;
+  --dark: #1C1812;
+  --pink: #E50C7D;
+  --warm-gray: #8A857A;
+  --light-border: rgba(28,24,18,0.1);
+  --accent-light: #FDF8EF;
+  --cream-dark: #EDE8DC;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--dark); font-family: 'Jost', sans-serif; overflow-x: hidden; cursor: none; }
+
+.cursor { width: 10px; height: 10px; background: var(--pink); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; mix-blend-mode: multiply; }
+.cursor-ring { width: 32px; height: 32px; border: 1px solid rgba(229,12,125,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; transform: translate(-50%,-50%); }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; background: rgba(28,24,18,0.96); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(247,242,232,0.05); }
+.nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links li { display: flex; align-items: center; }
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: rgba(247,242,232,0.45); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover { color: #F7F2E8; }
+.nav-cta { background: #E50C7D !important; color: #F7F2E8 !important; padding: 9px 22px !important; }
+.nav-cta:hover { background: #c5006a !important; }
+
+/* Hamburger */
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: none; padding: 6px; background: none; border: none; z-index: 200; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: #F7F2E8; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: rgba(28,24,18,0.98); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(247,242,232,0.08); padding: 24px 32px 32px; z-index: 99; flex-direction: column; gap: 0; }
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(247,242,232,0.06); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: rgba(247,242,232,0.45); text-decoration: none; transition: color 0.2s; }
+.nav-mobile-menu a:last-child { border-bottom: none; }
+.nav-mobile-menu a:hover { color: #F7F2E8; }
+.nav-mobile-menu .nav-cta { margin-top: 12px; text-align: center; }
+
+/* Footer (identisch) */
+footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); padding: 64px 56px 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 64px; margin-bottom: 56px; }
+.footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 16px; }
+.footer-tagline { font-size: 13px; color: rgba(247,242,232,0.3); line-height: 1.8; font-weight: 300; max-width: 280px; }
+.footer-col h4 { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,242,232,0.2); margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul li a { font-size: 13px; color: rgba(247,242,232,0.4); text-decoration: none; font-weight: 300; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--cream); }
+.footer-bottom { border-top: 1px solid rgba(247,242,232,0.05); padding-top: 32px; display: flex; align-items: center; justify-content: space-between; }
+.footer-copy { font-size: 11px; color: rgba(247,242,232,0.2); letter-spacing: 0.05em; font-weight: 300; }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,242,232,0.2); text-decoration: none; transition: color 0.2s; }
+.footer-social a:hover { color: var(--pink); }
+
+/* Marlon-Float + Popup (identisch) */
+.marlon-float { position: fixed; bottom: 80px; right: 32px; z-index: 200; }
+.marlon-float-btn { width: 60px; height: 60px; background: #E50C7D; display: flex; align-items: center; justify-content: center; cursor: none; transition: all 0.25s; margin-left: auto; box-shadow: 0 8px 28px rgba(229,12,125,0.35); border-radius: 50%; overflow: hidden; }
+.marlon-float-btn:hover { transform: scale(1.08) rotate(5deg); }
+.mf-popup { display: none; position: fixed; bottom: 104px; right: 32px; z-index: 91; background: #1C1812; border: 1px solid rgba(247,242,232,0.1); padding: 24px; width: 240px; box-shadow: 0 16px 48px rgba(0,0,0,0.4); animation: popupIn 0.2s ease; }
+@keyframes popupIn { from { opacity:0; transform: translateY(12px) scale(0.96); } to { opacity:1; transform: translateY(0) scale(1); } }
+.mf-popup.open { display: block; }
+.mf-popup-title { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,242,232,0.3); margin-bottom: 16px; }
+.mf-popup-btn { display: flex; align-items: center; gap: 12px; padding: 13px 16px; margin-bottom: 10px; text-decoration: none; font-size: 13px; font-weight: 500; cursor: none; transition: all 0.2s; border: 1px solid rgba(247,242,232,0.08); color: rgba(247,242,232,0.8); }
+.mf-popup-btn:last-child { margin-bottom: 0; }
+.mf-popup-btn:hover { background: rgba(247,242,232,0.06); color: #F7F2E8; border-color: rgba(247,242,232,0.2); }
+.mf-popup-btn.whatsapp:hover { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.3); color: #25D366; }
+.mf-popup-btn .btn-icon { font-size: 18px; flex-shrink: 0; }
+.mf-popup-close { position: absolute; top: 10px; right: 12px; font-size: 16px; color: rgba(247,242,232,0.2); cursor: none; background: none; border: none; line-height: 1; padding: 4px; transition: color 0.2s; }
+.mf-popup-close:hover { color: rgba(247,242,232,0.6); }
+
+/* ── HERO (Übernommen aus kampagnen-Stil) ── */
+.ccw-hero { min-height: 100vh; background: #1C1812; display: grid; grid-template-columns: 1.1fr 1fr; padding-top: 68px; position: relative; overflow: hidden; }
+.ccw-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 65% at 75% 50%, rgba(229,12,125,0.1) 0%, transparent 60%); pointer-events: none; }
+.ccw-hero-left { padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(247,242,232,0.06); position: relative; z-index: 1; }
+.ccw-hero-tag { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: #E50C7D; margin-bottom: 36px; }
+.ccw-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(44px, 5.6vw, 76px); font-weight: 400; line-height: 1.05; color: #F7F2E8; margin-bottom: 28px; }
+.ccw-hero-title em { font-style: italic; color: #E50C7D; }
+.ccw-hero-sub { font-size: 17px; line-height: 1.8; color: rgba(247,242,232,0.55); font-weight: 300; max-width: 460px; margin-bottom: 44px; }
+.ccw-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.ccw-hero-right { padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; z-index: 1; }
+.ccw-hero-stat { text-align: center; color: #F7F2E8; }
+.ccw-hero-stat-big { font-family: 'Cormorant Garamond', serif; font-size: clamp(110px, 14vw, 180px); font-weight: 300; line-height: 1; color: #E50C7D; }
+.ccw-hero-stat-lbl { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: rgba(247,242,232,0.5); margin-top: 8px; }
+.ccw-hero-stat-desc { font-size: 14px; line-height: 1.7; color: rgba(247,242,232,0.65); max-width: 320px; margin: 24px auto 0; font-weight: 300; }
+
+/* Buttons */
+.btn-pink-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--pink); color: var(--cream); padding: 16px 32px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: all .25s; cursor: none; }
+.btn-pink-cta:hover { background: #f0007a; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(229,12,125,0.35); }
+.btn-outline-cta { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: rgba(247,242,232,0.7); padding: 16px 32px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(247,242,232,0.2); transition: all .25s; cursor: none; }
+.btn-outline-cta:hover { color: var(--cream); border-color: var(--cream); transform: translateX(6px); }
+
+/* ── SECTION — Werbewirkung Vergleich ── */
+.section { padding: 120px 72px; }
+.section-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--pink); margin-bottom: 20px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(38px, 4.5vw, 58px); font-weight: 400; line-height: 1.1; color: var(--dark); margin-bottom: 20px; max-width: 760px; }
+.section-title em { font-style: italic; color: var(--pink); }
+.section-lead { font-size: 17px; line-height: 1.8; color: rgba(28,24,18,0.7); font-weight: 300; max-width: 680px; margin-bottom: 56px; }
+.section-dark { background: var(--dark); color: var(--cream); }
+.section-dark .section-title { color: var(--cream); }
+.section-dark .section-lead { color: rgba(247,242,232,0.65); }
+
+/* Vergleichstabelle */
+.cmp-table-wrap { background: var(--cream); border: 1px solid rgba(28,24,18,0.08); overflow-x: auto; }
+.cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.cmp-table thead th { text-align: left; padding: 20px 24px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--warm-gray); border-bottom: 2px solid var(--dark); background: var(--accent-light); font-weight: 600; }
+.cmp-table tbody td { padding: 22px 24px; border-bottom: 1px solid rgba(28,24,18,0.08); color: var(--dark); }
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+.cmp-table tbody tr.cmp-highlight { background: rgba(229,12,125,0.04); }
+.cmp-table tbody tr.cmp-highlight td { font-weight: 600; }
+.cmp-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; }
+.cmp-name em { font-style: italic; color: var(--pink); }
+.cmp-value { font-size: 15px; }
+.cmp-big { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--pink); }
+.cmp-yes { color: var(--warm-gray); font-size: 13px; }
+.cmp-no { color: var(--pink); font-size: 13px; font-weight: 700; }
+.cmp-source { margin-top: 20px; font-size: 12px; color: var(--warm-gray); font-style: italic; }
+
+/* ── SECTION — Morgenmoment ── */
+.morgen-wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 72px; align-items: center; }
+.morgen-kacheln { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.morgen-kachel { background: rgba(247,242,232,0.04); border: 1px solid rgba(247,242,232,0.08); padding: 26px 28px; display: flex; align-items: center; gap: 20px; transition: all .3s; }
+.morgen-kachel:hover { border-color: rgba(229,12,125,0.3); transform: translateX(6px); }
+.morgen-emoji { font-size: 36px; flex-shrink: 0; }
+.morgen-kachel-text { font-size: 15px; color: rgba(247,242,232,0.85); line-height: 1.5; font-weight: 300; }
+.morgen-kachel-text strong { color: var(--pink); font-weight: 600; display: block; font-size: 18px; margin-bottom: 4px; font-family: 'Playfair Display', serif; font-style: italic; }
+
+/* ── SECTION — Drei Schritte ── */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.step { background: var(--cream); border: 1px solid rgba(28,24,18,0.08); padding: 36px 30px; position: relative; }
+.step-num { font-family: 'Cormorant Garamond', serif; font-size: 64px; color: var(--pink); line-height: 1; margin-bottom: 16px; font-weight: 300; }
+.step-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--dark); margin-bottom: 12px; }
+.step-desc { font-size: 14px; line-height: 1.7; color: rgba(28,24,18,0.65); font-weight: 300; }
+
+/* ── SECTION — Nachhaltigkeit ── */
+.nach-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 16px; }
+.nach-kachel { background: var(--accent-light); border: 1px solid rgba(28,24,18,0.06); padding: 30px 24px; text-align: center; transition: all .25s; }
+.nach-kachel:hover { border-color: var(--pink); transform: translateY(-3px); }
+.nach-emoji { font-size: 30px; margin-bottom: 12px; }
+.nach-label { font-size: 13px; font-weight: 600; color: var(--dark); line-height: 1.4; }
+.nach-note { margin-top: 28px; font-size: 13px; color: var(--warm-gray); text-align: center; }
+.nach-note a { color: var(--pink); text-decoration: none; font-weight: 600; }
+
+/* ── SECTION — Referenzen ── */
+.ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.ref-card { background: var(--cream); border: 1px solid rgba(28,24,18,0.08); display: grid; grid-template-rows: auto 1fr; overflow: hidden; transition: all .3s; }
+.ref-card:hover { transform: translateY(-3px); box-shadow: 0 20px 48px rgba(28,24,18,0.08); }
+.ref-visual { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--cream-dark); }
+.ref-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.ref-card:hover .ref-visual img { transform: scale(1.05); }
+.ref-body { padding: 28px 32px; }
+.ref-cat { display: inline-block; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; background: var(--pink); color: var(--cream); padding: 4px 10px; margin-bottom: 14px; font-weight: 600; }
+.ref-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--dark); margin-bottom: 8px; }
+.ref-name em { font-style: italic; color: var(--pink); }
+.ref-desc { font-size: 14px; line-height: 1.7; color: rgba(28,24,18,0.65); font-weight: 300; margin-bottom: 16px; }
+.ref-metrics { display: flex; gap: 24px; font-size: 12px; color: var(--warm-gray); }
+.ref-metrics strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--dark); line-height: 1; margin-bottom: 4px; }
+.ref-footer { text-align: center; margin-top: 40px; }
+
+/* ── SECTION — FAQ ── */
+.faq-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid rgba(28,24,18,0.1); }
+.faq-item { border-bottom: 1px solid rgba(28,24,18,0.1); }
+.faq-item summary { padding: 28px 0; display: flex; justify-content: space-between; align-items: center; cursor: none; gap: 24px; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-q { font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.2vw, 26px); font-weight: 400; color: var(--dark); line-height: 1.3; flex: 1; }
+.faq-toggle { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(28,24,18,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--pink); font-size: 18px; line-height: 1; transition: all .25s; }
+.faq-item[open] .faq-toggle { background: var(--pink); color: var(--cream); transform: rotate(45deg); }
+.faq-a { padding: 0 0 28px; font-size: 16px; line-height: 1.85; color: rgba(28,24,18,0.7); font-weight: 300; max-width: 780px; }
+
+/* ── CTA Block (wie kampagnen.html) ── */
+.ccw-cta { background: var(--pink); padding: 120px 56px; text-align: center; }
+.ccw-cta-title { font-family: 'Playfair Display', serif; font-size: clamp(44px, 6vw, 80px); color: var(--cream); line-height: 1.05; margin-bottom: 22px; font-weight: 400; }
+.ccw-cta-title em { font-style: italic; }
+.ccw-cta-sub { font-size: 16px; color: rgba(247,242,232,0.8); margin-bottom: 44px; font-weight: 300; line-height: 1.8; }
+.ccw-cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--cream); color: var(--pink); padding: 18px 44px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: all .25s; }
+.ccw-cta-btn:hover { background: var(--dark); color: var(--cream); }
+
+/* ── Responsive ── */
+@media(max-width:1100px){
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 10px; }
+}
+@media(max-width:900px){
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex !important; }
+  .ccw-hero { grid-template-columns: 1fr; }
+  .ccw-hero-left { padding: 48px 24px; border-right: none; border-bottom: 1px solid rgba(247,242,232,0.06); }
+  .ccw-hero-right { padding: 48px 24px; }
+  .section { padding: 72px 24px; }
+  .morgen-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .steps { grid-template-columns: 1fr; }
+  .nach-row { grid-template-columns: repeat(2, 1fr); }
+  .ref-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  footer { padding: 56px 24px 32px; }
+  .ccw-cta { padding: 80px 24px; }
+  .cmp-table thead th, .cmp-table tbody td { padding: 16px 14px; }
+  .cmp-name { font-size: 15px; }
+}
+</style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-02C7GTHDB3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-02C7GTHDB3');
+</script>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mf-popup" id="marlonPopup">
+  <button class="mf-popup-close" onclick="document.getElementById('marlonPopup').classList.remove('open')">✕</button>
+  <div class="mf-popup-title">Wie können wir helfen?</div>
+  <a href="kontakt.html" class="mf-popup-btn">
+    <span class="btn-icon">📋</span><span>Kampagne anfragen</span>
+  </a>
+  <a href="https://wa.me/491727435515" target="_blank" rel="noopener" class="mf-popup-btn whatsapp">
+    <span class="btn-icon">💬</span><span>WhatsApp schreiben</span>
+  </a>
+  <a href="tel:+491727435515" class="mf-popup-btn">
+    <span class="btn-icon">📞</span><span>+49 172 743 55 15</span>
+  </a>
+</div>
+<div class="marlon-float">
+  <div class="marlon-float-btn"><img src="marlon-float.png" alt="Marlon" style="width:60px;height:60px;object-fit:cover"></div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo-nav.png" alt="brandilla" style="height:40px;width:auto;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="produkte.html">Produkte</a></li>
+    <li><a href="kampagnen.html">Kampagnen</a></li>
+    <li><a href="recruiting.html">Recruiting</a></li>
+    <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+    <li><a href="preise.html">Preise</a></li>
+    <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
+    <li><a href="partner.html">Partner</a></li>
+    <li><a href="https://app.brandilla.de" target="_blank" style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(247,242,232,0.4);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F7F2E8'" onmouseout="this.style.color='rgba(247,242,232,0.4)'">Dashboard</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="produkte.html">Produkte</a>
+  <a href="kampagnen.html">Kampagnen</a>
+  <a href="recruiting.html">Recruiting</a>
+  <a href="gorilla-talk.html">Gorilla Talk</a>
+  <a href="preise.html">Preise</a>
+  <a href="marketing-wissen.html">Marketing-Wissen</a>
+  <a href="partner.html">Partner</a>
+  <a href="https://app.brandilla.de" target="_blank">Dashboard</a>
+  <a href="kontakt.html" class="nav-cta">Kampagne anfragen</a>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 1. HERO                                      -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="ccw-hero">
+  <div class="ccw-hero-left">
+    <div class="ccw-hero-tag">Coffee Cup Werbung</div>
+    <h1 class="ccw-hero-title">Werbung auf Coffee Cups — die einzige Werbung, die man <em>nicht wegklicken</em> kann.</h1>
+    <p class="ccw-hero-sub">Haptisch. Messbar. Nachhaltig. Direkt in die Hände deiner Zielgruppe.</p>
+    <div class="ccw-hero-ctas">
+      <a href="kontakt.html" class="btn-pink-cta">Kampagne anfragen →</a>
+      <a href="preise.html" class="btn-outline-cta">Preise ansehen</a>
+    </div>
+  </div>
+  <div class="ccw-hero-right">
+    <div class="ccw-hero-stat">
+      <div class="ccw-hero-stat-big">59%</div>
+      <div class="ccw-hero-stat-lbl">Erinnerungswert</div>
+      <p class="ccw-hero-stat-desc">Haptische Werbung bleibt doppelt so lange im Kopf wie TV oder Radio — laut GWW-Studie des Dima-Instituts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 2. WERBEWIRKUNG IM VERGLEICH                 -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-tag">Werbewirkung im Vergleich</div>
+  <h2 class="section-title">Werbung die man <em>anfassen</em> kann, bleibt.</h2>
+  <p class="section-lead">Haptische Werbung erzielt laut GWW-Studie einen Erinnerungswert von 59 % — mehr als doppelt so hoch wie TV (28 %) oder Radio (29 %). Coffee Cups sind kein Bildschirm, kein Banner, kein Ad-Block — sie sind in der Hand.</p>
+
+  <div class="cmp-table-wrap">
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>Medium</th>
+          <th>Erinnerungswert</th>
+          <th>Tägliche Reichweite</th>
+          <th>Wegklickbar?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cmp-highlight">
+          <td class="cmp-name">Coffee Cup <em>(brandilla)</em></td>
+          <td class="cmp-value"><span class="cmp-big">59 %</span></td>
+          <td class="cmp-value">In der Hand</td>
+          <td><span class="cmp-no">Nein</span></td>
+        </tr>
+        <tr>
+          <td class="cmp-name">TV</td>
+          <td class="cmp-value">28 %</td>
+          <td class="cmp-value">Nebenbei</td>
+          <td><span class="cmp-yes">Ja</span></td>
+        </tr>
+        <tr>
+          <td class="cmp-name">Radio</td>
+          <td class="cmp-value">29 %</td>
+          <td class="cmp-value">Nebenbei</td>
+          <td><span class="cmp-yes">Ja</span></td>
+        </tr>
+        <tr>
+          <td class="cmp-name">Display Ads</td>
+          <td class="cmp-value">~ 9 %</td>
+          <td class="cmp-value">Überflogen</td>
+          <td><span class="cmp-yes">Ja</span></td>
+        </tr>
+        <tr>
+          <td class="cmp-name">Plakat</td>
+          <td class="cmp-value">—</td>
+          <td class="cmp-value">56 % der Bevölkerung</td>
+          <td><span class="cmp-yes">Ja</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cmp-source">Quelle: GWW Werbeartikel-Wirkungsstudie, Dima-Institut für Marktforschung. Display-Werte auf Basis Standard-Banner-Industrie-Benchmarks.</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 3. DER MORGENMOMENT                          -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="morgen-wrap">
+    <div>
+      <div class="section-tag">Der Morgenmoment</div>
+      <h2 class="section-title">Der Morgenmoment — wenn <em>Aufmerksamkeit</em> am höchsten ist.</h2>
+      <p class="section-lead">Zwischen 7 und 10 Uhr ist die kognitive Aufmerksamkeit am höchsten. Cortisol-Spiegel, Konzentration und Aufnahmebereitschaft sind auf dem Tagesmaximum. Genau in diesem Moment hält deine Zielgruppe unseren Cup in der Hand — nicht wegklickbar, nicht überspringbar.</p>
+    </div>
+    <div class="morgen-kacheln">
+      <div class="morgen-kachel">
+        <div class="morgen-emoji">🕐</div>
+        <div class="morgen-kachel-text"><strong>7 – 10 Uhr</strong>Morgenmoment mit maximaler kognitiver Aufmerksamkeit</div>
+      </div>
+      <div class="morgen-kachel">
+        <div class="morgen-emoji">✋</div>
+        <div class="morgen-kachel-text"><strong>6 – 8 Wahrnehmungen</strong>pro Cup über die durchschnittliche Nutzungsdauer</div>
+      </div>
+      <div class="morgen-kachel">
+        <div class="morgen-emoji">☕</div>
+        <div class="morgen-kachel-text"><strong>0:48 Min. Haltedauer</strong>aktive Zeit, in der der Cup in der Hand liegt</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 4. WIE ES FUNKTIONIERT — 3 SCHRITTE         -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--accent-light)">
+  <div class="section-tag">So funktioniert's</div>
+  <h2 class="section-title">Drei Schritte. <em>Fertig.</em></h2>
+  <p class="section-lead">Von der Idee zum Cup in Händen — in vier bis sechs Wochen.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Briefing &amp; Auswahl</div>
+      <div class="step-desc">Du sagst uns Zielgruppe, Region und Budget — wir liefern POS-Vorschläge aus unserem Netz von 1.431 aktiven Standorten.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Design &amp; Produktion</div>
+      <div class="step-desc">Wir übernehmen Design-Feinschliff, drucken FSC-zertifiziert in Deutschland und liefern direkt an die ausgewählten POS.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Live &amp; Tracking</div>
+      <div class="step-desc">Cups gehen in die Hände deiner Zielgruppe. Mit QR-Tracking siehst du Scans, Städte, Zeitpunkte — in Echtzeit im Dashboard.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 5. NACHHALTIGKEIT                            -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-tag">Nachhaltigkeit</div>
+  <h2 class="section-title">Gut für die Marke. <em>Gut für die Welt.</em></h2>
+  <div class="nach-row">
+    <div class="nach-kachel">
+      <div class="nach-emoji">♻️</div>
+      <div class="nach-label">100 % plastikfrei</div>
+    </div>
+    <div class="nach-kachel">
+      <div class="nach-emoji">🌲</div>
+      <div class="nach-label">FSC-zertifiziert</div>
+    </div>
+    <div class="nach-kachel">
+      <div class="nach-emoji">🇩🇪</div>
+      <div class="nach-label">Made in Germany</div>
+    </div>
+    <div class="nach-kachel">
+      <div class="nach-emoji">🌱</div>
+      <div class="nach-label">Plant-a-Tree pro Kampagne</div>
+    </div>
+  </div>
+  <div class="nach-note">Mehr zu Materialien, CO₂-Bilanz und Plant-a-Tree-Projekten auf <a href="index.html">unserer Startseite</a>.</div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 6. REFERENZEN                                -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="section-tag">Referenzen</div>
+  <h2 class="section-title">Vier Marken, die <em>in die Hände</em> wollten.</h2>
+  <p class="section-lead">Von DAX-Konzernen bis Tech-Scale-ups — so sehen echte Coffee-Cup-Kampagnen aus.</p>
+
+  <div class="ref-grid">
+    <article class="ref-card">
+      <div class="ref-visual"><img src="kampagne-db.jpg" alt="Deutsche Bahn Coffee Cup Employer Branding Kampagne — brandilla" loading="lazy"></div>
+      <div class="ref-body">
+        <div class="ref-cat">Employer Branding</div>
+        <h3 class="ref-name">Deutsche Bahn — <em>Recruiting to go.</em></h3>
+        <p class="ref-desc">50.000 Cups, flächendeckend in Baden-Württemberg — Cafés, Bäckereien und Tankstellen für den größten Arbeitgeber Deutschlands.</p>
+        <div class="ref-metrics">
+          <div><strong>50k</strong>Cups</div>
+          <div><strong>BW</strong>Bundesland</div>
+          <div><strong>6</strong>Wochen</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="ref-card">
+      <div class="ref-visual"><img src="kampagne-amazon.jpg" alt="Amazon Prime Reading Coffee Cup Kampagne — brandilla" loading="lazy"></div>
+      <div class="ref-body">
+        <div class="ref-cat">B2C</div>
+        <h3 class="ref-name">Amazon — <em>Bücher to go.</em></h3>
+        <p class="ref-desc">Prime-Reading-Launch in Berlin, Hamburg und München — 30.000 Cups in den drei größten deutschen Städten.</p>
+        <div class="ref-metrics">
+          <div><strong>30k</strong>Cups</div>
+          <div><strong>3</strong>Städte</div>
+          <div><strong>4</strong>Wochen</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="ref-card">
+      <div class="ref-visual"><img src="kampagne-n26.jpg" alt="N26 Coffee Cup Banking Kampagne — brandilla" loading="lazy"></div>
+      <div class="ref-body">
+        <div class="ref-cat">B2C / FinTech</div>
+        <h3 class="ref-name">N26 — <em>Banking to go.</em></h3>
+        <p class="ref-desc">100.000 Cups in sechs deutschen Städten — die größte Coffee-Cup-Kampagne, die brandilla je realisiert hat.</p>
+        <div class="ref-metrics">
+          <div><strong>100k</strong>Cups</div>
+          <div><strong>6</strong>Städte</div>
+          <div><strong>12</strong>Wochen</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="ref-card">
+      <div class="ref-visual"><img src="kampagne-qatar.jpg" alt="Qatar Airways Coffee Cup Kampagne — brandilla" loading="lazy"></div>
+      <div class="ref-body">
+        <div class="ref-cat">B2C / Premium</div>
+        <h3 class="ref-name">Qatar Airways — <em>Premium im Alltag.</em></h3>
+        <p class="ref-desc">30.000 Cups an Universitäten und Studentencafés — dort wo junge Premium-Reisende ihren Tag starten.</p>
+        <div class="ref-metrics">
+          <div><strong>30k</strong>Cups</div>
+          <div><strong>Unis</strong>Zielgruppe</div>
+          <div><strong>8</strong>Wochen</div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div class="ref-footer">
+    <a href="kampagnen.html" class="btn-pink-cta">Alle Kampagnen ansehen →</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 7. FAQ                                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="section" style="background:var(--accent-light)">
+  <div class="section-tag">Häufige Fragen</div>
+  <h2 class="section-title">FAQ — <em>Coffee Cup Werbung</em>.</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">Was kostet Werbung auf Kaffeebechern?</div>
+        <div class="faq-toggle">+</div>
+      </summary>
+      <div class="faq-a">Coffee Cup Werbung bei brandilla startet ab <strong>4.350 € netto</strong> für 10.000 Cups an 5 POS (LOKAL-Paket). Größere Pakete (STANDARD / PREMIUM / REICHWEITE) skalieren linear — 20.000 / 50.000 / 100.000 Cups. Individuelle Budgets und bundesweite Kampagnen sind jederzeit möglich. <a href="preise.html" style="color:var(--pink);text-decoration:none;font-weight:600">→ Alle Preise ansehen</a></div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">Wie viele Menschen sehen meinen Cup?</div>
+        <div class="faq-toggle">+</div>
+      </summary>
+      <div class="faq-a">Beim LOKAL-Paket (10.000 Cups) erreichst du <strong>ca. 70.000 Kontakte</strong>. Jeder Cup wird 6–8 Mal wahrgenommen (durch den Nutzer selbst und umstehende Personen) und wird durchschnittlich 48 Sekunden aktiv in der Hand gehalten. Bei PREMIUM (50.000 Cups) sind es rund 350.000 Kontakte, bei REICHWEITE (100.000 Cups) rund 700.000.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">Wie lange dauert eine Kampagne?</div>
+        <div class="faq-toggle">+</div>
+      </summary>
+      <div class="faq-a">Vom Briefing bis zum Kampagnenstart vergehen in der Regel <strong>4–6 Wochen</strong> — inklusive Design-Freigabe, Druck in Deutschland und Verteilung an die ausgewählten POS. Die eigentliche Kampagnenlaufzeit liegt je nach Paket zwischen 8 und 16 Wochen.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">Was ist der Unterschied zu normaler Außenwerbung?</div>
+        <div class="faq-toggle">+</div>
+      </summary>
+      <div class="faq-a">Coffee Cups werden <strong>gehalten, nicht nur gesehen</strong>. Während ein Plakat oder Display Ad nur flüchtigen Blickkontakt erzeugt, entstehen pro Cup <strong>6–8 bewusste Wahrnehmungen</strong> über rund 48 Sekunden Haltedauer. Die Werbebotschaft ist direkt in der Hand — nicht überspringbar, nicht wegklickbar, nicht blockierbar.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <div class="faq-q">Ist Coffee Cup Werbung nachhaltig?</div>
+        <div class="faq-toggle">+</div>
+      </summary>
+      <div class="faq-a">Ja. Unsere Cups sind <strong>100 % plastikfrei, FSC-zertifiziert und kompostierbar</strong>. Produktion erfolgt in Deutschland (kurze Lieferketten), für jede Kampagne pflanzen wir mindestens einen Baum über Plant-a-Tree-Projekte.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- FINAL CTA                                    -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="ccw-cta">
+  <h2 class="ccw-cta-title">Bereit für deine <em>Coffee Cup Kampagne?</em></h2>
+  <p class="ccw-cta-sub">Kostenlose Beratung. Individueller Vorschlag. Innerhalb von 24 Stunden.</p>
+  <a href="kontakt.html" class="ccw-cta-btn">Kampagne anfragen →</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">brandilla</div>
+      <div class="footer-tagline">TakeAway Marketing neu gedacht.</div>
+    </div>
+    <div class="footer-col"><h4>Produkte</h4><ul><li><a href="produkte.html">Coffee Cup</a></li><li><a href="produkte.html">Neue Medien</a></li></ul></div>
+    <div class="footer-col"><h4>Unternehmen</h4><ul><li><a href="preise.html">Preise</a></li><li><a href="gorilla-talk.html">Gorilla Talk</a></li><li><a href="marketing-wissen.html">Marketing-Wissen</a></li><li><a href="partner.html">Partner</a></li></ul></div>
+    <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="kontakt.html">Anfrage stellen</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2016–2026 brandilla UG · Berlin</div>
+    <div class="footer-social"><a href="https://www.instagram.com/brandilla_official/" target="_blank" rel="noopener">Instagram</a><a href="https://de.linkedin.com/company/brandilla" target="_blank" rel="noopener">LinkedIn</a><a href="#">YouTube</a></div>
+  </div>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+if (cursor && ring) {
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX - 5 + 'px';
+    cursor.style.top = e.clientY - 5 + 'px';
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a,button,summary').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2.5)'; ring.style.transform = 'translate(-50%,-50%) scale(1.5)'; });
+    el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.transform = 'translate(-50%,-50%) scale(1)'; });
+  });
+}
+
+// Gorilla Float Popup
+(function() {
+  var btn = document.querySelector('.marlon-float-btn');
+  var popup = document.getElementById('marlonPopup');
+  if (!btn || !popup) return;
+  btn.addEventListener('click', function(e) { e.stopPropagation(); popup.classList.toggle('open'); });
+  document.addEventListener('click', function(e) {
+    if (!popup.contains(e.target) && !btn.contains(e.target)) popup.classList.remove('open');
+  });
+})();
+
+// Mobile Nav
+function toggleMobileMenu() {
+  const btn = document.getElementById('navHamburger');
+  const menu = document.getElementById('navMobileMenu');
+  if (!btn || !menu) return;
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  const btn = document.getElementById('navHamburger');
+  const menu = document.getElementById('navMobileMenu');
+  if (!btn || !menu) return;
+  if (!btn.contains(e.target) && !menu.contains(e.target)) {
+    btn.classList.remove('open');
+    menu.classList.remove('open');
+  }
+});
+document.querySelectorAll('.nav-mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navHamburger')?.classList.remove('open');
+    document.getElementById('navMobileMenu')?.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
