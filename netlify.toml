@@ -74,13 +74,7 @@
   to = "/coffee-cup-werbung.html"
   status = 200
 
-# Bäckertüten-Werbung — Umlaut-Slug 301 auf die kanonische ASCII-Pretty-URL; ASCII-Slug rewritet auf die Datei.
-[[redirects]]
-  from = "/baeckertüten-werbung"
-  to = "/baeckertueten-werbung"
-  status = 301
-  force = true
-
+# Bäckertüten-Werbung — ASCII-Pretty-URL rewritet auf die Datei.
 [[redirects]]
   from = "/baeckertueten-werbung"
   to = "/baeckertueten-werbung.html"
