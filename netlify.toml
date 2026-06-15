@@ -1,6 +1,19 @@
 [build]
   publish = "."
 
+# Entfernte verwaiste Seiten → 301 auf gültiges Ziel
+[[redirects]]
+  from = "/index-shop"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/shop-final"
+  to = "/shop"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/kampagnen"
   to = "/kampagnen.html"
