@@ -75,6 +75,11 @@
   status = 200
 
 [[redirects]]
+  from = "/kunden-gewinnen"
+  to = "/kunden-gewinnen.html"
+  status = 200
+
+[[redirects]]
   from = "/shop"
   to = "/shop.html"
   status = 200
