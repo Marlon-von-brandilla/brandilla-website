@@ -54,7 +54,7 @@
     {
       "@type": "Question",
       "name": "Für welche Branchen eignet sich TakeAway Recruiting besonders?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Besonders wirksam ist die Methode überall dort wo klassisches Online-Recruiting nicht mehr funktioniert: Pflege & Gesundheit, KFZ & Handwerk, Bau, Gastronomie und Logistik." }
+      "acceptedAnswer": { "@type": "Answer", "text": "TakeAway Recruiting funktioniert für viele Branchen — von Pflege & Gesundheit über Handwerk und KFZ bis Bau, Gastronomie und Logistik. Für einzelne Branchen gibt es eigene Seiten mit Details." }
     },
     {
       "@type": "Question",
@@ -276,6 +276,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
 .rc-audience-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--cream); margin-bottom: 12px; }
 .rc-audience-card p { font-size: 15px; color: rgba(247,242,232,0.45); line-height: 1.8; font-weight: 300; }
 .rc-audience-tag { display: inline-block; margin-top: 16px; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--pink); background: rgba(229,12,125,0.08); padding: 6px 14px; }
+.rc-audience-link { display: block; margin-top: 16px; font-size: 13px; font-weight: 500; color: var(--pink); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; cursor: none; }
+.rc-audience-link:hover { color: #f0007a; }
 
 /* Steps */
 .rc-steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 56px; }
@@ -285,7 +287,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
 .rc-step p { font-size: 14px; color: rgba(247,242,232,0.4); line-height: 1.7; font-weight: 300; }
 
 /* Referenzen */
-.rc-ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.rc-ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; max-width: 760px; margin-left: auto; margin-right: auto; }
 .rc-ref-card { background: rgba(247,242,232,0.03); border: 1px solid rgba(247,242,232,0.06); padding: 32px; transition: border-color 0.3s; }
 .rc-ref-card:hover { border-color: var(--pink); }
 .rc-ref-icon { font-size: 32px; margin-bottom: 14px; display: block; }
@@ -320,6 +322,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
 .rc-faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
 .rc-faq-item.open .rc-faq-answer { max-height: 400px; }
 .rc-faq-answer p { font-size: 15px; color: rgba(247,242,232,0.4); line-height: 1.8; font-weight: 300; padding-bottom: 24px; }
+.rc-faq-answer a { color: var(--pink); text-decoration: none; font-weight: 500; }
+.rc-faq-answer a:hover { color: #f0007a; }
 
 /* CTA Section */
 .rc-cta { background: var(--dark); padding: 100px 56px; border-top: 2px solid var(--pink); text-align: center; }
@@ -533,7 +537,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   </div>
   <div class="rc-hero-right">
     <div class="rc-hero-visual reveal">
-      <img src="gorilla-recruiting.png" alt="brandilla Recruiting Gorillas — Pflege, Handwerk, KFZ mit Coffee Cups" style="max-width:100%;height:auto;filter:drop-shadow(0 8px 32px rgba(229,12,125,0.2))">
+      <img src="gorilla-recruiting.png" alt="brandilla Recruiting Gorillas — Fachkräfte, Handwerk, KFZ mit Coffee Cups" style="max-width:100%;height:auto;filter:drop-shadow(0 8px 32px rgba(229,12,125,0.2))">
     </div>
   </div>
 </section>
@@ -543,11 +547,11 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   <div class="rc-inner">
     <div class="rc-badge reveal">Das Problem</div>
     <div class="rc-title reveal">Klassische Stellenanzeigen?<br><em>Werden weggeklickt.</em></div>
-    <p class="rc-subtitle reveal-delay">Online-Recruiting wird teurer und lauter — die Zielgruppe ist übersättigt. Pflegefachkräfte, Handwerker und Azubis sind kaum auf LinkedIn. Aber sie trinken Kaffee.</p>
+    <p class="rc-subtitle reveal-delay">Online-Recruiting wird teurer und lauter — die Zielgruppe ist übersättigt. Fachkräfte, Handwerker und Azubis sind kaum auf LinkedIn. Aber sie trinken Kaffee.</p>
     <div class="rc-problem-cards">
       <div class="rc-problem-card reveal">
-        <h3>73 %</h3>
-        <p>der Pflegestellen werden nicht besetzt</p>
+        <h3>83 %</h3>
+        <p>der Unternehmen erwarten negative Folgen durch fehlende Fachkräfte<span style="display:block;margin-top:8px;font-size:10px;letter-spacing:0.5px;color:rgba(247,242,232,0.25)">Quelle: DIHK-Fachkräftereport 2025/2026</span></p>
       </div>
       <div class="rc-problem-card reveal">
         <h3>Ø 127 Tage</h3>
@@ -566,7 +570,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   <div class="rc-inner">
     <div class="rc-badge reveal">Die Lösung</div>
     <div class="rc-title reveal">TakeAway Recruiting —<br><em>dort wo deine Zielgruppe wirklich ist.</em></div>
-    <p class="rc-subtitle reveal-delay">Bedruckte Coffee Cups, Bäckertüten und Verpackungen tragen deine Stellenanzeige direkt in die Hände von Pflegefachkräften, Handwerkern und Azubis — an den Orten wo sie täglich einkaufen.</p>
+    <p class="rc-subtitle reveal-delay">Bedruckte Coffee Cups, Bäckertüten und Verpackungen tragen deine Stellenanzeige direkt in die Hände von Fachkräften, Handwerkern und Azubis — an den Orten wo sie täglich einkaufen.</p>
     <div class="rc-features">
       <div class="rc-feature reveal">
         <span class="rc-feature-icon">📍</span>
@@ -599,13 +603,15 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
 <!-- ═══════════ SECTION 4 — ZIELGRUPPEN ═══════════ -->
 <section class="rc-section rc-section-dark">
   <div class="rc-inner">
-    <div class="rc-badge rc-badge-center reveal">Zielgruppen</div>
+    <div class="rc-badge rc-badge-center reveal">Branchen</div>
     <div class="rc-title reveal" style="text-align:center">Bewährt in den härtesten<br><em>Recruiting-Märkten.</em></div>
+    <p class="rc-subtitle reveal-delay" style="text-align:center;margin:0 auto">Für diese Branchen funktioniert Recruiting-Werbung besonders gut — zu einzelnen Branchen gibt es eigene Seiten mit allen Details.</p>
     <div class="rc-audience-grid">
       <div class="rc-audience-card reveal">
         <span class="rc-audience-icon">🏥</span>
         <h3>Pflege & Gesundheit</h3>
-        <p>Pflegefachkräfte sind kaum online — aber täglich beim Bäcker und im Café. Unsere Cups erreichen sie im Alltag, nicht im Spam-Ordner.</p>
+        <p>Pflegefachkräfte sind kaum online — aber täglich beim Bäcker und im Café.</p>
+        <a href="/pflege" class="rc-audience-link">Zur Pflege-Seite →</a>
         <span class="rc-audience-tag">Referenz vorhanden</span>
       </div>
       <div class="rc-audience-card reveal">
@@ -649,12 +655,6 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
     <div class="rc-badge rc-badge-center reveal">Referenzen</div>
     <div class="rc-title reveal" style="text-align:center">Echte Kampagnen.<br><em>Echte Reichweite.</em></div>
     <div class="rc-ref-grid">
-      <div class="rc-ref-card reveal">
-        <span class="rc-ref-icon">🏥</span>
-        <h3>Pflegeeinrichtung, NRW</h3>
-        <p>50.000 Cups · 8 Standorte · Zielgruppe: Pflegefachkräfte 25–45</p>
-        <span class="rc-ref-tag">Employer Branding</span>
-      </div>
       <div class="rc-ref-card reveal">
         <span class="rc-ref-icon">🚂</span>
         <h3>Deutsche Bahn</h3>
@@ -743,7 +743,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
       <div class="rc-faq-item reveal">
         <button class="rc-faq-question">Für welche Branchen eignet sich TakeAway Recruiting besonders?</button>
         <div class="rc-faq-answer">
-          <p>Besonders wirksam ist die Methode überall dort wo klassisches Online-Recruiting nicht mehr funktioniert: Pflege & Gesundheit, KFZ & Handwerk, Bau, Gastronomie und Logistik. Diese Zielgruppen sind im Alltag erreichbar — nicht im Spam-Ordner.</p>
+          <p>TakeAway Recruiting funktioniert für viele Branchen — von <a href="/pflege">Pflege &amp; Gesundheit</a> über Handwerk und KFZ bis Bau, Gastronomie und Logistik. Für einzelne Branchen gibt es eigene Seiten mit Details.</p>
         </div>
       </div>
       <div class="rc-faq-item reveal">
