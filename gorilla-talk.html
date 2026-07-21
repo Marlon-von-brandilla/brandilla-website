@@ -103,7 +103,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   .nav-links { display: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
-@media(max-width:1100px){
+@media(max-width:1260px){
   .nav-links { gap: 20px; }
   .nav-links a { font-size: 10px; }
 }
@@ -345,9 +345,23 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
         <a href="/handwerk">Handwerk</a>
       </div>
     </li>
-    <li><a href="gorilla-talk.html">Gorilla Talk</a></li>
+    <li class="nav-dropdown">
+      <a href="/kunden-gewinnen" class="nav-dropdown-trigger">Kunden gewinnen <span class="nav-arrow">▾</span></a>
+      <div class="nav-dropdown-menu">
+        <a href="/kunden-gewinnen">Übersicht</a>
+        <a href="/neukundengewinnung">Neukundengewinnung</a>
+        <a href="/promotion">Produkt & Promotion</a>
+        <a href="/bank">Banken & Sparkassen</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="marketing-wissen.html" class="nav-dropdown-trigger">Wissen <span class="nav-arrow">▾</span></a>
+      <div class="nav-dropdown-menu">
+        <a href="marketing-wissen.html">Marketing-Wissen</a>
+        <a href="gorilla-talk.html">Gorilla Talk</a>
+      </div>
+    </li>
     <li><a href="preise.html">Preise</a></li>
-    <li><a href="marketing-wissen.html">Marketing-Wissen</a></li>
     <li><a href="partner.html">Partner</a></li>
     <li><a href="https://app.brandilla.de" target="_blank">Dashboard</a></li>
     <li><a href="kontakt.html" class="nav-cta">Kampagne anfragen</a></li>
@@ -372,9 +386,19 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
     <a href="/pflege">Pflege</a>
     <a href="/handwerk">Handwerk</a>
   </details>
-  <a href="gorilla-talk.html">Gorilla Talk</a>
+  <details class="nav-mobile-group">
+    <summary>Kunden gewinnen</summary>
+    <a href="/kunden-gewinnen">Übersicht</a>
+    <a href="/neukundengewinnung">Neukundengewinnung</a>
+    <a href="/promotion">Produkt & Promotion</a>
+    <a href="/bank">Banken & Sparkassen</a>
+  </details>
+  <details class="nav-mobile-group">
+    <summary>Wissen</summary>
+    <a href="marketing-wissen.html">Marketing-Wissen</a>
+    <a href="gorilla-talk.html">Gorilla Talk</a>
+  </details>
   <a href="preise.html">Preise</a>
-  <a href="marketing-wissen.html">Marketing-Wissen</a>
   <a href="partner.html">Partner</a>
   <a href="https://app.brandilla.de" target="_blank">Dashboard</a>
   <a href="kontakt.html" class="nav-cta">Kampagne anfragen</a>
