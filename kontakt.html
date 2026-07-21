@@ -433,50 +433,140 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
 <section class="contact-form-section">
   <div class="form-title reveal">Kampagne <em>anfragen.</em></div>
   <h1 class="hero-h1">Lass uns über deine Kampagne sprechen.</h1>
-  <form class="form-grid reveal-delay" action="mailto:kampagne@brandilla.de" method="post" enctype="text/plain">
+  <form class="form-grid reveal-delay" id="kaForm" novalidate>
     <div class="form-group">
-      <label class="form-label">Vorname *</label>
-      <input type="text" class="form-input" placeholder="Max" required>
+      <label class="form-label" for="kaVorname">Vorname *</label>
+      <input type="text" id="kaVorname" class="form-input" placeholder="Max" maxlength="100" required>
     </div>
     <div class="form-group">
-      <label class="form-label">Nachname *</label>
-      <input type="text" class="form-input" placeholder="Mustermann" required>
+      <label class="form-label" for="kaNachname">Nachname *</label>
+      <input type="text" id="kaNachname" class="form-input" placeholder="Mustermann" maxlength="100" required>
     </div>
     <div class="form-group">
-      <label class="form-label">Unternehmen *</label>
-      <input type="text" class="form-input" placeholder="Musterfirma GmbH" required>
+      <label class="form-label" for="kaFirma">Unternehmen</label>
+      <input type="text" id="kaFirma" class="form-input" placeholder="Musterfirma GmbH" maxlength="300">
     </div>
     <div class="form-group">
-      <label class="form-label">E-Mail *</label>
-      <input type="email" class="form-input" placeholder="max@musterfirma.de" required>
+      <label class="form-label" for="kaEmail">E-Mail *</label>
+      <input type="email" id="kaEmail" class="form-input" placeholder="max@musterfirma.de" maxlength="200" required>
     </div>
     <div class="form-group">
-      <label class="form-label">Telefon</label>
-      <input type="tel" class="form-input" placeholder="+49 ...">
+      <label class="form-label" for="kaTel">Telefon</label>
+      <input type="tel" id="kaTel" class="form-input" placeholder="+49 ..." maxlength="300">
     </div>
     <div class="form-group">
-      <label class="form-label">Interesse</label>
-      <select class="form-select form-input">
-        <option>Coffee Cup Kampagne</option>
-        <option>Pizzaschachtel</option>
-        <option>Bäckertüte</option>
-        <option>Bierdeckel</option>
-        <option>Snackbox</option>
-        <option>Gorilla Talk</option>
-        <option>Mehrere Formate</option>
+      <label class="form-label" for="kaInteresse">Interesse an</label>
+      <select id="kaInteresse" class="form-select form-input">
+        <option value="">Bitte wählen …</option>
+        <option>Recruiting</option>
+        <option>Pflege</option>
+        <option>Handwerk</option>
+        <option>Neukundengewinnung</option>
+        <option>Produkt &amp; Promotion</option>
+        <option>Bank &amp; Sparkasse</option>
+        <option>Cup Shop</option>
+        <option>Sonstiges</option>
       </select>
     </div>
     <div class="form-group full">
-      <label class="form-label">Nachricht</label>
-      <textarea class="form-input" rows="5" placeholder="Zielgruppe, Stadt, Budget, Besonderheiten ..." style="resize:vertical"></textarea>
+      <label class="form-label" for="kaNachricht">Nachricht *</label>
+      <textarea id="kaNachricht" class="form-input" rows="5" placeholder="Zielgruppe, Stadt, Budget, Besonderheiten ..." style="resize:vertical" maxlength="5000" required></textarea>
+    </div>
+    <!-- Honeypot: für Menschen unsichtbar, Bots füllen es aus — dann wird serverseitig verworfen -->
+    <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+      <label for="kaHp">Website</label>
+      <input type="text" id="kaHp" name="website_url" tabindex="-1" autocomplete="off">
+    </div>
+    <div class="form-group full" style="display:flex;align-items:flex-start;gap:10px">
+      <input type="checkbox" id="kaDsgvo" style="margin-top:4px;width:16px;height:16px;accent-color:#E50C7D;cursor:none">
+      <label for="kaDsgvo" style="font-size:13px;color:rgba(247,242,232,0.5);font-weight:300;line-height:1.6;cursor:none">Ich stimme der Verarbeitung meiner Daten laut <a href="/datenschutz" target="_blank" style="color:#E50C7D;text-decoration:none">Datenschutzerklärung</a> zu. *</label>
     </div>
     <div class="form-submit">
-      <button type="submit" class="btn-pink">Anfrage senden →</button>
+      <button type="submit" id="kaSubmit" class="btn-pink" disabled style="opacity:.45">Anfrage senden →</button>
     </div>
+    <div id="kaMsg" style="display:none;grid-column:1/-1;padding:14px 18px;font-size:14px;font-weight:500;line-height:1.6"></div>
     <div class="form-note">
       * Pflichtfelder · Wir melden uns innerhalb von 24 Stunden · kostenlos & unverbindlich
     </div>
   </form>
+  <script>
+  // Kontakt-Formular → Dashboard (kontakt-anfrage-Function). ts wird BEIM SEITENAUFBAU
+  // gesetzt (Zeitfalle: Submits <3s danach verwirft der Server als Bot).
+  (function(){
+    var KA_TS = Date.now();
+    var KA_URL = 'https://app.brandilla.de/.netlify/functions/kontakt-anfrage';
+    var form = document.getElementById('kaForm');
+    var btn = document.getElementById('kaSubmit');
+    var dsgvo = document.getElementById('kaDsgvo');
+    var msg = document.getElementById('kaMsg');
+    if (!form) return;
+
+    dsgvo.addEventListener('change', function(){
+      btn.disabled = !dsgvo.checked;
+      btn.style.opacity = dsgvo.checked ? '1' : '.45';
+    });
+
+    function showMsg(text, ok){
+      msg.textContent = text;
+      msg.style.display = 'block';
+      msg.style.background = ok ? 'rgba(74,222,128,0.08)' : 'rgba(229,12,125,0.08)';
+      msg.style.border = '1px solid ' + (ok ? 'rgba(74,222,128,0.4)' : 'rgba(229,12,125,0.4)');
+      msg.style.color = ok ? '#4ade80' : '#E50C7D';
+    }
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var vorname = document.getElementById('kaVorname').value.trim();
+      var nachname = document.getElementById('kaNachname').value.trim();
+      var email = document.getElementById('kaEmail').value.trim();
+      var nachricht = document.getElementById('kaNachricht').value.trim();
+      if (!vorname || !nachname || !email || !nachricht) { showMsg('Bitte fülle alle Pflichtfelder aus.', false); return; }
+      if (!dsgvo.checked) { showMsg('Bitte stimme der Datenschutzerklärung zu.', false); return; }
+
+      btn.disabled = true;
+      var label = btn.textContent;
+      btn.textContent = 'Wird gesendet …';
+      msg.style.display = 'none';
+
+      var payload = {
+        name: (vorname + ' ' + nachname).trim(),
+        email: email,
+        firma: document.getElementById('kaFirma').value.trim(),
+        telefon: document.getElementById('kaTel').value.trim(),
+        interesse: document.getElementById('kaInteresse').value,
+        nachricht: nachricht,
+        seite: window.location.pathname,
+        website_url: document.getElementById('kaHp').value,
+        ts: KA_TS
+      };
+
+      try {
+        var resp = await fetch(KA_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        var data = await resp.json().catch(function(){ return {}; });
+        if (resp.ok && data.success) {
+          showMsg('✓ Danke! Deine Anfrage ist angekommen — wir melden uns innerhalb von 24 Stunden.', true);
+          form.reset();
+          dsgvo.checked = false;
+          btn.textContent = label;
+          btn.disabled = true;
+          btn.style.opacity = '.45';
+          KA_TS = Date.now();
+          return;
+        }
+        showMsg(data.error || 'Senden fehlgeschlagen. Bitte versuche es später erneut oder ruf uns an: +49 172 743 55 15.', false);
+      } catch (err) {
+        showMsg('Verbindung fehlgeschlagen. Bitte versuche es später erneut oder ruf uns an: +49 172 743 55 15.', false);
+      }
+      btn.textContent = label;
+      btn.disabled = !dsgvo.checked;
+      btn.style.opacity = dsgvo.checked ? '1' : '.45';
+    });
+  })();
+  </script>
 </section>
 
 <footer>
