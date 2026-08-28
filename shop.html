@@ -97,23 +97,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 56px;d
 .form-block{display:flex;flex-direction:column;gap:12px}
 .form-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--warm-gray);font-weight:600}
 
-/* SIZE SELECTOR */
-.size-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.size-opt{padding:16px 12px;border:1px solid var(--border);background:var(--accent);text-align:center;cursor:none;transition:all .2s}
-.size-opt:hover{border-color:var(--pink);background:var(--cream)}
-.size-opt.selected{border-color:var(--pink);background:var(--cream)}
-.size-opt.selected .size-name{color:var(--pink)}
-.size-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--dark);margin-bottom:4px}
-.size-ml{font-size:10px;color:var(--warm-gray);letter-spacing:1px}
-.size-use{font-size:10px;color:var(--warm-gray);margin-top:2px}
+/* SIZE CARDS */
+.size-cards-3d{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.size-card-3d{position:relative;padding:18px 10px 16px;border:1px solid var(--border);background:var(--accent);text-align:center;cursor:none;transition:border-color .2s,background .2s,box-shadow .2s}
+.size-card-3d:hover{border-color:var(--pink);background:var(--cream)}
+.size-card-3d.active{border-color:var(--pink);background:var(--cream);box-shadow:inset 3px 0 0 var(--pink)}
+.size-card-3d.active::after{content:'★';position:absolute;top:7px;right:9px;font-size:10px;line-height:1;color:var(--pink)}
+.sc-oz{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--dark);line-height:1.1}
+.size-card-3d.active .sc-oz{color:var(--pink)}
+.sc-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--warm-gray);font-weight:600;margin-top:7px}
+.sc-desc{font-size:10px;color:var(--warm-gray);font-weight:300;margin-top:4px}
 
-/* MENGE SELECTOR */
-.menge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.menge-opt{padding:14px 8px;border:1px solid var(--border);background:var(--accent);text-align:center;cursor:none;transition:all .2s}
-.menge-opt:hover,.menge-opt.selected{border-color:var(--pink);background:var(--cream)}
-.menge-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--dark)}
-.menge-opt.selected .menge-num{color:var(--pink)}
-.menge-preis{font-size:9px;color:var(--warm-gray);letter-spacing:1px;margin-top:2px}
+/* FARBE & DESIGN */
+.color-swatches{display:flex;flex-wrap:wrap;gap:10px}
+.color-swatch-3d{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);cursor:none;transition:transform .15s,box-shadow .2s}
+.color-swatch-3d:hover{transform:scale(1.08)}
+.color-swatch-3d.active{box-shadow:0 0 0 2px var(--cream),0 0 0 3px var(--pink)}
+.konfigDesignDrop{border:1px dashed rgba(28,24,18,.22);background:var(--accent);padding:28px 20px;text-align:center;cursor:none;transition:border-color .2s,background .2s}
+.konfigDesignDrop:hover{border-color:var(--pink);background:var(--cream)}
+
+/* MENGE */
+.qty-btns-3d{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.qty-btn-3d{padding:13px 6px;border:1px solid var(--border);background:var(--accent);text-align:center;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:300;color:var(--dark);line-height:1.2;cursor:none;transition:all .2s}
+.qty-btn-3d:hover{border-color:var(--pink);background:var(--cream)}
+.qty-btn-3d.active{border-color:var(--pink);background:var(--pink);color:#F7F2E8}
+
+/* PREIS-BAR */
+.konfig-price-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--dark);border-left:3px solid var(--pink);padding:22px 26px;margin-top:8px}
+.kp-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,.32);margin-bottom:9px}
+.kp-value{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;line-height:1;color:var(--cream)}
+.konfig-price-bar>div:last-child .kp-value{color:var(--pink)}
+
+/* 3D-VIEWER */
+.konfig-viewer-wrap{border:1px solid var(--border);background:var(--accent)}
+#cupViewer{position:relative;width:100%;height:420px;cursor:none}
+#cup-canvas{display:block}
+.viewer-hint{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--warm-gray);opacity:.65;pointer-events:none}
 
 /* UPLOAD AREA */
 .upload-area{border:1px dashed rgba(28,24,18,.2);background:var(--accent);padding:40px;text-align:center;cursor:none;transition:all .25s}
@@ -217,8 +236,9 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
   .preview-panel{position:static}
   .preise-section,.features-section,.gallery-section{padding:60px 24px}
   .feat-grid,.gallery-grid{grid-template-columns:1fr}
-  .menge-grid{grid-template-columns:repeat(2,1fr)}
-  .size-grid{grid-template-columns:repeat(3,1fr)}
+  .qty-btns-3d{grid-template-columns:repeat(2,1fr)}
+  .size-cards-3d{grid-template-columns:repeat(3,1fr)}
+  #cupViewer{height:340px}
   footer{padding:52px 24px 36px}.fg{grid-template-columns:1fr 1fr;gap:32px}
 }
 
@@ -587,7 +607,7 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
         </div>
         <div style="text-align:right">
           <div class="kp-label">Gesamtpreis (brutto)</div>
-          <div class="kp-value" id="konfigPriceTotal">213,61 € brutto</div>
+          <div class="kp-value" id="konfigPriceTotal">213,61 €</div>
         </div>
       </div>
 
@@ -1134,7 +1154,7 @@ function updateKonfigPrice() {
   const pp = getStaffelPrice(currentQty3D, sizeKey);
   const brutto = pp * currentQty3D * (1 + MWST_SATZ);
   if (document.getElementById('konfigPriceUnit')) document.getElementById('konfigPriceUnit').textContent = eurUnit(pp);
-  if (document.getElementById('konfigPriceTotal')) document.getElementById('konfigPriceTotal').textContent = eur(brutto) + ' brutto';
+  if (document.getElementById('konfigPriceTotal')) document.getElementById('konfigPriceTotal').textContent = eur(brutto);
 }
 
 function applyImageToCup3D(img, name) {
@@ -1343,18 +1363,6 @@ function submitOrder() {
   msg.style.color = '#4ade80';
   msg.textContent = '✓ E-Mail-Client wird geöffnet — bitte sende die vorbereitete E-Mail ab.';
 }
-
-// Cup Designer: Logo-Text Vorschau live
-const logoInput = document.querySelector('#uploadArea .upload-label');
-document.getElementById('fileInput').addEventListener('change', function() {
-  if (this.files[0]) {
-    const name = this.files[0].name;
-    logoInput.textContent = '✓ ' + name;
-    // Zeige Dateiname als Preview-Text im SVG
-    const pt = document.getElementById('previewText');
-    if (pt) pt.textContent = name.replace(/\.[^/.]+$/, '').slice(0, 12);
-  }
-});
 </script>
 <script>
 (function() {
