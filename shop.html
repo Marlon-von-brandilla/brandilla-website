@@ -518,20 +518,20 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
       <div class="form-block r">
         <div class="form-label">Größe wählen</div>
         <div class="size-cards-3d">
-          <div class="size-card-3d" data-size="klein" onclick="selectSize3D('klein', this)">
-            <div class="sc-oz">4oz</div>
-            <div class="sc-label">Klein</div>
-            <div class="sc-desc">0,1l · Espresso</div>
-          </div>
-          <div class="size-card-3d active" data-size="medium" onclick="selectSize3D('medium', this)">
+          <div class="size-card-3d active" data-size="oz8" onclick="selectSize3D('oz8', this)">
             <div class="sc-oz">8oz</div>
-            <div class="sc-label">Medium</div>
+            <div class="sc-label">Standard</div>
             <div class="sc-desc">0,2l · Cappuccino</div>
           </div>
-          <div class="size-card-3d" data-size="gross" onclick="selectSize3D('gross', this)">
+          <div class="size-card-3d" data-size="oz12" onclick="selectSize3D('oz12', this)">
             <div class="sc-oz">12oz</div>
             <div class="sc-label">Groß</div>
             <div class="sc-desc">0,3l · Latte</div>
+          </div>
+          <div class="size-card-3d" data-size="oz16" onclick="selectSize3D('oz16', this)">
+            <div class="sc-oz">16oz</div>
+            <div class="sc-label">XL</div>
+            <div class="sc-desc">0,4l · Filterkaffee</div>
           </div>
         </div>
       </div>
@@ -583,11 +583,11 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
       <div class="konfig-price-bar rd">
         <div>
           <div class="kp-label">Stückpreis (netto)</div>
-          <div class="kp-value" id="konfigPriceUnit">0,245 €</div>
+          <div class="kp-value" id="konfigPriceUnit">0,359 €</div>
         </div>
         <div style="text-align:right">
           <div class="kp-label">Gesamtpreis (brutto)</div>
-          <div class="kp-value" id="konfigPriceTotal">145 €</div>
+          <div class="kp-value" id="konfigPriceTotal">213,61 € brutto</div>
         </div>
       </div>
 
@@ -632,14 +632,14 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
 <section class="preise-section" id="preise">
   <div class="preise-inner">
     <div class="snum r" style="color:var(--pink)">02 — Preisübersicht</div>
-    <div class="stitle r">Bio-Cups<br><em>4oz · 8oz · 12oz</em></div>
+    <div class="stitle r">Bio-Cups<br><em>8oz · 12oz · 16oz</em></div>
     <div class="r" style="margin-top:8px;font-size:15px;color:var(--warm-gray);font-weight:300">Alle Preise zzgl. MwSt. · Inkl. 4-farbigem Druck</div>
 
     <!-- Größen-Tabs -->
     <div style="display:flex;gap:2px;margin-bottom:2px" id="sizeTabs">
-      <button onclick="switchSizeTab('klein')" id="tab-klein" style="flex:1;padding:12px;background:rgba(28,24,18,0.06);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:var(--warm-gray)">4oz · 0,1l</button>
-      <button onclick="switchSizeTab('medium')" id="tab-medium" style="flex:1;padding:12px;background:var(--pink);border:1px solid var(--pink);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:#F7F2E8">8oz · 0,2l ★</button>
-      <button onclick="switchSizeTab('gross')" id="tab-gross" style="flex:1;padding:12px;background:rgba(28,24,18,0.06);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:var(--warm-gray)">12oz · 0,3l</button>
+      <button onclick="switchSizeTab('oz8')" id="tab-oz8" style="flex:1;padding:12px;background:var(--pink);border:1px solid var(--pink);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:#F7F2E8">8oz · 0,2l ★</button>
+      <button onclick="switchSizeTab('oz12')" id="tab-oz12" style="flex:1;padding:12px;background:rgba(28,24,18,0.06);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:var(--warm-gray)">12oz · 0,3l</button>
+      <button onclick="switchSizeTab('oz16')" id="tab-oz16" style="flex:1;padding:12px;background:rgba(28,24,18,0.06);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;color:var(--warm-gray)">16oz · 0,4l</button>
     </div>
 
     <table class="preise-table rd" id="preiseTableShop">
@@ -663,16 +663,16 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
         <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.3);margin-bottom:16px">Live-Kalkulation</div>
         <div style="display:flex;flex-direction:column;gap:10px">
           <div style="display:flex;justify-content:space-between;font-size:14px;color:rgba(247,242,232,0.5);font-weight:300;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,0.06)">
-            <span>Preis / Stück</span><span id="calcUnit" style="color:var(--cream)">0,245 €</span>
+            <span>Preis / Stück</span><span id="calcUnit" style="color:var(--cream)">0,359 €</span>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:14px;color:rgba(247,242,232,0.5);font-weight:300;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,0.06)">
-            <span>Gesamtpreis netto</span><span id="calcNetto" style="color:var(--cream)">122,50 €</span>
+            <span>Gesamtpreis netto</span><span id="calcNetto" style="color:var(--cream)">179,50 €</span>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:14px;color:rgba(247,242,232,0.5);font-weight:300;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,0.06)">
-            <span>MwSt. 19%</span><span id="calcMwst" style="color:var(--cream)">23,28 €</span>
+            <span>MwSt. 19%</span><span id="calcMwst" style="color:var(--cream)">34,11 €</span>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:16px;font-weight:600;color:var(--cream)">
-            <span>Gesamtpreis brutto</span><span id="calcBrutto" style="color:var(--pink)">145,78 €</span>
+            <span>Gesamtpreis brutto</span><span id="calcBrutto" style="color:var(--pink)">213,61 €</span>
           </div>
         </div>
       </div>
@@ -689,7 +689,8 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
     </div>
 
     <div style="margin-top:12px;font-size:12px;color:var(--warm-gray);font-weight:300;line-height:2">
-      Alle Preise zzgl. MwSt. · Inkl. 4-farbigem Druck · Bio-zertifiziert · plastikfrei · Made in Germany
+      Alle Preise zzgl. MwSt. · Inkl. 4-farbigem Druck · Bio-zertifiziert · Made in Germany<br>
+      100% plastikfrei — Innenbeschichtung aus Wasserlack statt PE-Folie, anders als bei herkömmlichen Coffee-to-go-Bechern.
     </div>
   </div>
 </section>
@@ -875,23 +876,18 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
       </div>
       <div>
         <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Cup-Größe *</label>
-        <select id="oCupSize" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s;appearance:none" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'">
-          <option value="4oz · 0,1l" style="background:#1C1812">4oz · 0,1l (Espresso)</option>
-          <option value="8oz · 0,2l" style="background:#1C1812" selected>8oz · 0,2l (Standard)</option>
-          <option value="12oz · 0,3l" style="background:#1C1812">12oz · 0,3l (Large)</option>
+        <select id="oCupSize" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s;appearance:none" onchange="syncSizeFromForm(this)" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'">
+          <option value="8oz · 0,2l" data-size="oz8" style="background:#1C1812" selected>8oz · 0,2l (Standard)</option>
+          <option value="12oz · 0,3l" data-size="oz12" style="background:#1C1812">12oz · 0,3l (Large)</option>
+          <option value="16oz · 0,4l" data-size="oz16" style="background:#1C1812">16oz · 0,4l (XL)</option>
         </select>
       </div>
       <div>
         <label style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,242,232,0.35);margin-bottom:10px">Menge *</label>
         <select id="oMenge" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s;appearance:none" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'">
-          <option value="500" style="background:#1C1812">500 Stück — 390 €</option>
-          <option value="1000" style="background:#1C1812" selected>1.000 Stück — 690 €</option>
-          <option value="5000" style="background:#1C1812">5.000 Stück — 2.900 €</option>
-          <option value="10000" style="background:#1C1812">10.000 Stück — 4.990 €</option>
-          <option value="25000" style="background:#1C1812">25.000 Stück — 10.900 €</option>
-          <option value="50000" style="background:#1C1812">50.000 Stück — 19.900 €</option>
-          <option value="custom" style="background:#1C1812">Individuelle Menge (Anfrage)</option>
+          <!-- Optionen werden aus PRICE_TABLE generiert: renderMengeOptions() -->
         </select>
+        <div id="oMengeHint" style="font-size:11px;color:rgba(247,242,232,0.3);margin-top:8px;font-weight:300">Listenpreise netto für 8oz · 0,2l</div>
       </div>
 
       <div style="grid-column:1/-1">
@@ -957,9 +953,9 @@ document.querySelectorAll('.r,.rd').forEach(el=>obs.observe(el));
 
 // ── 3D CUP DESIGNER (Three.js) ──
 const CUP_SIZES = {
-  klein:  { topR: 0.75,  bottomR: 0.60, height: 1.8,  label: '4oz · 0,1l' },
-  medium: { topR: 0.95,  bottomR: 0.78, height: 2.4,  label: '8oz · 0,2l' },
-  gross:  { topR: 1.10,  bottomR: 0.90, height: 2.9,  label: '12oz · 0,3l' }
+  oz8:  { topR: 0.95,  bottomR: 0.78, height: 2.40, label: '8oz · 0,2l' },
+  oz12: { topR: 1.10,  bottomR: 0.90, height: 2.90, label: '12oz · 0,3l' },
+  oz16: { topR: 1.20,  bottomR: 0.98, height: 3.15, label: '16oz · 0,4l' }
 };
 
 let cupMesh = null, cupGroup = null;
@@ -968,7 +964,7 @@ let autoRotate = true, autoRotateTimeout = null;
 let uploadedTexture = null;
 let currentCupColor3D = '#E50C7D';
 let currentCupText3D = '';
-let currentSize3D = 'medium';
+let currentSize3D = 'oz8';
 let currentQty3D = 500;
 
 function initCupViewer() {
@@ -996,7 +992,7 @@ function initCupViewer() {
   cupGroup = new THREE.Group();
   cupScene.add(cupGroup);
 
-  buildCup3D('medium');
+  buildCup3D('oz8');
 
   function resize() {
     const w = container.offsetWidth;
@@ -1083,8 +1079,16 @@ function selectSize3D(size, el) {
   document.querySelectorAll('.size-card-3d').forEach(c => c.classList.remove('active'));
   el.classList.add('active');
   buildCup3D(size);
-  // Sync Preistabelle
-  switchSizeTab(size === 'klein' ? 'klein' : size === 'gross' ? 'gross' : 'medium');
+  // Sync Preistabelle, Live-Kalkulation und Bestellformular
+  switchSizeTab(size);
+}
+
+// Bestellformular -> Konfigurator (Gegenrichtung)
+function syncSizeFromForm(sel) {
+  const key = sel.options[sel.selectedIndex] && sel.options[sel.selectedIndex].dataset.size;
+  if (!key || !CUP_SIZES[key]) return;
+  const card = document.querySelector('.size-card-3d[data-size="' + key + '"]');
+  if (card) selectSize3D(key, card); else switchSizeTab(key);
 }
 
 function setCupColor3D(el) {
@@ -1105,6 +1109,7 @@ function selectQty3D(qty, el) {
   if (el) el.classList.add('active');
   const inp = document.getElementById('qtyInput3D');
   if (inp) inp.value = qty;
+  syncCalcMenge(currentQty3D);
   updateKonfigPrice();
   updateCalc();
 }
@@ -1112,14 +1117,22 @@ function selectQty3D(qty, el) {
 function selectQtyInput3D(val) {
   currentQty3D = Math.max(500, Math.min(50000, parseInt(val) || 500));
   document.querySelectorAll('.qty-btn-3d').forEach(b => b.classList.remove('active'));
+  syncCalcMenge(currentQty3D);
   updateKonfigPrice();
   updateCalc();
+}
+
+// Konfigurator-Menge in die Live-Kalkulation spiegeln, damit beide Anzeigen
+// nie unterschiedliche Mengen zeigen
+function syncCalcMenge(qty) {
+  const cm = document.getElementById('calcMenge');
+  if (cm) cm.value = qty;
 }
 
 function updateKonfigPrice() {
   const sizeKey = currentSize3D;
   const pp = getStaffelPrice(currentQty3D, sizeKey);
-  const brutto = pp * currentQty3D * 1.19;
+  const brutto = pp * currentQty3D * (1 + MWST_SATZ);
   if (document.getElementById('konfigPriceUnit')) document.getElementById('konfigPriceUnit').textContent = eurUnit(pp);
   if (document.getElementById('konfigPriceTotal')) document.getElementById('konfigPriceTotal').textContent = eur(brutto) + ' brutto';
 }
@@ -1155,29 +1168,22 @@ function resetKonfigDesign3D() {
 }
 let selPreis=0;
 
-// ── Originale Staffelpreise (Preis pro Stück in EUR netto) ──
+// ── Staffelpreise (Preis pro Stück in EUR netto) — EINZIGE Preisquelle der Seite ──
+// Konfigurator, Live-Kalkulation, Preistabelle und Mengen-Dropdown lesen alle hier.
 const PRICE_TABLE = {
-  500:   { klein: 0.225, medium: 0.245, gross: 0.265 },
-  1000:  { klein: 0.210, medium: 0.230, gross: 0.250 },
-  2000:  { klein: 0.208, medium: 0.235, gross: 0.255 },
-  3000:  { klein: 0.205, medium: 0.222, gross: 0.242 },
-  4000:  { klein: 0.200, medium: 0.220, gross: 0.240 },
-  5000:  { klein: 0.195, medium: 0.215, gross: 0.235 },
-  6000:  { klein: 0.192, medium: 0.212, gross: 0.232 },
-  7000:  { klein: 0.190, medium: 0.210, gross: 0.230 },
-  8000:  { klein: 0.185, medium: 0.205, gross: 0.225 },
-  9000:  { klein: 0.180, medium: 0.200, gross: 0.220 },
-  10000: { klein: 0.175, medium: 0.195, gross: 0.215 },
-  15000: { klein: 0.155, medium: 0.175, gross: 0.195 },
-  20000: { klein: 0.141, medium: 0.161, gross: 0.181 },
-  25000: { klein: 0.139, medium: 0.159, gross: 0.179 },
-  30000: { klein: 0.137, medium: 0.157, gross: 0.177 },
-  40000: { klein: 0.132, medium: 0.152, gross: 0.172 },
-  50000: { klein: 0.129, medium: 0.149, gross: 0.169 }
+  500:   { oz8: 0.359, oz12: 0.421, oz16: 0.480 },
+  1000:  { oz8: 0.220, oz12: 0.323, oz16: 0.346 },
+  5000:  { oz8: 0.156, oz12: 0.204, oz16: 0.224 },
+  10000: { oz8: 0.152, oz12: 0.178, oz16: 0.203 },
+  20000: { oz8: 0.128, oz12: 0.160, oz16: 0.183 },
+  25000: { oz8: 0.126, oz12: 0.160, oz16: 0.182 },
+  50000: { oz8: 0.119, oz12: 0.147, oz16: 0.166 }
 };
+const MWST_SATZ = 0.19;
+const ABO_RABATT = 0.05;
 const STAFFELN = Object.keys(PRICE_TABLE).map(Number).sort((a,b)=>a-b);
-const DISPLAY_ROWS = [500,1000,2000,5000,10000,20000,30000,50000];
-let activeSize = 'medium';
+const DISPLAY_ROWS = STAFFELN.slice();
+let activeSize = 'oz8';
 
 function eur(v){return v.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
 function eurUnit(v){return v.toLocaleString('de-DE',{minimumFractionDigits:3,maximumFractionDigits:3})+' €';}
@@ -1195,7 +1201,7 @@ function renderPriceTable(size) {
   DISPLAY_ROWS.forEach(qty => {
     const pp = getStaffelPrice(qty, size);
     const netto = pp * qty;
-    const brutto = netto * 1.19;
+    const brutto = netto * (1 + MWST_SATZ);
     const isPopular = qty === 5000;
     const tr = document.createElement('tr');
     if (isPopular) tr.style.background = 'rgba(229,12,125,0.05)';
@@ -1213,22 +1219,45 @@ function renderPriceTable(size) {
 
 function switchSizeTab(size) {
   activeSize = size;
-  ['klein','medium','gross'].forEach(s => {
+  ['oz8','oz12','oz16'].forEach(s => {
     const btn = document.getElementById('tab-'+s);
     if (!btn) return;
     if (s===size) { btn.style.background='var(--pink)'; btn.style.borderColor='var(--pink)'; btn.style.color='#F7F2E8'; }
     else { btn.style.background='rgba(28,24,18,0.06)'; btn.style.borderColor='var(--border)'; btn.style.color='var(--warm-gray)'; }
   });
   renderPriceTable(size);
+  renderMengeOptions();
   updateCalc();
+  // Cup-Größe im Bestellformular mitziehen
+  const sf = document.getElementById('oCupSize');
+  if (sf) {
+    for (let opt of sf.options) {
+      if (opt.dataset.size === size) { sf.value = opt.value; break; }
+    }
+  }
+  const hint = document.getElementById('oMengeHint');
+  if (hint && CUP_SIZES[size]) hint.textContent = 'Listenpreise netto für ' + CUP_SIZES[size].label;
+}
+
+// Mengen-Dropdown im Bestellformular aus PRICE_TABLE erzeugen
+function renderMengeOptions() {
+  const sel = document.getElementById('oMenge');
+  if (!sel) return;
+  const prev = sel.value || '1000';
+  sel.innerHTML = STAFFELN.map(qty => {
+    const netto = getStaffelPrice(qty, activeSize) * qty;
+    return '<option value="' + qty + '" style="background:#1C1812">'
+      + qty.toLocaleString('de') + ' Stück — ' + eur(netto) + ' netto</option>';
+  }).join('') + '<option value="custom" style="background:#1C1812">Individuelle Menge (Anfrage)</option>';
+  sel.value = Array.prototype.some.call(sel.options, o => o.value === prev) ? prev : '1000';
 }
 
 function updateCalc() {
   const qty = Math.max(500, Math.min(50000, parseInt(document.getElementById('calcMenge')?.value)||500));
   const isAbo = (document.getElementById('aboTyp')?.value||'').includes('Abo');
-  const pp = getStaffelPrice(qty, activeSize) * (isAbo ? 0.95 : 1);
+  const pp = getStaffelPrice(qty, activeSize) * (isAbo ? (1 - ABO_RABATT) : 1);
   const netto = pp * qty;
-  const mwst = netto * 0.19;
+  const mwst = netto * MWST_SATZ;
   const brutto = netto + mwst;
   if (document.getElementById('calcUnit')) document.getElementById('calcUnit').textContent = eurUnit(pp);
   if (document.getElementById('calcNetto')) document.getElementById('calcNetto').textContent = eur(netto);
@@ -1340,7 +1369,8 @@ document.getElementById('fileInput').addEventListener('change', function() {
 // Init Preistabelle + Kalkulation
 document.addEventListener('DOMContentLoaded', function() {
   initCupViewer();
-  renderPriceTable('medium');
+  renderPriceTable('oz8');
+  renderMengeOptions();
   updateCalc();
   const aboSelect = document.getElementById('aboTyp');
   if (aboSelect) aboSelect.addEventListener('change', updateCalc);
