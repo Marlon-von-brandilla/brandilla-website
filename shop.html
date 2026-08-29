@@ -39,6 +39,21 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Ab welcher Menge kann ich bestellen?","acceptedAnswer":{"@type":"Answer","text":"Ab 500 Stück pro Design und Größe — deutlich niedriger als viele Anbieter, die erst ab mehreren Tausend Stück einsteigen."}},
+    {"@type":"Question","name":"Wie lange dauert die Lieferung?","acceptedAnswer":{"@type":"Answer","text":"Rund 3–4 Wochen ab Druckfreigabe. Unsere Becher werden in Deutschland produziert — bei Anbietern mit Fernost-Produktion sind 10–12 Wochen keine Seltenheit."}},
+    {"@type":"Question","name":"Sind die Becher wirklich plastikfrei?","acceptedAnswer":{"@type":"Answer","text":"Ja, vollständig. Die Innenbeschichtung besteht aus Wasserlack statt der bei vielen Bio-Bechern üblichen PE-Folie (Kunststoffbeschichtung). Nur echte Wasserlack-Becher sind tatsächlich vollständig kompostierbar."}},
+    {"@type":"Question","name":"Was ist im Preis enthalten?","acceptedAnswer":{"@type":"Answer","text":"Becher, 4-farbiger Rundum-Druck, Lieferung direkt zu Ihnen, sowie die gesetzliche Einwegkunststofffonds-Abgabe (EWK) — keine versteckten Zusatzkosten."}},
+    {"@type":"Question","name":"Welche Größen gibt es?","acceptedAnswer":{"@type":"Answer","text":"8oz (200ml), 12oz (300ml) und 16oz (400ml), jeweils doppelwandig für bessere Isolierung und angenehmeres Halten ohne Manschette."}},
+    {"@type":"Question","name":"Wie viele Farben kann ich für mein Design nutzen?","acceptedAnswer":{"@type":"Answer","text":"4-farbiger CMYK-Druck ist im Preis enthalten — deckt praktisch jede Farbkombination ab."}},
+    {"@type":"Question","name":"Kann ich vor der Bestellung ein Muster sehen?","acceptedAnswer":{"@type":"Answer","text":"Ja, auf Wunsch schicken wir echte Musterbecher mit eurem Design zu, bevor die Gesamtmenge produziert wird."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -191,6 +206,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 56px;d
 
 /* FEATURES */
 .features-section{padding:100px 56px;background:var(--cream);border-bottom:1px solid var(--border)}
+
+/* FAQ — Muster aus coffee-cup-werbung.html */
+.faq-section{padding:100px 56px;background:var(--cream);border-bottom:1px solid var(--border)}
+.faq-inner{max-width:1200px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(28,24,18,0.1);margin-top:56px}
+.faq-item{border-bottom:1px solid rgba(28,24,18,0.1)}
+.faq-item summary{padding:28px 0;display:flex;justify-content:space-between;align-items:center;cursor:none;gap:24px;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-q{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-weight:400;color:var(--dark);line-height:1.3;flex:1}
+.faq-toggle{width:32px;height:32px;border-radius:50%;border:1px solid rgba(28,24,18,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--pink);font-size:18px;line-height:1;transition:all .25s}
+.faq-item[open] .faq-toggle{background:var(--pink);color:var(--cream);transform:rotate(45deg)}
+.faq-a{padding:0 0 28px;font-size:16px;line-height:1.85;color:rgba(28,24,18,0.7);font-weight:300;max-width:780px}
 .features-inner{max-width:1200px;margin:0 auto}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px}
 .feat-card{background:var(--cream);padding:44px 36px;position:relative;overflow:hidden;transition:background .35s;cursor:none}
@@ -236,7 +263,7 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
   .hero{grid-template-columns:1fr}.hr{display:none}.hl{padding:56px 24px}
   .konfigurator{padding:60px 24px}.konfig-inner{grid-template-columns:1fr;gap:40px}
   .preview-panel{position:static}
-  .preise-section,.features-section,.gallery-section{padding:60px 24px}
+  .preise-section,.features-section,.gallery-section,.faq-section{padding:60px 24px}
   .feat-grid,.gallery-grid{grid-template-columns:1fr}
   .qty-btns-3d{grid-template-columns:repeat(2,1fr)}
   .size-cards-3d{grid-template-columns:repeat(3,1fr)}
@@ -857,10 +884,77 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="snum r">06 — Häufige Fragen</div>
+    <h2 class="stitle r">Alles, was du<br><em>wissen musst.</em></h2>
+    <div class="faq-list rd">
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-q">Ab welcher Menge kann ich bestellen?</div>
+          <div class="faq-toggle">+</div>
+        </summary>
+        <div class="faq-a">Ab <strong>500 Stück</strong> pro Design und Größe — deutlich niedriger als viele Anbieter, die erst ab mehreren Tausend Stück einsteigen.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-q">Wie lange dauert die Lieferung?</div>
+          <div class="faq-toggle">+</div>
+        </summary>
+        <div class="faq-a">Rund <strong>3–4 Wochen ab Druckfreigabe</strong>. Unsere Becher werden in Deutschland produziert — bei Anbietern mit Fernost-Produktion sind 10–12 Wochen keine Seltenheit.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-q">Sind die Becher wirklich plastikfrei?</div>
+          <div class="faq-toggle">+</div>
+        </summary>
+        <div class="faq-a">Ja, vollständig. Die Innenbeschichtung besteht aus <strong>Wasserlack</strong> statt der bei vielen „Bio“-Bechern üblichen PE-Folie (Kunststoffbeschichtung). Nur echte Wasserlack-Becher sind tatsächlich vollständig kompostierbar.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-q">Was ist im Preis enthalten?</div>
+          <div class="faq-toggle">+</div>
+        </summary>
+        <div class="faq-a">Becher, 4-farbiger Rundum-Druck, Lieferung direkt zu Ihnen, sowie die gesetzliche Einwegkunststofffonds-Abgabe (EWK) — <strong>keine versteckten Zusatzkosten</strong>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-q">Welche Größen gibt es?</div>
+          <div class="faq-toggle">+</div>
+        </summary>
+        <div class="faq-a"><strong>8oz (200ml), 12oz (300ml) und 16oz (400ml)</strong>, jeweils doppelwandig für bessere Isolierung und angenehmeres Halten ohne Manschette.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-q">Wie viele Farben kann ich für mein Design nutzen?</div>
+          <div class="faq-toggle">+</div>
+        </summary>
+        <div class="faq-a"><strong>4-farbiger CMYK-Druck</strong> ist im Preis enthalten — deckt praktisch jede Farbkombination ab.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-q">Kann ich vor der Bestellung ein Muster sehen?</div>
+          <div class="faq-toggle">+</div>
+        </summary>
+        <div class="faq-a">Ja, auf Wunsch schicken wir <strong>echte Musterbecher</strong> mit eurem Design zu, bevor die Gesamtmenge produziert wird.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <!-- DIREKTBESTELLUNG / ANFRAGE FORMULAR -->
 <section style="background:var(--dark);padding:100px 56px" id="bestellung">
   <div style="max-width:860px;margin:0 auto">
-    <div class="snum r" style="color:var(--pink)">06 — Bestellung & Anfrage</div>
+    <div class="snum r" style="color:var(--pink)">07 — Bestellung & Anfrage</div>
     <h2 class="stitle r" style="color:var(--cream)">Jetzt<br><em>bestellen.</em></h2>
     <div style="font-size:15px;color:rgba(247,242,232,0.4);font-weight:300;margin-top:16px;margin-bottom:56px;line-height:1.8">
       Füll das Formular aus — wir melden uns innerhalb von 24 Stunden mit Angebot und Druckdaten-Info.
