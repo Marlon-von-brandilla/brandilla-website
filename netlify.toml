@@ -14,6 +14,22 @@
   status = 301
   force = true
 
+# QR-Codes auf gedruckten Medien tragen brandilla.de/k/{campaign}?pos={pos}.
+# track.html liegt im Dashboard (app.brandilla.de). 302 bewusst dauerhaft
+# (Entscheidung 2026-09-07), damit die Ziel-Architektur umschwenkbar bleibt.
+# Query-String (?pos=) haengt Netlify bei 302 automatisch an.
+[[redirects]]
+  from = "/k/*"
+  to = "https://app.brandilla.de/k/:splat"
+  status = 302
+
+# POS-Foto-Upload analog: brandilla.de/u/{campaign}?pos={pos} -> upload.html
+# im Dashboard. Gleiche Begruendung, gleicher Status.
+[[redirects]]
+  from = "/u/*"
+  to = "https://app.brandilla.de/u/:splat"
+  status = 302
+
 [[redirects]]
   from = "/kampagnen"
   to = "/kampagnen.html"
