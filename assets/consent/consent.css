@@ -1,0 +1,67 @@
+/* brandilla – Look für den Cookie-Banner (überschreibt cookieconsent.css) */
+#cc-main {
+  /* unter dem Custom-Cursor (.cur z-index 9999), damit er über dem Banner sichtbar bleibt */
+  --cc-z-index: 9000;
+  --cc-font-family: 'Jost', system-ui, sans-serif;
+  --cc-modal-border-radius: 4px;
+  --cc-btn-border-radius: 0;
+
+  --cc-bg: #F7F2E8;
+  --cc-primary-color: #1C1812;
+  --cc-secondary-color: #5E594F;
+  --cc-link-color: #E50C7D;
+
+  /* Akzeptieren und Ablehnen bewusst identisch gestaltet (gleichwertige Wahl) */
+  --cc-btn-primary-bg: #1C1812;
+  --cc-btn-primary-color: #F7F2E8;
+  --cc-btn-primary-border-color: #1C1812;
+  --cc-btn-primary-hover-bg: #E50C7D;
+  --cc-btn-primary-hover-color: #F7F2E8;
+  --cc-btn-primary-hover-border-color: #E50C7D;
+  --cc-btn-secondary-bg: #1C1812;
+  --cc-btn-secondary-color: #F7F2E8;
+  --cc-btn-secondary-border-color: #1C1812;
+  --cc-btn-secondary-hover-bg: #E50C7D;
+  --cc-btn-secondary-hover-color: #F7F2E8;
+  --cc-btn-secondary-hover-border-color: #E50C7D;
+
+  --cc-separator-border-color: rgba(28, 24, 18, .12);
+  --cc-toggle-on-bg: #E50C7D;
+  --cc-toggle-off-bg: #8A857A;
+  --cc-toggle-readonly-bg: #C9C3B6;
+  --cc-cookie-category-block-bg: #FDF8EF;
+  --cc-cookie-category-block-border: rgba(28, 24, 18, .1);
+  --cc-cookie-category-block-hover-bg: #F2EBDD;
+  --cc-cookie-category-block-hover-border: rgba(28, 24, 18, .15);
+  --cc-cookie-category-expanded-block-bg: #FDF8EF;
+  --cc-cookie-category-expanded-block-hover-bg: #F2EBDD;
+  --cc-footer-bg: #F2EBDD;
+  --cc-footer-color: #5E594F;
+  --cc-footer-border-color: rgba(28, 24, 18, .1);
+  --cc-overlay-bg: rgba(28, 24, 18, .55);
+}
+#cc-main .cm__title,
+#cc-main .pm__title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+#cc-main .cm__btn,
+#cc-main .pm__btn { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+#cc-main .cm,
+#cc-main .pm { border: 1px solid rgba(28, 24, 18, .12); box-shadow: 0 20px 60px rgba(28, 24, 18, .25); }
+
+/* Platzhalter für YouTube-Videos ohne Einwilligung */
+.cc-media-ph {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  background: #1C1812; color: #F7F2E8; text-align: center; padding: 20px;
+  font-family: 'Jost', system-ui, sans-serif;
+}
+.cc-media-ph__inner { max-width: 420px; }
+.cc-media-ph p { font-size: 13px; line-height: 1.55; color: rgba(247, 242, 232, .75); margin: 0 0 16px; }
+.cc-media-ph__btn {
+  background: #E50C7D; color: #F7F2E8; border: 0; padding: 10px 22px; cursor: pointer;
+  font: 600 11px/1 'Jost', sans-serif; letter-spacing: .1em; text-transform: uppercase;
+}
+.cc-media-ph__btn:hover { background: #c5006a; }
+.cc-media-ph__link {
+  display: block; margin: 12px auto 0; background: none; border: 0; cursor: pointer;
+  color: rgba(247, 242, 232, .6); font: 400 12px 'Jost', sans-serif; text-decoration: underline;
+}

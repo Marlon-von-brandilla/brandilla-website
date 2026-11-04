@@ -12,7 +12,6 @@
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://brandilla.de/datenschutz">
 <title>Datenschutz — brandilla UG Berlin</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root { --cream: #F7F2E8; --dark: #1C1812; --pink: #E50C7D; --warm-gray: #8A857A; --light-border: rgba(28,24,18,0.1); --accent-light: #FDF8EF; --cream-dark: #EDE8DC; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -116,8 +115,11 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
 .nav-mobile-group>a{display:block;padding:10px 16px 0;font-size:12px;color:rgba(247,242,232,0.5);border-bottom:none}
 .nav-mobile-group>a:hover{color:#F7F2E8}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-02C7GTHDB3"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-02C7GTHDB3',{'anonymize_ip':true});</script>
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v=1">
+<link rel="stylesheet" href="/assets/consent/cookieconsent.css?v=1">
+<link rel="stylesheet" href="/assets/consent/consent.css?v=1">
+<script defer src="/assets/consent/cookieconsent.umd.js?v=1"></script>
+<script defer src="/assets/consent/consent-config.js?v=1"></script>
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
@@ -288,41 +290,58 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   </div>
 
   <div class="legal-section">
-    <div class="legal-section-title">Webanalyse</div>
-    <h2 class="legal-h2">Google <em>Analytics.</em></h2>
+    <div class="legal-section-title">Cookies & Einwilligung</div>
+    <h2 class="legal-h2">Cookies &amp; <em>Einwilligung.</em></h2>
     <p class="legal-p">
-      Diese Website nutzt <strong>Google Analytics 4</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; Muttergesellschaft: Google LLC, Mountain View, CA, USA). Google Analytics verwendet Cookies und ähnliche Technologien, um das Nutzerverhalten auf unserer Website zu analysieren.
+      Beim ersten Besuch fragen wir Sie über einen Cookie-Banner, welche optionalen Dienste wir nutzen dürfen. Ohne Ihre aktive Zustimmung werden ausschließlich technisch notwendige Informationen gespeichert. Google Analytics und YouTube-Videos werden erst geladen, nachdem Sie eingewilligt haben.
     </p>
-    <div class="legal-kv">
-      <div class="legal-kv-key">Zweck</div>
-      <div class="legal-kv-val">Analyse des Nutzerverhaltens, Optimierung der Website</div>
-      <div class="legal-kv-key">Rechtsgrundlage</div>
-      <div class="legal-kv-val">Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse); IP-Anonymisierung ist aktiviert</div>
-      <div class="legal-kv-key">Datenübertragung</div>
-      <div class="legal-kv-val">USA (auf Basis des EU-US Data Privacy Framework)</div>
-      <div class="legal-kv-key">Speicherdauer</div>
-      <div class="legal-kv-val">14 Monate (Standard Google Analytics 4)</div>
-    </div>
+    <ul class="legal-ul">
+      <li><strong>Technisch notwendig:</strong> Cookie „cc_brandilla“ zur Speicherung Ihrer Cookie-Auswahl (Speicherdauer 6 Monate). Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG, Art. 6 Abs. 1 lit. c und f DSGVO (Nachweis der Einwilligung).</li>
+      <li><strong>Statistik:</strong> Google Analytics (Cookies _ga, _ga_*), nur nach Einwilligung. Rechtsgrundlage: § 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO.</li>
+      <li><strong>Externe Medien:</strong> YouTube-Videos, nur nach Einwilligung. Rechtsgrundlage: § 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO.</li>
+    </ul>
     <p class="legal-p">
-      Sie können die Erfassung durch Google Analytics verhindern, indem Sie das Browser-Add-on zur Deaktivierung von Google Analytics installieren: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">tools.google.com/dlpage/gaoptout</a>
-    </p>
-    <p class="legal-p">
-      Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>
+      Ihre Einwilligung ist freiwillig. Sie können sie jederzeit mit Wirkung für die Zukunft widerrufen oder ändern – über den Link <a href="#" data-cc="show-preferencesModal">Cookie-Einstellungen</a> im Footer jeder Seite. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt unberührt. Für den Cookie-Banner nutzen wir die Open-Source-Software „CookieConsent“, die direkt von unserem Server ausgeliefert wird; dabei werden keine Daten an Dritte übertragen.
     </p>
   </div>
 
   <div class="legal-section">
-    <div class="legal-section-title">Cookies</div>
-    <h2 class="legal-h2">Cookies &amp; <em>Tracking.</em></h2>
+    <div class="legal-section-title">Webanalyse</div>
+    <h2 class="legal-h2">Google <em>Analytics.</em></h2>
     <p class="legal-p">
-      Diese Website verwendet ausschließlich technisch notwendige Cookies sowie, mit Ihrer impliziten Einwilligung durch Weiternutzung der Website, Analyse-Cookies von Google Analytics. Es werden keine Werbe-Cookies oder Cookies von sozialen Netzwerken gesetzt.
+      Sofern Sie eingewilligt haben, nutzt diese Website <strong>Google Analytics 4</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; Muttergesellschaft: Google LLC, Mountain View, CA, USA). Google Analytics verwendet Cookies und ähnliche Technologien, um zu analysieren, wie unsere Website genutzt wird (z. B. aufgerufene Seiten, Verweildauer, Herkunft der Besucher, ungefährer Standort, Gerät und Browser). In Google Analytics 4 werden IP-Adressen nicht gespeichert.
     </p>
-    <ul class="legal-ul">
-      <li><strong>Technisch notwendig:</strong> Session-Cookies für die Grundfunktionen der Website (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO)</li>
-      <li><strong>Analyse:</strong> Google Analytics (_ga, _gid, _gat) zur Messung von Website-Besuchen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO)</li>
-    </ul>
+    <div class="legal-kv">
+      <div class="legal-kv-key">Zweck</div>
+      <div class="legal-kv-val">Reichweitenmessung und Optimierung der Website</div>
+      <div class="legal-kv-key">Rechtsgrundlage</div>
+      <div class="legal-kv-val">Ihre Einwilligung, § 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO – jederzeit widerrufbar</div>
+      <div class="legal-kv-key">Datenübertragung</div>
+      <div class="legal-kv-val">USA möglich; Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert (Angemessenheitsbeschluss, Art. 45 DSGVO)</div>
+      <div class="legal-kv-key">Speicherdauer</div>
+      <div class="legal-kv-val">Cookies bis zu 14 Monate; Analysedaten werden nach spätestens 14 Monaten gelöscht</div>
+    </div>
     <p class="legal-p">
-      Sie können die Speicherung von Cookies in Ihren Browser-Einstellungen deaktivieren. Bitte beachten Sie, dass dies die Funktionalität der Website beeinträchtigen kann.
+      Wir haben mit Google einen Auftragsverarbeitungsvertrag abgeschlossen. Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Eingebettete Videos</div>
+    <h2 class="legal-h2">You<em>Tube.</em></h2>
+    <p class="legal-p">
+      Auf einzelnen Seiten (z. B. „Marketing-Wissen“) binden wir Videos von <strong>YouTube</strong> ein (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Die Videos werden erst geladen, wenn Sie in der Kategorie „Externe Medien“ eingewilligt oder auf „Video laden“ geklickt haben. Wir nutzen den erweiterten Datenschutzmodus (youtube-nocookie.com). Beim Laden werden u. a. Ihre IP-Adresse und die aufgerufene Seite an YouTube übermittelt; eine Übertragung in die USA ist möglich (EU-US Data Privacy Framework).
+    </p>
+    <p class="legal-p">
+      Rechtsgrundlage: Ihre Einwilligung, § 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>
+    </p>
+  </div>
+
+  <div class="legal-section">
+    <div class="legal-section-title">Schriftarten & Skripte</div>
+    <h2 class="legal-h2">Lokal <em>gehostet.</em></h2>
+    <p class="legal-p">
+      Die auf dieser Website verwendeten Schriftarten (Playfair Display, Jost, Cormorant Garamond) sowie alle Skripte werden lokal von unserem eigenen Server geladen. Es findet keine Verbindung zu Servern von Google Fonts oder anderen Content-Delivery-Netzwerken statt.
     </p>
   </div>
 
@@ -330,7 +349,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
     <div class="legal-section-title">Externe Dienste</div>
     <h2 class="legal-h2">Externe <em>Links.</em></h2>
     <p class="legal-p">
-      Unsere Website enthält Links zu Social-Media-Plattformen (Instagram, LinkedIn). Diese Links führen zu externen Websites, auf deren Datenschutzpraktiken wir keinen Einfluss haben. Beim Aufruf dieser Links gelten die jeweiligen Datenschutzbestimmungen der Plattformbetreiber.
+      Unsere Website enthält Links zu externen Plattformen (Instagram, LinkedIn, YouTube, WhatsApp, Calendly). Diese Links führen zu externen Websites, auf deren Datenschutzpraktiken wir keinen Einfluss haben. Daten werden erst übertragen, wenn Sie einen Link anklicken; dann gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
     </p>
     <p class="legal-p">
       Auf dieser Website sind keine Social-Media-Plugins direkt eingebunden — nur einfache Links, die beim Anklicken zur jeweiligen Plattform führen.
@@ -360,7 +379,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   <div class="legal-section">
     <div class="legal-section-title">Aktualität</div>
     <p class="legal-p">
-      Diese Datenschutzerklärung ist aktuell gültig und hat den Stand <strong>März 2026</strong>. Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
+      Diese Datenschutzerklärung ist aktuell gültig und hat den Stand <strong>November 2026</strong>. Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
     </p>
   </div>
 
@@ -371,7 +390,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
     <div><div class="footer-brand-name">brandilla</div><div class="footer-tagline">TakeAway Marketing neu gedacht.</div></div>
     <div class="footer-col"><h4>Produkte</h4><ul><li><a href="produkte.html">Coffee Cup</a></li><li><a href="produkte.html">Neue Medien</a></li></ul></div>
     <div class="footer-col"><h4>Unternehmen</h4><ul><li><a href="kampagnen.html">Kampagnen</a></li><li><a href="preise.html">Preise</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
-    <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="agb.html">AGB</a></li></ul></div>
+    <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li>
+<li><a href="#" data-cc="show-preferencesModal">Cookie-Einstellungen</a></li><li><a href="agb.html">AGB</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2016–2026 brandilla UG · Berlin</div>
