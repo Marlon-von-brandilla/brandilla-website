@@ -31,9 +31,6 @@
 
 
 <title>brandilla — TakeAway Marketing Agentur | Werbung auf Coffee Cups & mehr</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
   --cream: #F7F2E8;
@@ -478,14 +475,6 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
   ]
 }
 </script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-02C7GTHDB3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-02C7GTHDB3');
-  </script>
 
 <style id="gorilla-popup-style">
 .mf-popup {
@@ -533,6 +522,11 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
 .mf-popup-close:hover { color: rgba(247,242,232,0.6); }
 </style>
 
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v=1">
+<link rel="stylesheet" href="/assets/consent/cookieconsent.css?v=1">
+<link rel="stylesheet" href="/assets/consent/consent.css?v=1">
+<script defer src="/assets/consent/cookieconsent.umd.js?v=1"></script>
+<script defer src="/assets/consent/consent-config.js?v=1"></script>
 </head>
 <body>
 
@@ -938,6 +932,7 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
       <li><a href="kontakt.html">Kontakt</a></li>
       <li><a href="impressum.html">Impressum</a></li>
       <li><a href="datenschutz.html">Datenschutz</a></li>
+      <li><a href="#" data-cc="show-preferencesModal">Cookie-Einstellungen</a></li>
       <li><a href="agb.html">AGB</a></li>
     </ul></div>
   </div>

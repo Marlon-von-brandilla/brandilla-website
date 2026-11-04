@@ -17,9 +17,6 @@
 <meta property="og:title" content="TakeAway Marketing Wissen — brandilla">
 <meta property="og:description" content="Videos, Tipps und Insights vom brandilla Team über TakeAway Marketing.">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400&display=swap" rel="stylesheet">
 <style>
 /* shared.css — brandilla Design System */
 :root {
@@ -604,14 +601,6 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   .video-grid, .artikel-grid { grid-template-columns: 1fr; }
 }
 </style>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-02C7GTHDB3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-02C7GTHDB3');
-  </script>
 
 <style id="gorilla-popup-style">
 .mf-popup {
@@ -669,6 +658,11 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v=1">
+<link rel="stylesheet" href="/assets/consent/cookieconsent.css?v=1">
+<link rel="stylesheet" href="/assets/consent/consent.css?v=1">
+<script defer src="/assets/consent/cookieconsent.umd.js?v=1"></script>
+<script defer src="/assets/consent/consent-config.js?v=1"></script>
 </head>
 <body>
 <div class="cursor" id="cursor"></div>
@@ -806,7 +800,7 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
       <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/QpWA-ps37jI"
+        data-cc-src="https://www.youtube-nocookie.com/embed/QpWA-ps37jI"
         title="Warum Offline-Marketing 2026 boomt — brandilla"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -948,7 +942,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(247,242,232,0.05); 
     <div><div class="footer-brand-name">brandilla</div><div class="footer-tagline">TakeAway Marketing neu gedacht.</div></div>
     <div class="footer-col"><h4>Produkte</h4><ul><li><a href="/coffee-cup-werbung">Coffee Cup</a></li><li><a href="/baeckertueten-werbung">Bäckertüte</a></li><li><a href="/pizzaschachtel-werbung">Pizzaschachtel</a></li><li><a href="/bierdeckel-werbung">Bierdeckel</a></li><li><a href="/produkte">Snackbox</a></li><li><a href="/produkte">Activated Cup</a></li></ul></div>
     <div class="footer-col"><h4>Wissen</h4><ul><li><a href="marketing-wissen.html">Alle Videos</a></li><li><a href="gorilla-talk.html">Gorilla Talk</a></li><li><a href="kampagnen.html">Kampagnen</a></li></ul></div>
-    <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="kontakt.html">Anfrage stellen</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+    <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="kontakt.html">Anfrage stellen</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li>
+<li><a href="#" data-cc="show-preferencesModal">Cookie-Einstellungen</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2016–2026 brandilla UG · Berlin</div>
@@ -1123,7 +1118,7 @@ function showFallbackVideos() {
   grid.innerHTML = `
     <div class="v-card" data-cat="employer">
       <div class="v-thumb" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1C1812;border-radius:8px">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/TedUvAZnugk" title="Warum deine Stellenanzeige niemanden interessiert" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" data-cc-src="https://www.youtube-nocookie.com/embed/TedUvAZnugk" title="Warum deine Stellenanzeige niemanden interessiert" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="v-body" style="padding:24px 24px 28px">
         <div class="v-cat" style="display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:#E50C7D;color:#F7F2E8;padding:4px 10px;font-weight:600;margin-bottom:10px">Employer Branding</div>
@@ -1132,7 +1127,7 @@ function showFallbackVideos() {
     </div>
     <div class="v-card" data-cat="employer">
       <div class="v-thumb" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1C1812;border-radius:8px">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/QVFK5Dyxwak" title="Werbepsychologie im Recruiting" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" data-cc-src="https://www.youtube-nocookie.com/embed/QVFK5Dyxwak" title="Werbepsychologie im Recruiting" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="v-body" style="padding:24px 24px 28px">
         <div class="v-cat" style="display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:#E50C7D;color:#F7F2E8;padding:4px 10px;font-weight:600;margin-bottom:10px">Recruiting</div>
@@ -1141,7 +1136,7 @@ function showFallbackVideos() {
     </div>
     <div class="v-card" data-cat="takeaway">
       <div class="v-thumb" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#1C1812;border-radius:8px">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube.com/embed/rNNZd1OuR6Y" title="Marlon gegen ChatGPT — Gorilla gegen KI" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" data-cc-src="https://www.youtube-nocookie.com/embed/rNNZd1OuR6Y" title="Marlon gegen ChatGPT — Gorilla gegen KI" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="v-body" style="padding:24px 24px 28px">
         <div class="v-cat" style="display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;background:#E50C7D;color:#F7F2E8;padding:4px 10px;font-weight:600;margin-bottom:10px">TakeAway Marketing</div>
