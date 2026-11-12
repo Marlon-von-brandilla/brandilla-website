@@ -1,6 +1,30 @@
 [build]
   publish = "."
 
+# Weihnachtsaktion 2026: feste Adresse fuer das Aktions-PDF (steht so in den Mail-Wellen, NICHT aendern).
+# Das PDF laesst sich austauschen, indem die Datei unter assets/pdf/ ersetzt wird; die Adresse bleibt gleich.
+# Status 200 = Rewrite: die Adresse bleibt im Browser stehen, ausgeliefert wird das PDF.
+[[redirects]]
+  from = "/aktion/weihnachten-2026"
+  to = "/assets/pdf/Brandilla_Weihnachtsaktion_2026.pdf"
+  status = 200
+  force = true
+
+# Aktions-PDF: nicht in Suchmaschinen, im Browser anzeigen statt herunterladen, kurz cachen (austauschbar)
+[[headers]]
+  for = "/aktion/weihnachten-2026"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    Content-Type = "application/pdf"
+    Content-Disposition = "inline; filename=\"Brandilla_Weihnachtsaktion_2026.pdf\""
+    Cache-Control = "public, max-age=300"
+
+[[headers]]
+  for = "/assets/pdf/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    Cache-Control = "public, max-age=300"
+
 # Entfernte verwaiste Seiten → 301 auf gültiges Ziel
 [[redirects]]
   from = "/index-shop"
