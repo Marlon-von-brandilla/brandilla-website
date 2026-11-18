@@ -1015,6 +1015,11 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
         <textarea id="oAnmerkung" rows="4" style="width:100%;background:rgba(247,242,232,0.04);border:1px solid rgba(247,242,232,0.1);color:var(--cream);padding:14px 18px;font-family:'Jost',sans-serif;font-size:14px;font-weight:300;outline:none;cursor:none;transition:border-color .2s;resize:vertical" onfocus="this.style.borderColor='rgba(229,12,125,0.5)'" onblur="this.style.borderColor='rgba(247,242,232,0.1)'" placeholder="Besondere Wünsche, Druckdaten-Hinweise, Lieferadresse..."></textarea>
       </div>
 
+      <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+        <label for="oHp">Website</label>
+        <input type="text" id="oHp" name="website_url" tabindex="-1" autocomplete="off">
+      </div>
+
       <div style="grid-column:1/-1;display:flex;align-items:flex-start;gap:14px">
         <input type="checkbox" id="oDsgvo" required style="width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--pink);cursor:pointer">
         <label for="oDsgvo" style="font-size:13px;color:rgba(247,242,232,0.35);font-weight:300;line-height:1.6">
@@ -1024,7 +1029,7 @@ footer{background:var(--dark);border-top:1px solid rgba(247,242,232,.05);padding
 
       <div style="grid-column:1/-1">
         <button type="button" id="submitBtn" onclick="submitOrder()" class="bp" style="width:100%;justify-content:center;font-size:13px">
-          Bestellung absenden →
+          Anfrage absenden →
         </button>
         <div id="formMsg" style="margin-top:16px;font-size:13px;text-align:center;display:none"></div>
       </div>
@@ -1386,50 +1391,73 @@ function updateCalc() {
 }
 
 
-// Bestellformular absenden via mailto
-function submitOrder() {
+// Anfrage absenden: geht an den Server (Function shop-anfrage im Dashboard). Der speichert die Anfrage,
+// mailt an cups@brandilla.de und schickt dem Besteller eine Bestätigung. Der Erfolgshinweis erscheint
+// erst, wenn der Server bestätigt hat. ts wird beim Seitenaufbau gesetzt (Zeitfalle gegen Bots).
+var SHOP_TS = Date.now();
+var SHOP_URL = 'https://app.brandilla.de/.netlify/functions/shop-anfrage';
+var shopSending = false;
+
+function shopMsg(text, ok) {
+  const msg = document.getElementById('formMsg');
+  msg.style.display = 'block';
+  msg.style.color = ok ? '#4ade80' : '#E50C7D';
+  msg.textContent = text;
+}
+
+async function submitOrder() {
+  if (shopSending) return;
   const vorname = document.getElementById('oVorname').value.trim();
   const nachname = document.getElementById('oNachname').value.trim();
   const firma = document.getElementById('oFirma').value.trim();
   const email = document.getElementById('oEmail').value.trim();
   const tel = document.getElementById('oTel').value.trim();
   const aboTyp = document.getElementById('aboTyp').value;
-  const cupSize = document.getElementById('oCupSize').value;
+  const sizeSel = document.getElementById('oCupSize');
+  const sizeKey = (sizeSel.options[sizeSel.selectedIndex] && sizeSel.options[sizeSel.selectedIndex].dataset.size) || '';
   const menge = document.getElementById('oMenge').value;
   const anmerkung = document.getElementById('oAnmerkung').value.trim();
   const dsgvo = document.getElementById('oDsgvo').checked;
-  const msg = document.getElementById('formMsg');
+  const btn = document.getElementById('submitBtn');
 
-  if (!vorname || !nachname || !firma || !email || !menge) {
-    msg.style.display = 'block';
-    msg.style.color = '#E50C7D';
-    msg.textContent = 'Bitte fülle alle Pflichtfelder aus.';
-    return;
+  if (!vorname || !nachname || !firma || !email || !menge) { shopMsg('Bitte fülle alle Pflichtfelder aus.', false); return; }
+  if (!dsgvo) { shopMsg('Bitte stimme der Datenschutzerklärung zu.', false); return; }
+
+  shopSending = true;
+  const label = btn.textContent;
+  btn.disabled = true;
+  btn.style.opacity = '.5';
+  btn.textContent = 'Wird gesendet …';
+  document.getElementById('formMsg').style.display = 'none';
+
+  const fehlerText = 'Deine Anfrage konnte gerade nicht übermittelt werden. Bitte versuch es noch einmal oder schreib uns an cups@brandilla.de.';
+  try {
+    const resp = await fetch(SHOP_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        vorname: vorname, nachname: nachname, firma: firma, email: email, telefon: tel,
+        bestelltyp: aboTyp, groesse: sizeKey, menge: menge, anmerkung: anmerkung, dsgvo: dsgvo,
+        website_url: document.getElementById('oHp').value, ts: SHOP_TS
+      })
+    });
+    const data = await resp.json().catch(function(){ return {}; });
+    if (resp.ok && data.success) {
+      shopMsg('✓ Deine Anfrage ist eingegangen. Wir melden uns innerhalb von 24 Stunden mit deinem Angebot.'
+        + (data.bestaetigung ? ' Eine Bestätigung ist unterwegs an ' + email + '.' : ''), true);
+      document.getElementById('orderForm').reset();
+      renderMengeOptions();
+      SHOP_TS = Date.now();
+    } else {
+      shopMsg(data.error || fehlerText, false);
+    }
+  } catch (err) {
+    shopMsg(fehlerText, false);
   }
-  if (!dsgvo) {
-    msg.style.display = 'block';
-    msg.style.color = '#E50C7D';
-    msg.textContent = 'Bitte stimme der Datenschutzerklärung zu.';
-    return;
-  }
-
-  const mengeText = menge === 'custom' ? 'Individuelle Menge' : parseInt(menge).toLocaleString('de') + ' Stück';
-  const subject = `Cup Shop Anfrage — ${firma} — ${mengeText} ${cupSize}`;
-  const body = `Neue Cup-Bestellung / Anfrage\n\n`
-    + `Name: ${vorname} ${nachname}\n`
-    + `Unternehmen: ${firma}\n`
-    + `E-Mail: ${email}\n`
-    + `Telefon: ${tel || '—'}\n\n`
-    + `Bestelltyp: ${aboTyp}\n`
-    + `Cup-Größe: ${cupSize}\n`
-    + `Menge: ${mengeText}\n\n`
-    + `Anmerkungen: ${anmerkung || '—'}\n`;
-
-  window.location.href = `mailto:cups@brandilla.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-  msg.style.display = 'block';
-  msg.style.color = '#4ade80';
-  msg.textContent = '✓ E-Mail-Client wird geöffnet — bitte sende die vorbereitete E-Mail ab.';
+  btn.textContent = label;
+  btn.disabled = false;
+  btn.style.opacity = '';
+  shopSending = false;
 }
 </script>
 <script>
